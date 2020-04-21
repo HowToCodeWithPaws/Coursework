@@ -17,7 +17,8 @@ namespace Coursework
 
 		string inputPath = "";
 
-		float Um, Vm, du, dv, u, v, a, Tc, up1, up2, vp1, vp2, Ap1, Ap2, gamma, mu, H;
+		float Um, Vm, du, dv, u, v, a, Tc, up1, up2, vp1, vp2, Ap1, Ap2, gamma, _mu, H;
+
 		int N, Mu, Mv, pq;
 
 		public Form1()
@@ -37,7 +38,7 @@ namespace Coursework
 			up1 = 0.03125f;
 			up2 = -0.03125f;
 			Ap1 = Ap2 = 300;
-			mu = 3000; H = 7;
+			_mu = 3000; H = 7;
 			N = 128;
 			Mu = Mv = 8;
 			pq = 576;
@@ -60,7 +61,7 @@ namespace Coursework
 			lAp1.Text = $"Ap1 = {Ap1}";
 			lAp2.Text = $"Ap2 = {Ap2}";
 			lgamma.Text = $"gamma = {gamma}";
-			l_mu.Text = $"mu = {mu}";
+			l_mu.Text = $"_mu = {_mu}";
 			lH.Text = $"H = {H}";
 			lpq.Text = $"pq = {pq}";
 
@@ -69,22 +70,22 @@ namespace Coursework
 			InMv.Text = Mu.ToString();
 			InUm.Text = Um.ToString();
 			InVm.Text = Vm.ToString();
-			InDu.Text = dv.ToString();
-			InDv.Text = dv.ToString();
-			InU.Text = u.ToString();
-			InV.Text = v.ToString();
+			Indu.Text = dv.ToString();
+			Indv.Text = dv.ToString();
+			Inu.Text = u.ToString();
+			Inv.Text = v.ToString();
 			InTc.Text = Tc.ToString();
-			InA.Text = a.ToString();
-			InUp1.Text = up1.ToString();
-			InUp2.Text = up2.ToString();
-			InVp1.Text = vp1.ToString();
-			InVp2.Text = vp2.ToString();
+			Ina.Text = a.ToString();
+			Inup1.Text = up1.ToString();
+			Inup2.Text = up2.ToString();
+			Invp1.Text = vp1.ToString();
+			Invp2.Text = vp2.ToString();
 			InAp1.Text = Ap1.ToString();
 			InAp2.Text = Ap2.ToString();
-			InGamma.Text = gamma.ToString();
-			In_Mu.Text = mu.ToString();
+			Ingamma.Text = gamma.ToString();
+			In_mu.Text = _mu.ToString();
 			InH.Text = H.ToString();
-			InPq.Text = pq.ToString();
+			Inpq.Text = pq.ToString();
 
 			toolTipN.SetToolTip(lN, "КОЛИЧЕСТВО ВЕКТОРОВ НАБЛЮДЕНИЙ, ПО КОТОРЫМ " +
 				"ФОРМИРУЕТСЯ СТАТИСТИКА");
@@ -108,142 +109,54 @@ namespace Coursework
 			toolTip_Mu.SetToolTip(l_mu, "ПАРАМЕТР РЕГУЛЯРИЗАЦИИ МАТРИЦЫ МЮ");
 			toolTipH.SetToolTip(lH, "ПОРОГОВОЕ ЗНАЧЕНИЕ МОЩНОСТИ СИГНАЛА");
 			toolTipPq.SetToolTip(lpq, "ПАРАМЕТР ПКУ");
-
 		}
 
 		public void GetFromFile()
 		{
 			try
 			{
-				int number;
-				float num;
+				ChangeValueFromFileI(ref N, inputStrings[0], InN, lN);
 
-				if (!CheckValidityI(inputStrings[0], out number))
-				{
-					N = number;
-					lN.Text = $"N = {N}";
-					InN.Text = N.ToString();
-				}
-				if (!CheckValidityI(inputStrings[1], out number))
-				{
-					Mu = number;
-					lMu.Text = $"Mu = {Mu}";
-					InMu.Text = Mu.ToString();
-				}
-				if (!CheckValidityI(inputStrings[2], out number))
-				{
-					Mv = number;
-					lMv.Text = $"Mv = {Mv}";
-					InMv.Text = Mv.ToString();
-				}
-				if (!CheckValidityF(inputStrings[3], out num))
-				{
-					Um = num;
-					lUm.Text = $"Um = {Um}";
-					InUm.Text = Um.ToString();
-				}
-				if (!CheckValidityF(inputStrings[4], out num))
-				{
-					Vm = num;
-					lVm.Text = $"Vm = {Vm}";
-					InVm.Text = Vm.ToString();
-				}
-				if (!CheckValidityF(inputStrings[5], out num))
-				{
-					du = num;
-					ldu.Text = $"du = {dv}";
-					InDu.Text = dv.ToString();
-				}
-				if (!CheckValidityF(inputStrings[6], out num))
-				{
-					dv = num;
-					ldv.Text = $"dv = {dv}";
-					InDv.Text = dv.ToString();
-				}
-				if (!CheckValidityF(inputStrings[7], out num))
-				{
-					u = num;
-					lu.Text = $"u = {u}";
-					InU.Text = u.ToString();
-				}
-				if (!CheckValidityF(inputStrings[8], out num))
-				{
-					v = num;
-					lv.Text = $"v = {v}";
-					InV.Text = v.ToString();
-				}
-				if (!CheckValidityF(inputStrings[9], out num))
-				{
-					a = num;
-					la.Text = $"a = {a}";
-					InA.Text = a.ToString();
-				}
-				if (!CheckValidityF(inputStrings[10], out num))
-				{
-					Tc = num;
-					lTc.Text = $"Tc = {Tc}";
-					InTc.Text = Tc.ToString();
-				}
-				if (!CheckValidityF(inputStrings[11], out num))
-				{
-					up1 = num;
-					lup1.Text = $"up1 = {up1}";
-					InUp1.Text = up1.ToString();
-				}
-				if (!CheckValidityF(inputStrings[12], out num))
-				{
-					up2 = num;
-					lup2.Text = $"up2 = {up2}";
-					InUp2.Text = up2.ToString();
-				}
-				if (!CheckValidityF(inputStrings[13], out num))
-				{
-					vp1 = num;
-					lvp1.Text = $"vp1 = {vp1}";
-					InVp1.Text = vp1.ToString();
-				}
-				if (!CheckValidityF(inputStrings[14], out num))
-				{
-					vp2 = num;
-					lvp2.Text = $"vp2 = {vp2}";
-					InVp2.Text = vp2.ToString();
-				}
-				if (!CheckValidityF(inputStrings[15], out num))
-				{
-					Ap1 = num;
-					lAp1.Text = $"Ap1 = {Ap1}";
-					InAp1.Text = Ap1.ToString();
-				}
-				if (!CheckValidityF(inputStrings[16], out num))
-				{
-					Ap2 = num;
-					lAp2.Text = $"Ap2 = {Ap2}";
-					InAp2.Text = Ap2.ToString();
-				}
-				if (!CheckValidityF(inputStrings[17], out num))
-				{
-					gamma = num;
-					lgamma.Text = $"gamma = {gamma}";
-					InGamma.Text = gamma.ToString();
-				}
-				if (!CheckValidityF(inputStrings[18], out num))
-				{
-					mu = num;
-					l_mu.Text = $"mu = {mu}";
-					In_Mu.Text = mu.ToString();
-				}
-				if (!CheckValidityF(inputStrings[19], out num))
-				{
-					H = num;
-					lH.Text = $"H = {H}";
-					InH.Text = H.ToString();
-				}
-				if (!CheckValidityI(inputStrings[20], out number))
-				{
-					pq = number;
-					lpq.Text = $"pq = {pq}";
-					InPq.Text = pq.ToString();
-				}
+				ChangeValueFromFileI(ref Mu, inputStrings[1], InMu, lMu);
+
+				ChangeValueFromFileI(ref Mv, inputStrings[2], InMv, lMv);
+
+				ChangeValueFromFileF(ref Um, inputStrings[3], InUm, lUm);
+
+				ChangeValueFromFileF(ref Vm, inputStrings[4], InVm, lVm);
+
+				ChangeValueFromFileF(ref du, inputStrings[5], Indu, ldu);
+
+				ChangeValueFromFileF(ref dv, inputStrings[6], Indv, ldv);
+
+				ChangeValueFromFileF(ref u, inputStrings[7], Inu, lu);
+
+				ChangeValueFromFileF(ref v, inputStrings[8], Inv, lv);
+
+				ChangeValueFromFileF(ref a, inputStrings[9], Ina, la);
+
+				ChangeValueFromFileF(ref Tc, inputStrings[10], InTc, lTc);
+
+				ChangeValueFromFileF(ref up1, inputStrings[11], Inup1, lup1);
+
+				ChangeValueFromFileF(ref up2, inputStrings[12], Inup2, lup2);
+
+				ChangeValueFromFileF(ref vp1, inputStrings[13], Invp1, lvp1);
+
+				ChangeValueFromFileF(ref vp2, inputStrings[14], Invp2, lvp2);
+
+				ChangeValueFromFileF(ref Ap1, inputStrings[15], InAp1, lAp1);
+
+				ChangeValueFromFileF(ref Ap2, inputStrings[16], InAp2, lAp2);
+
+				ChangeValueFromFileF(ref gamma, inputStrings[17], Ingamma, lgamma);
+
+				ChangeValueFromFileF(ref _mu, inputStrings[18], In_mu, l_mu);
+
+				ChangeValueFromFileF(ref H, inputStrings[19], InH, lH);
+
+				ChangeValueFromFileI(ref pq, inputStrings[20], Inpq, lpq);
+
 			}
 			catch (IndexOutOfRangeException)
 			{
@@ -256,7 +169,7 @@ namespace Coursework
 		{
 			string path = "";
 			if (openFileInput.ShowDialog()
-	== DialogResult.OK)
+				== DialogResult.OK)
 			{
 				path = openFileInput.FileName;
 			}
@@ -272,7 +185,7 @@ namespace Coursework
 			{ N.ToString(), Mu.ToString(), Mv.ToString(),Um.ToString(), Vm.ToString(),
 				du.ToString(), dv.ToString(), u.ToString(), v.ToString(), a.ToString(),
 				Tc.ToString(), up1.ToString(), up2.ToString(), vp1.ToString(),vp2.ToString(),
-				Ap1.ToString(),Ap2.ToString(), gamma.ToString(), mu.ToString(), H.ToString(),
+				Ap1.ToString(),Ap2.ToString(), gamma.ToString(), _mu.ToString(), H.ToString(),
 				pq.ToString() });
 			}
 			catch (FileNotFoundException)
@@ -352,10 +265,10 @@ namespace Coursework
 			try
 			{
 				File.WriteAllLines("Input.txt", new string[]
-			{ N.ToString(), Mu.ToString(), Mv.ToString(),Um.ToString(), Vm.ToString(),
+				{ N.ToString(), Mu.ToString(), Mv.ToString(),Um.ToString(), Vm.ToString(),
 				du.ToString(), dv.ToString(),  u.ToString(), v.ToString(), a.ToString(),
 				Tc.ToString(), up1.ToString(), up2.ToString(), vp1.ToString(),vp2.ToString(),
-				Ap1.ToString(),Ap2.ToString(), gamma.ToString(), mu.ToString(), H.ToString(),
+				Ap1.ToString(),Ap2.ToString(), gamma.ToString(), _mu.ToString(), H.ToString(),
 				pq.ToString() });
 			}
 			catch (Exception ex)
@@ -363,155 +276,72 @@ namespace Coursework
 				MessageBox.Show("trouble" + ex.Message);
 			}
 
-
 			this.Hide();
 
 			// Создание новой формы на основе
 			// текущей формы 
 			new Form2(this, N, Mu, Mv, Um, Vm, du, dv, u, v, a, Tc, up1,
-				up2, vp1, vp2, Ap1, Ap2, gamma, mu, H, pq, false).Show();
+				up2, vp1, vp2, Ap1, Ap2, gamma, _mu, H, pq).Show();
 
 			// Вызов метода, приводящего форму
 			// к начальному виду.
 			Begin();
 		}
 
-		private void proceedWithData_Click(object sender, EventArgs e)
+		void ChangeValueFromFileI(ref int value, string newvalue, TextBox Invalue, Label lvalue)
 		{
-			MessageBox.Show("Для того, чтобы продолжить с уже сгенерированными" +
-				" данными, вам нужно иметь файл с параметрами симуляции в требуемом" +
-	"формате. Для начала вы должны выбрать его.");
-
-			if (openFileInput.ShowDialog()
-				   == DialogResult.OK)
+			int num;
+			if (!CheckValidityFailedI(newvalue, out num))
 			{
-				inputPath = openFileInput.FileName;
-			}
-
-			/// Блок try catch обрабатывает возможные исключения, возникающие при работе с файлами.
-			try
-			{
-				inputStrings = File.ReadAllLines(inputPath);
-				GetFromFile();
-
-				string pathSx, pathSy, pathUx, pathUy, pathYX, pathYY;
-				pathSy = pathSx = pathUx = pathUy = pathYX = pathYY = "";
-
-				MessageBox.Show("Файл с параметрами загружен. Теперь нужно выбрать файл Sx");
-				// File Sx
-				if (openFileInput.ShowDialog()
-					   == DialogResult.OK)
-				{
-					pathSx = openFileInput.FileName;
-				}
-
-				MessageBox.Show("Файл Sx. Теперь нужно выбрать файл Sy");
-				// File Sy
-				if (openFileInput.ShowDialog()
-						== DialogResult.OK)
-				{
-					pathSy = openFileInput.FileName;
-				}
-
-				MessageBox.Show("Файл Sy. Теперь нужно выбрать файл Ux");
-				// File Ux
-				if (openFileInput.ShowDialog()
-						== DialogResult.OK)
-				{
-					pathUx = openFileInput.FileName;
-				}
-
-				MessageBox.Show("Файл Ux. Теперь нужно выбрать файл Uy");
-				// File Uy				
-				if (openFileInput.ShowDialog()
-					   == DialogResult.OK)
-				{
-					pathUy = openFileInput.FileName;
-				}
-
-
-				MessageBox.Show("Файл Uy. Теперь нужно выбрать файл YX");
-				// File YX
-				if (openFileInput.ShowDialog()
-					   == DialogResult.OK)
-				{
-					pathYX = openFileInput.FileName;
-				}
-
-				MessageBox.Show("Файл YX. Теперь нужно выбрать файл YY");
-				// File YY
-				if (openFileInput.ShowDialog()
-					  == DialogResult.OK)
-				{
-					pathYY = openFileInput.FileName;
-				}
-
-				if (CheckData(pathYY) && CheckData(pathYX)
-					&& CheckData(pathSx) && CheckData(pathSy)
-					&& CheckData(pathUx) && CheckData(pathUy))
-				{
-					File.WriteAllLines("Input.txt", new string[]
-					{ N.ToString(), Mu.ToString(), Mv.ToString(),Um.ToString(), Vm.ToString(),
-				du.ToString(), dv.ToString(),  u.ToString(), v.ToString(), a.ToString(),
-				Tc.ToString(), up1.ToString(), up2.ToString(), vp1.ToString(),vp2.ToString(),
-				Ap1.ToString(),Ap2.ToString(), gamma.ToString(), mu.ToString(), H.ToString(),
-				pq.ToString() });
-					File.Copy(pathSx, "Sx.txt");
-					File.Copy(pathSy, "Sy.txt");
-					File.Copy(pathUx, "Ux.txt");
-					File.Copy(pathUy, "Uy.txt");
-					File.Copy(pathYX, "YX.txt");
-					File.Copy(pathYY, "YY.txt");
-
-					this.Hide();
-
-					// Создание новой формы на основе
-					// текущей формы 
-					new Form2(this, N, Mu, Mv, Um, Vm, du, dv, u, v, a, Tc, up1,
-						up2, vp1, vp2, Ap1, Ap2, gamma, mu, H, pq, true).Show();
-
-					// Вызов метода, приводящего форму
-					// к начальному виду.
-					Begin();
-				}
-			}
-			catch (ArgumentException)
-			{
-				MessageBox.Show("Вы должны выбрать файл.");
-			}
-			catch (FileNotFoundException)
-			{
-				MessageBox.Show("Файл не существует, " +
-					"добавьте его в папку с решением. " +
-					"Начните заново.");
-			}
-			catch (IOException)
-			{
-				MessageBox.Show("Ошибка в работе с файлом." +
-					" Начните заново.");
-			}
-			catch (UnauthorizedAccessException)
-			{
-				MessageBox.Show("Ошибка доступа к файлу:" +
-					" нет разрешения на доступ. Начните заново.");
-			}
-			catch (System.Security.SecurityException)
-			{
-				MessageBox.Show("Ошибка безопасности при " +
-				"работе с файлом. Начните заново.");
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show(ex.Message);
+				value = num;
+				lvalue.Text = $"{lvalue.Name.Substring(1)} = {value}";
+				Invalue.Text = value.ToString();
 			}
 		}
 
-		public bool CheckData(string path)
+		void ChangeValueFromFileF(ref float value, string newvalue, TextBox Invalue, Label lvalue)
 		{
-			return true;
+			float num;
+			if (!CheckValidityFailedF(newvalue, out num))
+			{
+				value = num;
+				lvalue.Text = $"{lvalue.Name.Substring(1)} = {value}";
+				Invalue.Text = value.ToString();
+			}
 		}
 
-		public bool CheckValidityF(string newText, out float number,
+		void ChangeValueI(ref int value, TextBox Invalue, Label lvalue)
+		{
+			int num;
+
+			if (!CheckValidityFailedI(Invalue.Text, out num))
+			{
+				value = num;
+				lvalue.Text = $"{lvalue.Name.Substring(1)} = {value}";
+			}
+
+			else
+			{
+				Invalue.Text = value.ToString();
+			}
+		}
+
+		void ChangeValueF(ref float value, TextBox Invalue, Label lvalue)
+		{
+			float num;
+
+			if (!CheckValidityFailedF(Invalue.Text, out num))
+			{
+				value = num;
+				lvalue.Text = $"{lvalue.Name.Substring(1)} = {value}";
+			}
+			else
+			{
+				Invalue.Text = value.ToString();
+			}
+		}
+
+		public bool CheckValidityFailedF(string newText, out float number,
 			float min = float.MinValue, float max = float.MaxValue)
 		{
 			number = 0;
@@ -544,7 +374,7 @@ namespace Coursework
 			return false;
 		}
 
-		public bool CheckValidityI(string newText, out int number,
+		public bool CheckValidityFailedI(string newText, out int number,
 			int min = int.MinValue, int max = int.MaxValue)
 		{
 			number = 0;
@@ -577,320 +407,108 @@ namespace Coursework
 			return false;
 		}
 
-		private void InMu_TextChanged(object sender, EventArgs e)
+		private void InMu_Leave(object sender, EventArgs e)
 		{
-			int num;
-
-			if (!CheckValidityI(InMu.Text, out num))
-			{
-				Mu = num;
-				lMu.Text = $"Mu = {Mu}";
-			}
-			else
-			{
-				InMu.Text = Mu.ToString();
-			}
+			ChangeValueI(ref Mu, InMu, lMu);
+		}
+		private void In_mu_Leave(object sender, EventArgs e)
+		{
+			ChangeValueF(ref _mu, In_mu, l_mu);
 		}
 
-		private void InMv_TextChanged(object sender, EventArgs e)
+		private void InUm_Leave(object sender, EventArgs e)
 		{
-			int num;
-
-			if (!CheckValidityI(InMv.Text, out num))
-			{
-				Mv = num;
-				lMv.Text = $"Mv = {Mv}";
-			}
-			else
-			{
-				InMv.Text = Mv.ToString();
-			}
+			ChangeValueF(ref Um, InUm, lUm);
 		}
 
-		private void InN_TextChanged(object sender, EventArgs e)
+		private void InVm_Leave(object sender, EventArgs e)
 		{
-			int num;
-
-			if (!CheckValidityI(InN.Text, out num))
-			{
-				N = num;
-				lN.Text = $"N = {N}";
-			}
-			else
-			{
-				InN.Text = N.ToString();
-			}
+			ChangeValueF(ref Vm, InVm, lVm);
 		}
 
-		private void InUm_TextChanged(object sender, EventArgs e)
+		private void Indu_Leave(object sender, EventArgs e)
 		{
-			float num;
-
-			if (!CheckValidityF(InUm.Text, out num))
-			{
-				Um = num;
-				lUm.Text = $"Um = {Um}";
-			}
-			else
-			{
-				InUm.Text = Um.ToString();
-			}
+			ChangeValueF(ref du, Indu, ldu);
 		}
 
-		private void InVm_TextChanged(object sender, EventArgs e)
+		private void Indv_Leave(object sender, EventArgs e)
 		{
-			float num;
-
-			if (!CheckValidityF(InVm.Text, out num))
-			{
-				Vm = num;
-				lVm.Text = $"Vm = {Vm}";
-			}
-			else
-			{
-				InVm.Text = Vm.ToString();
-			}
+			ChangeValueF(ref dv, Indv, ldv);
 		}
 
-		private void InDu_TextChanged(object sender, EventArgs e)
+		private void Inu_Leave(object sender, EventArgs e)
 		{
-			float num;
-
-			if (!CheckValidityF(InDu.Text, out num))
-			{
-				du = num;
-				ldu.Text = $"du = {du}";
-			}
-			else
-			{
-				InDu.Text = du.ToString();
-			}
+			ChangeValueF(ref u, Inu, lu);
 		}
 
-		private void InDv_TextChanged(object sender, EventArgs e)
+		private void Inv_Leave(object sender, EventArgs e)
 		{
-			float num;
-
-			if (!CheckValidityF(InDv.Text, out num))
-			{
-				dv = num;
-				ldv.Text = $"dv = {dv}";
-			}
-			else
-			{
-				InDv.Text = dv.ToString();
-			}
+			ChangeValueF(ref v, Inv, lv);
 		}
 
-		private void InU_TextChanged(object sender, EventArgs e)
+		private void Ina_Leave(object sender, EventArgs e)
 		{
-			float num;
-
-			if (!CheckValidityF(InU.Text, out num))
-			{
-				u = num;
-				lu.Text = $"u = {u}";
-			}
-			else
-			{
-				InU.Text = u.ToString();
-			}
+			ChangeValueF(ref a, Ina, la);
 		}
 
-		private void InV_TextChanged(object sender, EventArgs e)
+		private void InTc_Leave(object sender, EventArgs e)
 		{
-			float num;
-
-			if (!CheckValidityF(InV.Text, out num))
-			{
-				v = num;
-				lv.Text = $"v = {v}";
-			}
-			else
-			{
-				InV.Text = v.ToString();
-			}
+			ChangeValueF(ref Tc, InTc, lTc);
 		}
 
-		private void InA_TextChanged(object sender, EventArgs e)
+		private void InH_Leave(object sender, EventArgs e)
 		{
-			float num;
-
-			if (!CheckValidityF(InA.Text, out num))
-			{
-				a = num;
-				la.Text = $"a = {a}";
-			}
-			else
-			{
-				InA.Text = a.ToString();
-			}
+			ChangeValueF(ref H, InH, lH);
 		}
 
-		private void InTc_TextChanged(object sender, EventArgs e)
+		private void Inup1_Leave(object sender, EventArgs e)
 		{
-			float num;
-
-			if (!CheckValidityF(InTc.Text, out num))
-			{
-				Tc = num;
-				lTc.Text = $"Tc = {Tc}";
-			}
-			else
-			{
-				InTc.Text = Tc.ToString();
-			}
+			ChangeValueF(ref up1, Inup1, lup1);
 		}
 
-		private void InUp1_TextChanged(object sender, EventArgs e)
+		private void Inup2_Leave(object sender, EventArgs e)
 		{
-			float num;
-
-			if (!CheckValidityF(InUp1.Text, out num))
-			{
-				up1 = num;
-				lup1.Text = $"up1 = {up1}";
-			}
-			else
-			{
-				InUp1.Text = up1.ToString();
-			}
+			ChangeValueF(ref up2, Inup2, lup2);
 		}
 
-		private void InUp2_TextChanged(object sender, EventArgs e)
+		private void Invp1_Leave(object sender, EventArgs e)
 		{
-			float num;
-
-			if (!CheckValidityF(InUp2.Text, out num))
-			{
-				up2 = num;
-				lup2.Text = $"up2 = {up2}";
-			}
-			else
-			{
-				InUp2.Text = up2.ToString();
-			}
+			ChangeValueF(ref vp1, Invp1, lvp1);
 		}
 
-		private void InVp1_TextChanged(object sender, EventArgs e)
+		private void Invp2_Leave(object sender, EventArgs e)
 		{
-			float num;
-
-			if (!CheckValidityF(InVp1.Text, out num))
-			{
-				vp1 = num;
-				lvp1.Text = $"vp1 = {vp1}";
-			}
-			else
-			{
-				InVp1.Text = vp1.ToString();
-			}
+			ChangeValueF(ref vp2, Invp2, lvp2);
 		}
 
-		private void InVp2_TextChanged(object sender, EventArgs e)
+		private void InAp1_Leave(object sender, EventArgs e)
 		{
-			float num;
-
-			if (!CheckValidityF(InVp2.Text, out num))
-			{
-				vp2 = num;
-				lvp2.Text = $"vp2 = {vp2}";
-			}
-			else
-			{
-				InVp2.Text = vp2.ToString();
-			}
+			ChangeValueF(ref Ap1, InAp1, lAp1);
 		}
 
-		private void InAp1_TextChanged(object sender, EventArgs e)
+		private void InAp2_Leave(object sender, EventArgs e)
 		{
-			float num;
-
-			if (!CheckValidityF(InAp1.Text, out num))
-			{
-				Ap1 = num;
-				lAp1.Text = $"Ap1 = {Ap1}";
-			}
-			else
-			{
-				InAp1.Text = Ap1.ToString();
-			}
+			ChangeValueF(ref Ap2, InAp2, lAp2);
 		}
 
-		private void InAp2_TextChanged(object sender, EventArgs e)
+		private void Ingamma_Leave(object sender, EventArgs e)
 		{
-			float num;
-
-			if (!CheckValidityF(InAp2.Text, out num))
-			{
-				Ap2 = num;
-				lAp2.Text = $"Ap2 = {Ap2}";
-			}
-			else
-			{
-				InAp2.Text = Ap2.ToString();
-			}
+			ChangeValueF(ref gamma, Ingamma, lgamma);
 		}
 
-		private void InGamma_TextChanged(object sender, EventArgs e)
+		private void Inpq_Leave(object sender, EventArgs e)
 		{
-			float num;
-
-			if (!CheckValidityF(InGamma.Text, out num))
-			{
-				gamma = num;
-				lgamma.Text = $"gamma = {gamma}";
-			}
-			else
-			{
-				InGamma.Text = gamma.ToString();
-			}
+			ChangeValueI(ref pq, Inpq, lpq);
 		}
 
-		private void In_Mu_TextChanged(object sender, EventArgs e)
+		private void InN_Leave(object sender, EventArgs e)
 		{
-			float num;
-
-			if (!CheckValidityF(In_Mu.Text, out num))
-			{
-				mu = num;
-				l_mu.Text = $"mu = {mu}";
-			}
-			else
-			{
-				In_Mu.Text = mu.ToString();
-			}
+			ChangeValueI(ref N, InN, lN);
 		}
 
-		private void InH_TextChanged(object sender, EventArgs e)
+		private void InMv_Leave(object sender, EventArgs e)
 		{
-			float num;
-
-			if (!CheckValidityF(InH.Text, out num))
-			{
-				H = num;
-				lH.Text = $"H = {H}";
-			}
-			else
-			{
-				InH.Text = H.ToString();
-			}
+			ChangeValueI(ref Mv, InMv, lMv);
 		}
-
-		private void InPq_TextChanged(object sender, EventArgs e)
-		{
-			int num;
-
-			if (!CheckValidityI(InPq.Text, out num))
-			{
-				pq = num;
-				lpq.Text = $"pq = {pq}";
-			}
-			else
-			{
-				InPq.Text = pq.ToString();
-			}
-		}
-
 	}
 }

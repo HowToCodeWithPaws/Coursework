@@ -55,7 +55,8 @@ namespace RadarLib
 				{
 					for (int i = 0; i < n; i++)
 					{
-						data[pqm * i + k * m + j] = new Complex(float.Parse(linesYr[it].Trim(' ')), float.Parse(linesYy[it].Trim(' ')));
+						data[pqm * i + k * m + j] = new Complex(float.Parse(linesYr[it].Trim(' ')), 
+							float.Parse(linesYy[it].Trim(' ')));
 
 						it++;
 					}

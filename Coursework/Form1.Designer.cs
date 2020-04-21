@@ -56,23 +56,23 @@
 			this.InMv = new System.Windows.Forms.TextBox();
 			this.InUm = new System.Windows.Forms.TextBox();
 			this.InVm = new System.Windows.Forms.TextBox();
-			this.InDu = new System.Windows.Forms.TextBox();
-			this.InDv = new System.Windows.Forms.TextBox();
-			this.InU = new System.Windows.Forms.TextBox();
-			this.InV = new System.Windows.Forms.TextBox();
-			this.InA = new System.Windows.Forms.TextBox();
+			this.Indu = new System.Windows.Forms.TextBox();
+			this.Indv = new System.Windows.Forms.TextBox();
+			this.Inu = new System.Windows.Forms.TextBox();
+			this.Inv = new System.Windows.Forms.TextBox();
+			this.Ina = new System.Windows.Forms.TextBox();
 			this.lpq = new System.Windows.Forms.Label();
 			this.InTc = new System.Windows.Forms.TextBox();
-			this.InUp1 = new System.Windows.Forms.TextBox();
-			this.InUp2 = new System.Windows.Forms.TextBox();
-			this.InVp1 = new System.Windows.Forms.TextBox();
-			this.InVp2 = new System.Windows.Forms.TextBox();
+			this.Inup1 = new System.Windows.Forms.TextBox();
+			this.Inup2 = new System.Windows.Forms.TextBox();
+			this.Invp1 = new System.Windows.Forms.TextBox();
+			this.Invp2 = new System.Windows.Forms.TextBox();
 			this.InAp1 = new System.Windows.Forms.TextBox();
 			this.InAp2 = new System.Windows.Forms.TextBox();
-			this.InGamma = new System.Windows.Forms.TextBox();
-			this.In_Mu = new System.Windows.Forms.TextBox();
+			this.Ingamma = new System.Windows.Forms.TextBox();
+			this.In_mu = new System.Windows.Forms.TextBox();
 			this.InH = new System.Windows.Forms.TextBox();
-			this.InPq = new System.Windows.Forms.TextBox();
+			this.Inpq = new System.Windows.Forms.TextBox();
 			this.toolTipTc = new System.Windows.Forms.ToolTip(this.components);
 			this.toolTipMu = new System.Windows.Forms.ToolTip(this.components);
 			this.toolTipMv = new System.Windows.Forms.ToolTip(this.components);
@@ -97,7 +97,6 @@
 			this.proceed = new System.Windows.Forms.Button();
 			this.openFileInput = new System.Windows.Forms.OpenFileDialog();
 			this.saveFileInput = new System.Windows.Forms.SaveFileDialog();
-			this.proceedWithData = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// inputUpload
@@ -128,7 +127,7 @@
 			this.InN.Name = "InN";
 			this.InN.Size = new System.Drawing.Size(100, 26);
 			this.InN.TabIndex = 9;
-			this.InN.TextChanged += new System.EventHandler(this.InN_TextChanged);
+			this.InN.Leave += new System.EventHandler(this.InN_Leave);
 			// 
 			// lN
 			// 
@@ -298,7 +297,7 @@
 			this.InMu.Name = "InMu";
 			this.InMu.Size = new System.Drawing.Size(100, 26);
 			this.InMu.TabIndex = 30;
-			this.InMu.TextChanged += new System.EventHandler(this.InMu_TextChanged);
+			this.InMu.Leave += new System.EventHandler(this.InMu_Leave);
 			// 
 			// InMv
 			// 
@@ -306,7 +305,7 @@
 			this.InMv.Name = "InMv";
 			this.InMv.Size = new System.Drawing.Size(100, 26);
 			this.InMv.TabIndex = 31;
-			this.InMv.TextChanged += new System.EventHandler(this.InMv_TextChanged);
+			this.InMv.Leave += new System.EventHandler(this.InMv_Leave);
 			// 
 			// InUm
 			// 
@@ -314,7 +313,7 @@
 			this.InUm.Name = "InUm";
 			this.InUm.Size = new System.Drawing.Size(100, 26);
 			this.InUm.TabIndex = 32;
-			this.InUm.TextChanged += new System.EventHandler(this.InUm_TextChanged);
+			this.InUm.Leave += new System.EventHandler(this.InUm_Leave);
 			// 
 			// InVm
 			// 
@@ -322,47 +321,47 @@
 			this.InVm.Name = "InVm";
 			this.InVm.Size = new System.Drawing.Size(100, 26);
 			this.InVm.TabIndex = 33;
-			this.InVm.TextChanged += new System.EventHandler(this.InVm_TextChanged);
+			this.InVm.Leave += new System.EventHandler(this.InVm_Leave);
 			// 
-			// InDu
+			// Indu
 			// 
-			this.InDu.Location = new System.Drawing.Point(380, 360);
-			this.InDu.Name = "InDu";
-			this.InDu.Size = new System.Drawing.Size(100, 26);
-			this.InDu.TabIndex = 34;
-			this.InDu.TextChanged += new System.EventHandler(this.InDu_TextChanged);
+			this.Indu.Location = new System.Drawing.Point(380, 360);
+			this.Indu.Name = "Indu";
+			this.Indu.Size = new System.Drawing.Size(100, 26);
+			this.Indu.TabIndex = 34;
+			this.Indu.Leave += new System.EventHandler(this.Indu_Leave);
 			// 
-			// InDv
+			// Indv
 			// 
-			this.InDv.Location = new System.Drawing.Point(380, 465);
-			this.InDv.Name = "InDv";
-			this.InDv.Size = new System.Drawing.Size(100, 26);
-			this.InDv.TabIndex = 35;
-			this.InDv.TextChanged += new System.EventHandler(this.InDv_TextChanged);
+			this.Indv.Location = new System.Drawing.Point(380, 465);
+			this.Indv.Name = "Indv";
+			this.Indv.Size = new System.Drawing.Size(100, 26);
+			this.Indv.TabIndex = 35;
+			this.Indv.Leave += new System.EventHandler(this.Indv_Leave);
 			// 
-			// InU
+			// Inu
 			// 
-			this.InU.Location = new System.Drawing.Point(700, 150);
-			this.InU.Name = "InU";
-			this.InU.Size = new System.Drawing.Size(100, 26);
-			this.InU.TabIndex = 36;
-			this.InU.TextChanged += new System.EventHandler(this.InU_TextChanged);
+			this.Inu.Location = new System.Drawing.Point(700, 150);
+			this.Inu.Name = "Inu";
+			this.Inu.Size = new System.Drawing.Size(100, 26);
+			this.Inu.TabIndex = 36;
+			this.Inu.Leave += new System.EventHandler(this.Inu_Leave);
 			// 
-			// InV
+			// Inv
 			// 
-			this.InV.Location = new System.Drawing.Point(700, 255);
-			this.InV.Name = "InV";
-			this.InV.Size = new System.Drawing.Size(100, 26);
-			this.InV.TabIndex = 37;
-			this.InV.TextChanged += new System.EventHandler(this.InV_TextChanged);
+			this.Inv.Location = new System.Drawing.Point(700, 255);
+			this.Inv.Name = "Inv";
+			this.Inv.Size = new System.Drawing.Size(100, 26);
+			this.Inv.TabIndex = 37;
+			this.Inv.Leave += new System.EventHandler(this.Inv_Leave);
 			// 
-			// InA
+			// Ina
 			// 
-			this.InA.Location = new System.Drawing.Point(700, 360);
-			this.InA.Name = "InA";
-			this.InA.Size = new System.Drawing.Size(100, 26);
-			this.InA.TabIndex = 38;
-			this.InA.TextChanged += new System.EventHandler(this.InA_TextChanged);
+			this.Ina.Location = new System.Drawing.Point(700, 360);
+			this.Ina.Name = "Ina";
+			this.Ina.Size = new System.Drawing.Size(100, 26);
+			this.Ina.TabIndex = 38;
+			this.Ina.Leave += new System.EventHandler(this.Ina_Leave);
 			// 
 			// lpq
 			// 
@@ -378,39 +377,39 @@
 			this.InTc.Name = "InTc";
 			this.InTc.Size = new System.Drawing.Size(100, 26);
 			this.InTc.TabIndex = 40;
-			this.InTc.TextChanged += new System.EventHandler(this.InTc_TextChanged);
+			this.InTc.Leave += new System.EventHandler(this.InTc_Leave);
 			// 
-			// InUp1
+			// Inup1
 			// 
-			this.InUp1.Location = new System.Drawing.Point(1020, 150);
-			this.InUp1.Name = "InUp1";
-			this.InUp1.Size = new System.Drawing.Size(100, 26);
-			this.InUp1.TabIndex = 41;
-			this.InUp1.TextChanged += new System.EventHandler(this.InUp1_TextChanged);
+			this.Inup1.Location = new System.Drawing.Point(1020, 150);
+			this.Inup1.Name = "Inup1";
+			this.Inup1.Size = new System.Drawing.Size(100, 26);
+			this.Inup1.TabIndex = 41;
+			this.Inup1.Leave += new System.EventHandler(this.Inup1_Leave);
 			// 
-			// InUp2
+			// Inup2
 			// 
-			this.InUp2.Location = new System.Drawing.Point(1020, 255);
-			this.InUp2.Name = "InUp2";
-			this.InUp2.Size = new System.Drawing.Size(100, 26);
-			this.InUp2.TabIndex = 42;
-			this.InUp2.TextChanged += new System.EventHandler(this.InUp2_TextChanged);
+			this.Inup2.Location = new System.Drawing.Point(1020, 255);
+			this.Inup2.Name = "Inup2";
+			this.Inup2.Size = new System.Drawing.Size(100, 26);
+			this.Inup2.TabIndex = 42;
+			this.Inup2.Leave += new System.EventHandler(this.Inup2_Leave);
 			// 
-			// InVp1
+			// Invp1
 			// 
-			this.InVp1.Location = new System.Drawing.Point(1020, 360);
-			this.InVp1.Name = "InVp1";
-			this.InVp1.Size = new System.Drawing.Size(100, 26);
-			this.InVp1.TabIndex = 43;
-			this.InVp1.TextChanged += new System.EventHandler(this.InVp1_TextChanged);
+			this.Invp1.Location = new System.Drawing.Point(1020, 360);
+			this.Invp1.Name = "Invp1";
+			this.Invp1.Size = new System.Drawing.Size(100, 26);
+			this.Invp1.TabIndex = 43;
+			this.Invp1.Leave += new System.EventHandler(this.Invp1_Leave);
 			// 
-			// InVp2
+			// Invp2
 			// 
-			this.InVp2.Location = new System.Drawing.Point(1020, 465);
-			this.InVp2.Name = "InVp2";
-			this.InVp2.Size = new System.Drawing.Size(100, 26);
-			this.InVp2.TabIndex = 44;
-			this.InVp2.TextChanged += new System.EventHandler(this.InVp2_TextChanged);
+			this.Invp2.Location = new System.Drawing.Point(1020, 465);
+			this.Invp2.Name = "Invp2";
+			this.Invp2.Size = new System.Drawing.Size(100, 26);
+			this.Invp2.TabIndex = 44;
+			this.Invp2.Leave += new System.EventHandler(this.Invp2_Leave);
 			// 
 			// InAp1
 			// 
@@ -418,7 +417,7 @@
 			this.InAp1.Name = "InAp1";
 			this.InAp1.Size = new System.Drawing.Size(100, 26);
 			this.InAp1.TabIndex = 45;
-			this.InAp1.TextChanged += new System.EventHandler(this.InAp1_TextChanged);
+			this.InAp1.Leave += new System.EventHandler(this.InAp1_Leave);
 			// 
 			// InAp2
 			// 
@@ -426,23 +425,23 @@
 			this.InAp2.Name = "InAp2";
 			this.InAp2.Size = new System.Drawing.Size(100, 26);
 			this.InAp2.TabIndex = 46;
-			this.InAp2.TextChanged += new System.EventHandler(this.InAp2_TextChanged);
+			this.InAp2.Leave += new System.EventHandler(this.InAp2_Leave);
 			// 
-			// InGamma
+			// Ingamma
 			// 
-			this.InGamma.Location = new System.Drawing.Point(60, 570);
-			this.InGamma.Name = "InGamma";
-			this.InGamma.Size = new System.Drawing.Size(100, 26);
-			this.InGamma.TabIndex = 47;
-			this.InGamma.TextChanged += new System.EventHandler(this.InGamma_TextChanged);
+			this.Ingamma.Location = new System.Drawing.Point(60, 570);
+			this.Ingamma.Name = "Ingamma";
+			this.Ingamma.Size = new System.Drawing.Size(100, 26);
+			this.Ingamma.TabIndex = 47;
+			this.Ingamma.Leave += new System.EventHandler(this.Ingamma_Leave);
 			// 
-			// In_Mu
+			// In_mu
 			// 
-			this.In_Mu.Location = new System.Drawing.Point(60, 675);
-			this.In_Mu.Name = "In_Mu";
-			this.In_Mu.Size = new System.Drawing.Size(100, 26);
-			this.In_Mu.TabIndex = 48;
-			this.In_Mu.TextChanged += new System.EventHandler(this.In_Mu_TextChanged);
+			this.In_mu.Location = new System.Drawing.Point(60, 675);
+			this.In_mu.Name = "In_mu";
+			this.In_mu.Size = new System.Drawing.Size(100, 26);
+			this.In_mu.TabIndex = 48;
+			this.In_mu.Leave += new System.EventHandler(this.In_mu_Leave);
 			// 
 			// InH
 			// 
@@ -450,15 +449,15 @@
 			this.InH.Name = "InH";
 			this.InH.Size = new System.Drawing.Size(100, 26);
 			this.InH.TabIndex = 49;
-			this.InH.TextChanged += new System.EventHandler(this.InH_TextChanged);
+			this.InH.Leave += new System.EventHandler(this.InH_Leave);
 			// 
-			// InPq
+			// Inpq
 			// 
-			this.InPq.Location = new System.Drawing.Point(60, 465);
-			this.InPq.Name = "InPq";
-			this.InPq.Size = new System.Drawing.Size(100, 26);
-			this.InPq.TabIndex = 50;
-			this.InPq.TextChanged += new System.EventHandler(this.InPq_TextChanged);
+			this.Inpq.Location = new System.Drawing.Point(60, 465);
+			this.Inpq.Name = "Inpq";
+			this.Inpq.Size = new System.Drawing.Size(100, 26);
+			this.Inpq.TabIndex = 50;
+			this.Inpq.Leave += new System.EventHandler(this.Inpq_Leave);
 			// 
 			// proceed
 			// 
@@ -466,7 +465,7 @@
 			this.proceed.Name = "proceed";
 			this.proceed.Size = new System.Drawing.Size(200, 85);
 			this.proceed.TabIndex = 51;
-			this.proceed.Text = "сгенерировать данные";
+			this.proceed.Text = "перейти к созданию наблюдений";
 			this.proceed.UseVisualStyleBackColor = true;
 			this.proceed.Click += new System.EventHandler(this.proceed_Click);
 			// 
@@ -475,41 +474,30 @@
 			this.openFileInput.DefaultExt = "txt";
 			this.openFileInput.Filter = "TXT files (*.txt)|*.txt";
 			// 
-			// proceedWithData
-			// 
-			this.proceedWithData.Location = new System.Drawing.Point(1020, 25);
-			this.proceedWithData.Name = "proceedWithData";
-			this.proceedWithData.Size = new System.Drawing.Size(200, 85);
-			this.proceedWithData.TabIndex = 52;
-			this.proceedWithData.Text = "продолжить с ранее сгенерированными данными";
-			this.proceedWithData.UseVisualStyleBackColor = true;
-			this.proceedWithData.Click += new System.EventHandler(this.proceedWithData_Click);
-			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSize = true;
 			this.ClientSize = new System.Drawing.Size(1338, 740);
-			this.Controls.Add(this.proceedWithData);
 			this.Controls.Add(this.proceed);
-			this.Controls.Add(this.InPq);
+			this.Controls.Add(this.Inpq);
 			this.Controls.Add(this.InH);
-			this.Controls.Add(this.In_Mu);
-			this.Controls.Add(this.InGamma);
+			this.Controls.Add(this.In_mu);
+			this.Controls.Add(this.Ingamma);
 			this.Controls.Add(this.InAp2);
 			this.Controls.Add(this.InAp1);
-			this.Controls.Add(this.InVp2);
-			this.Controls.Add(this.InVp1);
-			this.Controls.Add(this.InUp2);
-			this.Controls.Add(this.InUp1);
+			this.Controls.Add(this.Invp2);
+			this.Controls.Add(this.Invp1);
+			this.Controls.Add(this.Inup2);
+			this.Controls.Add(this.Inup1);
 			this.Controls.Add(this.InTc);
 			this.Controls.Add(this.lpq);
-			this.Controls.Add(this.InA);
-			this.Controls.Add(this.InV);
-			this.Controls.Add(this.InU);
-			this.Controls.Add(this.InDv);
-			this.Controls.Add(this.InDu);
+			this.Controls.Add(this.Ina);
+			this.Controls.Add(this.Inv);
+			this.Controls.Add(this.Inu);
+			this.Controls.Add(this.Indv);
+			this.Controls.Add(this.Indu);
 			this.Controls.Add(this.InVm);
 			this.Controls.Add(this.InUm);
 			this.Controls.Add(this.InMv);
@@ -573,23 +561,23 @@
 		private System.Windows.Forms.TextBox InMv;
 		private System.Windows.Forms.TextBox InUm;
 		private System.Windows.Forms.TextBox InVm;
-		private System.Windows.Forms.TextBox InDu;
-		private System.Windows.Forms.TextBox InDv;
-		private System.Windows.Forms.TextBox InU;
-		private System.Windows.Forms.TextBox InV;
-		private System.Windows.Forms.TextBox InA;
+		private System.Windows.Forms.TextBox Indu;
+		private System.Windows.Forms.TextBox Indv;
+		private System.Windows.Forms.TextBox Inu;
+		private System.Windows.Forms.TextBox Inv;
+		private System.Windows.Forms.TextBox Ina;
 		private System.Windows.Forms.Label lpq;
 		private System.Windows.Forms.TextBox InTc;
-		private System.Windows.Forms.TextBox InUp1;
-		private System.Windows.Forms.TextBox InUp2;
-		private System.Windows.Forms.TextBox InVp1;
-		private System.Windows.Forms.TextBox InVp2;
+		private System.Windows.Forms.TextBox Inup1;
+		private System.Windows.Forms.TextBox Inup2;
+		private System.Windows.Forms.TextBox Invp1;
+		private System.Windows.Forms.TextBox Invp2;
 		private System.Windows.Forms.TextBox InAp1;
 		private System.Windows.Forms.TextBox InAp2;
-		private System.Windows.Forms.TextBox InGamma;
-		private System.Windows.Forms.TextBox In_Mu;
+		private System.Windows.Forms.TextBox Ingamma;
+		private System.Windows.Forms.TextBox In_mu;
 		private System.Windows.Forms.TextBox InH;
-		private System.Windows.Forms.TextBox InPq;
+		private System.Windows.Forms.TextBox Inpq;
 		private System.Windows.Forms.ToolTip toolTipTc;
 		private System.Windows.Forms.ToolTip toolTipMu;
 		private System.Windows.Forms.ToolTip toolTipMv;
@@ -614,7 +602,6 @@
 		private System.Windows.Forms.Button proceed;
 		private System.Windows.Forms.OpenFileDialog openFileInput;
 		private System.Windows.Forms.SaveFileDialog saveFileInput;
-		private System.Windows.Forms.Button proceedWithData;
 	}
 }
 

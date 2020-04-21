@@ -97,12 +97,13 @@
 			this.proceed = new System.Windows.Forms.Button();
 			this.openFileInput = new System.Windows.Forms.OpenFileDialog();
 			this.saveFileInput = new System.Windows.Forms.SaveFileDialog();
+			this.info = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// inputUpload
 			// 
 			this.inputUpload.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.inputUpload.Location = new System.Drawing.Point(60, 25);
+			this.inputUpload.Location = new System.Drawing.Point(380, 25);
 			this.inputUpload.Name = "inputUpload";
 			this.inputUpload.Size = new System.Drawing.Size(200, 85);
 			this.inputUpload.TabIndex = 0;
@@ -113,7 +114,7 @@
 			// inputDownload
 			// 
 			this.inputDownload.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.inputDownload.Location = new System.Drawing.Point(380, 25);
+			this.inputDownload.Location = new System.Drawing.Point(700, 25);
 			this.inputDownload.Name = "inputDownload";
 			this.inputDownload.Size = new System.Drawing.Size(200, 85);
 			this.inputDownload.TabIndex = 8;
@@ -461,7 +462,7 @@
 			// 
 			// proceed
 			// 
-			this.proceed.Location = new System.Drawing.Point(700, 25);
+			this.proceed.Location = new System.Drawing.Point(1020, 25);
 			this.proceed.Name = "proceed";
 			this.proceed.Size = new System.Drawing.Size(200, 85);
 			this.proceed.TabIndex = 51;
@@ -474,12 +475,28 @@
 			this.openFileInput.DefaultExt = "txt";
 			this.openFileInput.Filter = "TXT files (*.txt)|*.txt";
 			// 
+			// saveFileInput
+			// 
+			this.saveFileInput.DefaultExt = "txt";
+			this.saveFileInput.Filter = "TXT files (*.txt)|*.txt";
+			// 
+			// info
+			// 
+			this.info.Location = new System.Drawing.Point(60, 25);
+			this.info.Name = "info";
+			this.info.Size = new System.Drawing.Size(200, 85);
+			this.info.TabIndex = 52;
+			this.info.Text = "информация";
+			this.info.UseVisualStyleBackColor = true;
+			this.info.Click += new System.EventHandler(this.info_Click);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSize = true;
 			this.ClientSize = new System.Drawing.Size(1338, 740);
+			this.Controls.Add(this.info);
 			this.Controls.Add(this.proceed);
 			this.Controls.Add(this.Inpq);
 			this.Controls.Add(this.InH);
@@ -602,6 +619,7 @@
 		private System.Windows.Forms.Button proceed;
 		private System.Windows.Forms.OpenFileDialog openFileInput;
 		private System.Windows.Forms.SaveFileDialog saveFileInput;
+		private System.Windows.Forms.Button info;
 	}
 }
 

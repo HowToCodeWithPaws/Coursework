@@ -294,7 +294,7 @@ namespace Coursework
 
 			// Создание новой формы на основе
 			// текущей формы 
-			new Form2(this, N, Mu, Mv, _mu, pq).Show();
+			new Form2(this, N, Mu, Mv,Um, Vm, du, dv, u, v, a, Tc, up1, up2, vp1, vp2, Ap1, Ap2,gamma, _mu, pq, H).Show();
 
 			// Вызов метода, приводящего форму
 			// к начальному виду.

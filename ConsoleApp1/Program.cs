@@ -69,52 +69,55 @@ namespace ConsoleApp1
 			System.Globalization.CultureInfo.CurrentCulture
 				= new System.Globalization.CultureInfo("en-US", false);
 
-			Console.WriteLine("Введите параметры\n");
+			//Console.WriteLine("Введите параметры\n");
 
-			int N = ReadI("N");
-			int Mu = ReadI("Mu");
-			int Mv = ReadI("Mv");
-			float Um = ReadF("Um");
-			float Vm = ReadF("Vm");
-			float du = ReadF("du");
-			float dv = ReadF("dv");
-			float u = ReadF("u");
-			float v = ReadF("v");
-			float a = ReadF("a");
-			float Tc = ReadF("Tc");
-			float up1 = ReadF("up1");
-			float up2 = ReadF("up2");
-			float vp1 = ReadF("vp1");
-			float vp2 = ReadF("vp2");
-			float Ap1 = ReadF("Ap1");
-			float Ap2 = ReadF("Ap2");
-			float gamma = ReadF("gamma");
-			float mu = ReadF("mu");
-			float H = ReadF("H");
-			int pq = ReadI("pq");
+			//int N = ReadI("N");
+			//int Mu = ReadI("Mu");
+			//int Mv = ReadI("Mv");
+			//float Um = ReadF("Um");
+			//float Vm = ReadF("Vm");
+			//float du = ReadF("du");
+			//float dv = ReadF("dv");
+			//float u = ReadF("u");
+			//float v = ReadF("v");
+			//float a = ReadF("a");
+			//float Tc = ReadF("Tc");
+			//float up1 = ReadF("up1");
+			//float up2 = ReadF("up2");
+			//float vp1 = ReadF("vp1");
+			//float vp2 = ReadF("vp2");
+			//float Ap1 = ReadF("Ap1");
+			//float Ap2 = ReadF("Ap2");
+			//float gamma = ReadF("gamma");
+			//float mu = ReadF("mu");
+			//float H = ReadF("H");
+			//int pq = ReadI("pq");
 
 
-			File.WriteAllLines("../../../Input.txt", new string[]
-			{ N.ToString(), Mu.ToString(), Mv.ToString(),	Um.ToString(), Vm.ToString(), 
-				du.ToString(), dv.ToString(), u.ToString(), v.ToString(), a.ToString(),
-				Tc.ToString(), up1.ToString(), up2.ToString(), vp1.ToString(),vp2.ToString(),
-				Ap1.ToString(),Ap2.ToString(), gamma.ToString(), mu.ToString(), H.ToString(),
-				pq.ToString() });
+			//File.WriteAllLines("../../../Input.txt", new string[]
+			//{ N.ToString(), Mu.ToString(), Mv.ToString(),	Um.ToString(), Vm.ToString(), 
+			//	du.ToString(), dv.ToString(), u.ToString(), v.ToString(), a.ToString(),
+			//	Tc.ToString(), up1.ToString(), up2.ToString(), vp1.ToString(),vp2.ToString(),
+			//	Ap1.ToString(),Ap2.ToString(), gamma.ToString(), mu.ToString(), H.ToString(),
+			//	pq.ToString() });
 
 			Console.WriteLine("Input written to file. Now generating data");
 
-			Exec(@"GenerateFiles.exe");
+			CreateFiles.MatlabFuncs class1 = new CreateFiles.MatlabFuncs();
+			class1.CreateFiles(1, 64, 4, 4, 0.1666667, 0.1666667, 0.1666667, 0.1666667, 0, 0, 0.42, 20, 0.03125, -0.03125, 0, 0, 300, 300, 0, 3000);
 
-			Console.WriteLine("Data generated");
+//			Exec(@"GenerateFiles.exe");
 
-			RadarOperations test = new RadarOperations(pq, mu, Mv * Mu, N,
-				"../../../Yx.txt", "../../../Yy.txt", "../../../Rx.txt", "../../../Ry.txt");
+			//Console.WriteLine("Data generated");
 
-			test.Start();
+			//RadarOperations test = new RadarOperations(pq, mu, Mv * Mu, N);/*,
+			//	"../../../Yx.txt", "../../../Yy.txt", "../../../Rx.txt", "../../../Ry.txt");*/
 
-			Console.WriteLine("Now visualizing");
+			//test.Start();
 
-			Exec(@"Graphics.exe");
+			//Console.WriteLine("Now visualizing");
+
+			//Exec(@"Graphics.exe");
 		}
 
 		public static void Exec(string cmd)

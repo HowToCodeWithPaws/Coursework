@@ -10,22 +10,51 @@ using System.Windows.Forms;
 using RadarLib;
 using System.Diagnostics;
 using System.IO;
+using CreateFiles;
+using MathWorks.MATLAB.NET.Utility;
+using MathWorks.MATLAB.NET.Arrays;
 
 namespace Coursework
 {
 	public partial class Form2 : Form
 	{
 		Form1 prevForm;
-		int pq, M, N;
-		float mu;
+		//	MatlabFuncs funcs;
 
-		public Form2(Form1 form, int N, int Mu, int Mv, float mu, int pq)
+		float Um, Vm, du, dv, u, v, a, Tc, up1, up2, vp1, vp2, Ap1, Ap2, gamma, _mu, H;
+
+		int N, Mu, Mv, pq, M;
+		public Form2(Form1 form, int N, int Mu, int Mv,
+			float Um, float Vm, float du, float dv,
+			float u, float v, float a, float Tc,
+			float up1, float up2, float vp1, float vp2,
+			float Ap1, float Ap2, float gamma, float _mu, int pq, float H)
 		{
-			this.mu = mu;
+			this.Mu = Mu;
+			this.Mv = Mv;
+			this.Um = Um;
+			this.Vm = Vm;
+			this.u = u;
+			this.v = v;
+			this.du = du;
+			this.dv = dv;
+			this.a = a;
+			this.Tc = Tc;
+			this.up1 = up1;
+			this.up2 = up2;
+			this.vp1 = vp1;
+			this.vp2 = vp2;
+			this.Ap1 = Ap1;
+			this.Ap2 = Ap2;
+			this.H = H;
+			this._mu = _mu;
 			this.pq = pq;
 			this.N = N;
 			M = Mu * Mv;
+			this.gamma = gamma;
 			prevForm = form;
+	//		funcs = new MatlabFuncs();
+
 			InitializeComponent();
 			log.Text = "Параметры симуляции определены";
 			generateData.Visible = true;
@@ -58,22 +87,34 @@ namespace Coursework
 				progress.Visible = true;
 				log.Text += "\nНачинаем генерацию наблюдений";
 
-				await Task.Run(() => Exec(@"GenerateFiles.exe"));
+				MatlabFuncs funcs = new MatlabFuncs();
+
+				MWArray[] res = null;
+
+				await Task.Run(() =>
+				{
+					res = funcs.CreateFiles(1, N, Mu, Mv, Um, Vm, du, dv,
+  u, v, a, Tc, up1, up2, vp1, vp2, Ap1, Ap2, gamma, _mu);
+				});
+
+
+
+				//		await Task.Run(() => Exec(@"GenerateFiles.exe"));
 
 				progress.Visible = false;
-				log.Text += "\nНаблюдения сгенерированы";
+				log.Text += $"\nНаблюдения сгенерированы за {res[0]}";
 				saveData.Visible = true;
 				generateMatrix.Visible = true;
 				getMatrix.Visible = true;
-				Enable();
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
 				MessageBox.Show("Произошла ошибка запуска исполняемого файла матлаб." +
-					" Пожалуйста, добавьте файл в папку с исполняемым файлом винформы.");
+					" Пожалуйста, добавьте файл в папку с исполняемым файлом винформы." + e.Message);
 				progress.Visible = false;
 				log.Text += "\nПроиошла ошибка при генерации наблюдений";
 			}
+			finally { Enable(); }
 		}
 
 		public async void BeginMatrix()
@@ -83,7 +124,7 @@ namespace Coursework
 				Disable();
 				progress.Visible = true;
 				log.Text += "\nНачинаем вычисление корреляционной матрицы";
-				RadarOperations test = new RadarOperations(pq, mu, M, N);
+				RadarOperations test = new RadarOperations(pq, _mu, M, N);
 
 				await Task.Run(() => test.Start());
 
@@ -92,15 +133,15 @@ namespace Coursework
 				saveMatrix.Visible = true;
 				generateL.Visible = true;
 				getL.Visible = true;
-				Enable();
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
 				MessageBox.Show("Произошла ошибка запуска процесса расчета" +
-					" корреляционной матрицы. Попробуйте снова.");
+					" корреляционной матрицы. Попробуйте снова." + e.Message);
 				progress.Visible = false;
 				log.Text += "\nПроизошла ошибка при расчете корреляционной матрицы";
 			}
+			finally { Enable(); }
 		}
 
 		public async void BeginL()
@@ -111,21 +152,32 @@ namespace Coursework
 				progress.Visible = true;
 				log.Text += "\nНачинаем расчет статистики наблюдений";
 
-				await Task.Run(() => Exec(@"GetL.exe"));
+				MatlabFuncs funcs = new MatlabFuncs();
+
+				MWArray[] res = null;
+
+				await Task.Run(() =>
+				{
+					res = funcs.CreateL(1, N, Mu, Mv, Um, Vm, du, dv,
+  u, v, a, Tc, up1, up2, vp1, vp2, Ap1, Ap2, gamma, _mu);
+				});
+
+
+				//	await Task.Run(() => Exec(@"GetL.exe"));
 
 				progress.Visible = false;
-				log.Text += "\nРасчет статистики наблюдений закончен";
+				log.Text += $"\nРасчет статистики наблюдений закончен за {res[0]}";
 				saveL.Visible = true;
 				visualize.Visible = true;
-				Enable();
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
 				MessageBox.Show("Произошла ошибка запуска исполняемого файла матлаб." +
-					" Пожалуйста, добавьте файл в папку с исполняемым файлом винформы.");
+					" Пожалуйста, добавьте файл в папку с исполняемым файлом винформы." + e.Message);
 				progress.Visible = false;
 				log.Text += "\nПроиошла ошибка при расчете статистики наблюдений";
 			}
+			finally { Enable(); }
 		}
 
 		public async void BeginVis()
@@ -136,11 +188,21 @@ namespace Coursework
 				progress.Visible = true;
 				log.Text += "\nНачинаем визуализацию";
 
-				await Task.Run(() => Exec(@"Graphics.exe"));
+				MatlabFuncs funcs = new MatlabFuncs();
+
+				MWArray[] res = null;
+
+				await Task.Run(() =>
+				{
+					res = funcs.CreatePicture(1, N, Mu, Mv, Um, Vm, H);
+				});
+
+
+
+				//	await Task.Run(() => Exec(@"Graphics.exe"));
 
 				progress.Visible = false;
-				log.Text += "\nВизуализация закончена";
-				Enable();
+				log.Text += $"\nВизуализация закончена за {res[0]}";
 			}
 			catch (Exception)
 			{
@@ -149,6 +211,7 @@ namespace Coursework
 				progress.Visible = false;
 				log.Text += "\nПроиошла ошибка при визуализации";
 			}
+			finally { Enable(); }
 		}
 
 		private void generateData_Click(object sender, EventArgs e)
@@ -615,7 +678,7 @@ namespace Coursework
 
 				if (CheckData(pathL))
 				{
-					File.Copy("Lfile.txt",pathL,  true);
+					File.Copy("Lfile.txt", pathL, true);
 
 					log.Text += "\nФайл статистики сохранен";
 				}

@@ -19,16 +19,17 @@ namespace Coursework
 	public partial class Form2 : Form
 	{
 		Form1 prevForm;
-		//	MatlabFuncs funcs;
+
+		MatlabFuncs funcs;
 
 		float Um, Vm, du, dv, u, v, a, Tc, up1, up2, vp1, vp2, Ap1, Ap2, gamma, _mu, H;
 
 		int N, Mu, Mv, pq, M;
-		public Form2(Form1 form, int N, int Mu, int Mv,
-			float Um, float Vm, float du, float dv,
-			float u, float v, float a, float Tc,
-			float up1, float up2, float vp1, float vp2,
-			float Ap1, float Ap2, float gamma, float _mu, int pq, float H)
+
+		public Form2(Form1 form, MatlabFuncs funcs, int N, int Mu, int Mv,
+			float Um, float Vm, float du, float dv, float u, float v,
+			float a, float Tc, float up1, float up2, float vp1, float vp2,
+			float Ap1, float Ap2, float gamma, float _mu, float H, int pq)
 		{
 			this.Mu = Mu;
 			this.Mv = Mv;
@@ -50,12 +51,13 @@ namespace Coursework
 			this._mu = _mu;
 			this.pq = pq;
 			this.N = N;
-			M = Mu * Mv;
 			this.gamma = gamma;
+			this.funcs = funcs;
 			prevForm = form;
-	//		funcs = new MatlabFuncs();
+			M = Mu * Mv;
 
 			InitializeComponent();
+
 			log.Text = "Параметры симуляции определены";
 			generateData.Visible = true;
 			getData.Visible = true;
@@ -68,16 +70,6 @@ namespace Coursework
 			saveL.Visible = false;
 			visualize.Visible = false;
 		}
-		public void Exec(string adress)
-		{
-			Process process = new Process();
-			process.EnableRaisingEvents = true;
-			ProcessStartInfo startInfo = new ProcessStartInfo();
-			startInfo.FileName = adress;
-			process.StartInfo = startInfo;
-			process.Start();
-			process.WaitForExit();
-		}
 
 		public async void BeginData()
 		{
@@ -87,32 +79,27 @@ namespace Coursework
 				progress.Visible = true;
 				log.Text += "\nНачинаем генерацию наблюдений";
 
-				MatlabFuncs funcs = new MatlabFuncs();
-
 				MWArray[] res = null;
 
 				await Task.Run(() =>
 				{
 					res = funcs.CreateFiles(1, N, Mu, Mv, Um, Vm, du, dv,
-  u, v, a, Tc, up1, up2, vp1, vp2, Ap1, Ap2, gamma, _mu);
+					u, v, a, Tc, up1, up2, vp1, vp2, Ap1, Ap2, gamma, _mu);
 				});
 
-
-
-				//		await Task.Run(() => Exec(@"GenerateFiles.exe"));
-
 				progress.Visible = false;
-				log.Text += $"\nНаблюдения сгенерированы за {res[0]}";
+				log.Text += $"\nНаблюдения сгенерированы за "
+					+ TimeFormat(double.Parse(res[0].ToString()));
 				saveData.Visible = true;
 				generateMatrix.Visible = true;
 				getMatrix.Visible = true;
 			}
 			catch (Exception e)
 			{
-				MessageBox.Show("Произошла ошибка запуска исполняемого файла матлаб." +
-					" Пожалуйста, добавьте файл в папку с исполняемым файлом винформы." + e.Message);
+				MessageBox.Show("Произошла ошибка при генерации наблюдений." +
+					" Начните заново, либо перейдите к другому шагу." + e.Message);
 				progress.Visible = false;
-				log.Text += "\nПроиошла ошибка при генерации наблюдений";
+				log.Text += "\nПроизошла ошибка при генерации наблюдений";
 			}
 			finally { Enable(); }
 		}
@@ -124,20 +111,23 @@ namespace Coursework
 				Disable();
 				progress.Visible = true;
 				log.Text += "\nНачинаем вычисление корреляционной матрицы";
+
 				RadarOperations test = new RadarOperations(pq, _mu, M, N);
 
-				await Task.Run(() => test.Start());
+				string res = "";
+
+				await Task.Run(() => { res = test.Start(); });
 
 				progress.Visible = false;
-				log.Text += "\nВычисление матрицы закончено";
+				log.Text += $"\nВычисление матрицы закончено за {res}";
 				saveMatrix.Visible = true;
 				generateL.Visible = true;
 				getL.Visible = true;
 			}
 			catch (Exception e)
 			{
-				MessageBox.Show("Произошла ошибка запуска процесса расчета" +
-					" корреляционной матрицы. Попробуйте снова." + e.Message);
+				MessageBox.Show("Произошла ошибка при расчете корреляционной матрицы." +
+					" Начните заново, либо перейдите к другому шагу." + e.Message);
 				progress.Visible = false;
 				log.Text += "\nПроизошла ошибка при расчете корреляционной матрицы";
 			}
@@ -152,30 +142,26 @@ namespace Coursework
 				progress.Visible = true;
 				log.Text += "\nНачинаем расчет статистики наблюдений";
 
-				MatlabFuncs funcs = new MatlabFuncs();
-
 				MWArray[] res = null;
 
 				await Task.Run(() =>
 				{
 					res = funcs.CreateL(1, N, Mu, Mv, Um, Vm, du, dv,
-  u, v, a, Tc, up1, up2, vp1, vp2, Ap1, Ap2, gamma, _mu);
+					u, v, a, Tc, up1, up2, vp1, vp2, Ap1, Ap2, gamma, _mu);
 				});
 
-
-				//	await Task.Run(() => Exec(@"GetL.exe"));
-
 				progress.Visible = false;
-				log.Text += $"\nРасчет статистики наблюдений закончен за {res[0]}";
+				log.Text += $"\nРасчет статистики наблюдений закончен за "
+					+ TimeFormat(double.Parse(res[0].ToString()));
 				saveL.Visible = true;
 				visualize.Visible = true;
 			}
 			catch (Exception e)
 			{
-				MessageBox.Show("Произошла ошибка запуска исполняемого файла матлаб." +
-					" Пожалуйста, добавьте файл в папку с исполняемым файлом винформы." + e.Message);
+				MessageBox.Show("Произошла ошибка при расчете статистики наблюдений." +
+					" Начните заново, либо перейдите к другому шагу." + e.Message);
 				progress.Visible = false;
-				log.Text += "\nПроиошла ошибка при расчете статистики наблюдений";
+				log.Text += "\nПроизошла ошибка при расчете статистики наблюдений";
 			}
 			finally { Enable(); }
 		}
@@ -188,8 +174,6 @@ namespace Coursework
 				progress.Visible = true;
 				log.Text += "\nНачинаем визуализацию";
 
-				MatlabFuncs funcs = new MatlabFuncs();
-
 				MWArray[] res = null;
 
 				await Task.Run(() =>
@@ -197,19 +181,16 @@ namespace Coursework
 					res = funcs.CreatePicture(1, N, Mu, Mv, Um, Vm, H);
 				});
 
-
-
-				//	await Task.Run(() => Exec(@"Graphics.exe"));
-
 				progress.Visible = false;
-				log.Text += $"\nВизуализация закончена за {res[0]}";
+				log.Text += $"\nВизуализация закончена за "
+					+ TimeFormat(double.Parse(res[0].ToString()));
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
-				MessageBox.Show("Произошла ошибка запуска исполняемого файла матлаб." +
-					" Пожалуйста, добавьте файл в папку с исполняемым файлом винформы.");
+				MessageBox.Show("Произошла ошибка при визуализации." +
+					" Начните заново, либо перейдите к другому шагу." + e.Message);
 				progress.Visible = false;
-				log.Text += "\nПроиошла ошибка при визуализации";
+				log.Text += "\nПроизошла ошибка при визуализации";
 			}
 			finally { Enable(); }
 		}
@@ -231,13 +212,13 @@ namespace Coursework
 
 		private void visualize_Click(object sender, EventArgs e)
 		{
-			//	visualize.Visible = false;
 			BeginVis();
 		}
 
 		private void getData_Click(object sender, EventArgs e)
 		{
-			/// Блок try catch обрабатывает возможные исключения, возникающие при работе с файлами.
+			/// Блок try catch обрабатывает возможные исключения,
+			/// возникающие при работе с файлами.
 			try
 			{
 				log.Text += "\nДобавляем файлы наблюдений";
@@ -246,7 +227,7 @@ namespace Coursework
 				pathSy = pathSx = pathUx = pathUy = pathYX = pathYY = "";
 
 				MessageBox.Show("Вам нужно выбрать файл Sx");
-				// File Sx
+
 				if (openFileInput.ShowDialog()
 					   == DialogResult.OK)
 				{
@@ -254,7 +235,7 @@ namespace Coursework
 				}
 
 				MessageBox.Show("Файл Sx выбран. Теперь нужно выбрать файл Sy");
-				// File Sy
+
 				if (openFileInput.ShowDialog()
 						== DialogResult.OK)
 				{
@@ -262,7 +243,7 @@ namespace Coursework
 				}
 
 				MessageBox.Show("Файл Sy выбран. Теперь нужно выбрать файл Ux");
-				// File Ux
+
 				if (openFileInput.ShowDialog()
 						== DialogResult.OK)
 				{
@@ -270,16 +251,15 @@ namespace Coursework
 				}
 
 				MessageBox.Show("Файл Ux выбран. Теперь нужно выбрать файл Uy");
-				// File Uy				
+
 				if (openFileInput.ShowDialog()
 					   == DialogResult.OK)
 				{
 					pathUy = openFileInput.FileName;
 				}
 
-
 				MessageBox.Show("Файл Uy выбран. Теперь нужно выбрать файл YX");
-				// File YX
+
 				if (openFileInput.ShowDialog()
 					   == DialogResult.OK)
 				{
@@ -287,7 +267,7 @@ namespace Coursework
 				}
 
 				MessageBox.Show("Файл YX выбран. Теперь нужно выбрать файл YY");
-				// File YY
+
 				if (openFileInput.ShowDialog()
 					  == DialogResult.OK)
 				{
@@ -311,14 +291,13 @@ namespace Coursework
 			}
 			catch (ArgumentException)
 			{
-				MessageBox.Show("Вы должны выбрать файл.");
+				MessageBox.Show("Вы не выбрали файл.");
 
 				log.Text += "\nПроизошла ошибка добавления файлов.";
 			}
 			catch (FileNotFoundException)
 			{
-				MessageBox.Show("Файл не существует, " +
-					"добавьте его в папку с решением. " +
+				MessageBox.Show("Файл не существует. " +
 					"Начните заново.");
 				log.Text += "\nПроизошла ошибка добавления файлов.";
 			}
@@ -342,14 +321,15 @@ namespace Coursework
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show(ex.Message);
+				MessageBox.Show("Произошла ошибка: " + ex.Message);
 				log.Text += "\nПроизошла ошибка добавления файлов.";
 			}
 		}
 
 		private void getMatrix_Click(object sender, EventArgs e)
 		{
-			/// Блок try catch обрабатывает возможные исключения, возникающие при работе с файлами.
+			/// Блок try catch обрабатывает возможные исключения,
+			/// возникающие при работе с файлами.
 			try
 			{
 				log.Text += "\nДобавляем файлы матрицы";
@@ -358,7 +338,7 @@ namespace Coursework
 				pathRy = pathRx = "";
 
 				MessageBox.Show("Вам нужно выбрать файл Rx");
-				// File Rx
+
 				if (openFileInput.ShowDialog()
 					   == DialogResult.OK)
 				{
@@ -366,7 +346,7 @@ namespace Coursework
 				}
 
 				MessageBox.Show("Файл Rx выбран. Теперь нужно выбрать файл Ry");
-				// File Ry
+
 				if (openFileInput.ShowDialog()
 						== DialogResult.OK)
 				{
@@ -384,14 +364,13 @@ namespace Coursework
 			}
 			catch (ArgumentException)
 			{
-				MessageBox.Show("Вы должны выбрать файл.");
+				MessageBox.Show("Вы не выбрали файл.");
 
 				log.Text += "\nПроизошла ошибка добавления файлов.";
 			}
 			catch (FileNotFoundException)
 			{
-				MessageBox.Show("Файл не существует, " +
-					"добавьте его в папку с решением. " +
+				MessageBox.Show("Файл не существует. " +
 					"Начните заново.");
 				log.Text += "\nПроизошла ошибка добавления файлов.";
 			}
@@ -415,14 +394,15 @@ namespace Coursework
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show(ex.Message);
+				MessageBox.Show("Произошла ошибка: " + ex.Message);
 				log.Text += "\nПроизошла ошибка добавления файлов.";
 			}
 		}
 
 		private void getL_Click(object sender, EventArgs e)
 		{
-			/// Блок try catch обрабатывает возможные исключения, возникающие при работе с файлами.
+			/// Блок try catch обрабатывает возможные исключения,
+			/// возникающие при работе с файлами.
 			try
 			{
 				log.Text += "\nДобавляем файл статистики";
@@ -431,7 +411,7 @@ namespace Coursework
 				pathL = "";
 
 				MessageBox.Show("Вам нужно выбрать файл L");
-				// File L
+
 				if (openFileInput.ShowDialog()
 					   == DialogResult.OK)
 				{
@@ -448,14 +428,13 @@ namespace Coursework
 			}
 			catch (ArgumentException)
 			{
-				MessageBox.Show("Вы должны выбрать файл.");
+				MessageBox.Show("Вы не выбрали файл.");
 
 				log.Text += "\nПроизошла ошибка добавления файлов.";
 			}
 			catch (FileNotFoundException)
 			{
-				MessageBox.Show("Файл не существует, " +
-					"добавьте его в папку с решением. " +
+				MessageBox.Show("Файл не существует. " +
 					"Начните заново.");
 				log.Text += "\nПроизошла ошибка добавления файлов.";
 			}
@@ -479,13 +458,15 @@ namespace Coursework
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show(ex.Message);
+				MessageBox.Show("Произошла ошибка: " + ex.Message);
 				log.Text += "\nПроизошла ошибка добавления файлов.";
 			}
 		}
 
 		private void saveData_Click(object sender, EventArgs e)
-		{/// Блок try catch обрабатывает возможные исключения, возникающие при работе с файлами.
+		{
+			/// Блок try catch обрабатывает возможные исключения,
+			/// возникающие при работе с файлами.
 			try
 			{
 				log.Text += "\nСохраняем файлы наблюдений";
@@ -494,31 +475,34 @@ namespace Coursework
 				pathSy = pathSx = pathUx = pathUy = pathYX = pathYY = "";
 
 				MessageBox.Show("Вам нужно выбрать, куда сохранить файл Sx");
-				// File Sx
+
 				if (openFileInput.ShowDialog()
 					   == DialogResult.OK)
 				{
 					pathSx = openFileInput.FileName;
 				}
 
-				MessageBox.Show("Путь для файла Sx выбран. Теперь нужно выбрать, куда сохранить файл Sy");
-				// File Sy
+				MessageBox.Show("Путь для файла Sx выбран. " +
+					"Теперь нужно выбрать, куда сохранить файл Sy");
+
 				if (openFileInput.ShowDialog()
 						== DialogResult.OK)
 				{
 					pathSy = openFileInput.FileName;
 				}
 
-				MessageBox.Show("Путь для файла Sy выбран. Теперь нужно выбрать, куда сохранить файл Ux");
-				// File Ux
+				MessageBox.Show("Путь для файла Sy выбран. " +
+					"Теперь нужно выбрать, куда сохранить файл Ux");
+
 				if (openFileInput.ShowDialog()
 						== DialogResult.OK)
 				{
 					pathUx = openFileInput.FileName;
 				}
 
-				MessageBox.Show("Путь для файла Ux выбран. Теперь нужно выбрать, куда сохранить файл Uy");
-				// File Uy				
+				MessageBox.Show("Путь для файла Ux выбран." +
+					" Теперь нужно выбрать, куда сохранить файл Uy");
+
 				if (openFileInput.ShowDialog()
 					   == DialogResult.OK)
 				{
@@ -526,16 +510,18 @@ namespace Coursework
 				}
 
 
-				MessageBox.Show("Путь для файла Uy выбран. Теперь нужно выбрать, куда сохранить файл YX");
-				// File YX
+				MessageBox.Show("Путь для файла Uy выбран." +
+					" Теперь нужно выбрать, куда сохранить файл YX");
+
 				if (openFileInput.ShowDialog()
 					   == DialogResult.OK)
 				{
 					pathYX = openFileInput.FileName;
 				}
 
-				MessageBox.Show("Путь для файла YX выбран. Теперь нужно выбрать, куда сохранить файл YY");
-				// File YY
+				MessageBox.Show("Путь для файла YX выбран." +
+					" Теперь нужно выбрать, куда сохранить файл YY");
+
 				if (openFileInput.ShowDialog()
 					  == DialogResult.OK)
 				{
@@ -553,14 +539,13 @@ namespace Coursework
 			}
 			catch (ArgumentException)
 			{
-				MessageBox.Show("Вы должны выбрать файл.");
+				MessageBox.Show("Вы не выбрали путь для файла.");
 
 				log.Text += "\nПроизошла ошибка сохранения файлов.";
 			}
 			catch (FileNotFoundException)
 			{
-				MessageBox.Show("Файл не существует, " +
-					"добавьте его в папку с решением. " +
+				MessageBox.Show("Файл не существует. " +
 					"Начните заново.");
 				log.Text += "\nПроизошла ошибка сохранения файлов.";
 			}
@@ -584,14 +569,15 @@ namespace Coursework
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show(ex.Message);
+				MessageBox.Show("Произошла ошибка: " + ex.Message);
 				log.Text += "\nПроизошла ошибка сохранения файлов.";
 			}
 		}
 
 		private void saveMatrix_Click(object sender, EventArgs e)
 		{
-			/// Блок try catch обрабатывает возможные исключения, возникающие при работе с файлами.
+			/// Блок try catch обрабатывает возможные исключения,
+			/// возникающие при работе с файлами.
 			try
 			{
 				log.Text += "\nСохраняем файлы матрицы";
@@ -599,16 +585,18 @@ namespace Coursework
 				string pathRx, pathRy;
 				pathRy = pathRx = "";
 
-				MessageBox.Show("Вам нужно выбрать, куда сохранить файл Rx");
-				// File Rx
+				MessageBox.Show("Вам нужно выбрать," +
+					" куда сохранить файл Rx");
+
 				if (openFileInput.ShowDialog()
 					   == DialogResult.OK)
 				{
 					pathRx = openFileInput.FileName;
 				}
 
-				MessageBox.Show("Файл Rx выбран. Теперь нужно выбрать, куда сохранить файл Ry");
-				// File Ry
+				MessageBox.Show("Файл Rx выбран. " +
+					"Теперь нужно выбрать, куда сохранить файл Ry");
+
 				if (openFileInput.ShowDialog()
 						== DialogResult.OK)
 				{
@@ -622,14 +610,13 @@ namespace Coursework
 			}
 			catch (ArgumentException)
 			{
-				MessageBox.Show("Вы должны выбрать файл.");
+				MessageBox.Show("Вы не выбрали путь для файла.");
 
 				log.Text += "\nПроизошла ошибка сохранения файлов.";
 			}
 			catch (FileNotFoundException)
 			{
-				MessageBox.Show("Файл не существует, " +
-					"добавьте его в папку с решением. " +
+				MessageBox.Show("Файл не существует. " +
 					"Начните заново.");
 				log.Text += "\nПроизошла ошибка сохранения файлов.";
 			}
@@ -653,14 +640,15 @@ namespace Coursework
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show(ex.Message);
+				MessageBox.Show("Произошла ошибка: " + ex.Message);
 				log.Text += "\nПроизошла ошибка сохранения файлов.";
 			}
 		}
 
 		private void saveL_Click(object sender, EventArgs e)
 		{
-			/// Блок try catch обрабатывает возможные исключения, возникающие при работе с файлами.
+			/// Блок try catch обрабатывает возможные исключения,
+			/// возникающие при работе с файлами.
 			try
 			{
 				log.Text += "\nСохраняем файл статистики";
@@ -669,7 +657,7 @@ namespace Coursework
 				pathL = "";
 
 				MessageBox.Show("Вам нужно выбрать, куда сохранить файл L");
-				// File L
+
 				if (openFileInput.ShowDialog()
 					   == DialogResult.OK)
 				{
@@ -685,14 +673,13 @@ namespace Coursework
 			}
 			catch (ArgumentException)
 			{
-				MessageBox.Show("Вы должны выбрать файл.");
+				MessageBox.Show("Вы не выбрали путь для файла.");
 
 				log.Text += "\nПроизошла ошибка сохранения файлов.";
 			}
 			catch (FileNotFoundException)
 			{
-				MessageBox.Show("Файл не существует, " +
-					"добавьте его в папку с решением. " +
+				MessageBox.Show("Файл не существует. " +
 					"Начните заново.");
 				log.Text += "\nПроизошла ошибка сохранения файлов.";
 			}
@@ -716,7 +703,7 @@ namespace Coursework
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show(ex.Message);
+				MessageBox.Show("Произошла ошибка: " + ex.Message);
 				log.Text += "\nПроизошла ошибка сохранения файлов.";
 			}
 		}
@@ -733,11 +720,13 @@ namespace Coursework
 			foreach (Control c in container.Controls)
 			{
 				controlList.AddRange(GetAllControlsOfType<T>(c));
+
 				if (c is T)
 				{
 					controlList.Add(c);
 				}
 			}
+
 			return controlList;
 		}
 
@@ -757,14 +746,27 @@ namespace Coursework
 			}
 		}
 
+		public string TimeFormat(double time)
+		{
+			double hours = Math.Floor(time / 3600);
+			double minutes = Math.Floor(Math.Floor((time - hours) / 60));
+			double seconds = time - hours - minutes;
+
+			string hrs = hours >= 10 ? $"{hours}" : $"0{hours}";
+			string mts = minutes >= 10 ? $"{minutes}" : $"0{minutes}";
+			string scs = seconds >= 10 ? $"{seconds}" : $"0{seconds}";
+
+			return hrs + ":" + mts + ":" + scs;
+		}
+
 		private void formBack_Click(object sender, EventArgs e)
 		{
 			this.Close();
 		}
+
 		private void Form2_FormClosing(object sender, FormClosingEventArgs e)
 		{
 			prevForm.Show();
 		}
-
 	}
 }

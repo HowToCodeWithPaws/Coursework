@@ -13,6 +13,8 @@ namespace Coursework
 {
 	public partial class Form1 : Form
 	{
+		CreateFiles.MatlabFuncs funcs = new CreateFiles.MatlabFuncs();
+
 		string[] inputStrings;
 
 		string inputPath = "";
@@ -32,15 +34,20 @@ namespace Coursework
 		private void info_Click(object sender, EventArgs e)
 		{
 			MessageBox.Show("Это программа для симуляции и визуализации работы" +
-				" радиолокатора. Она качественно разделена на несколько стадий:" +
-				"задание параметров симуляции, создание наблюдений, расчет " +
+				" радиолокатора. Она разделена на несколько стадий:" +
+				" задание параметров симуляции, создание наблюдений, расчет " +
 				"корреляционной матрицы, формирование статистики и визуализация." +
 				" На всех этапах кроме последнего генерируются файлы, которые" +
 				" можно сохранить в какое-то удобное место, кроме того, этап можно" +
 				"пропустить при условии, что у вас есть файлы, которые должны быть" +
-				" сформированы на пропускаемом этапе И файл с параметрами симуляции." +
-				" Рекомендуется не задавать слишком большие числа, потому что тогда" +
-				" программа может работать чудовищно долго.");
+				" сформированы на пропускаемом этапе и файл с параметрами симуляции." +
+				" Если файлы не будут согласованы друг с другом или с параметрами" +
+				" симуляции, будет выведено сообщение об ошибке, и вы сможете загрузить" +
+				" другие файлы, либо сгенерировать их. Также при противоречивых или " +
+				"некорректных для симуляции параметрах могут быть получены некорректные" +
+				" результаты, но всегда есть возможность задать их заново и повторить" +
+				" работу программы. Рекомендуется не задавать слишком большие числа," +
+				" потому что тогда программа может работать чудовищно долго.");
 		}
 
 		public void Begin()
@@ -182,6 +189,7 @@ namespace Coursework
 		private void inputDownload_Click(object sender, EventArgs e)
 		{
 			string path = "";
+
 			if (openFileInput.ShowDialog()
 				== DialogResult.OK)
 			{
@@ -204,8 +212,7 @@ namespace Coursework
 			}
 			catch (FileNotFoundException)
 			{
-				MessageBox.Show("Файл не существует, " +
-					"добавьте его в папку с решением. " +
+				MessageBox.Show("Файл не существует. " +
 					"Начните заново.");
 			}
 			catch (IOException)
@@ -225,9 +232,9 @@ namespace Coursework
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show(ex.Message);
+				MessageBox.Show("Произошла ошибка: " + ex.Message);
 			}
-			finally { MessageBox.Show("Запись в файл окончена."); }
+			finally { MessageBox.Show("Работа с файлом окончена."); }
 		}
 		private void inputUpload_Click(object sender, EventArgs e)
 		{
@@ -237,7 +244,6 @@ namespace Coursework
 				inputPath = openFileInput.FileName;
 			}
 
-			/// Блок try catch обрабатывает возможные исключения, возникающие при работе с файлами.
 			try
 			{
 				inputStrings = File.ReadAllLines(inputPath);
@@ -245,12 +251,11 @@ namespace Coursework
 			}
 			catch (ArgumentException)
 			{
-				MessageBox.Show("Вы должны выбрать файл.");
+				MessageBox.Show("Вы не выбрали файл.");
 			}
 			catch (FileNotFoundException)
 			{
-				MessageBox.Show("Файл не существует, " +
-					"добавьте его в папку с решением. " +
+				MessageBox.Show("Файл не существует. " +
 					"Начните заново.");
 			}
 			catch (IOException)
@@ -270,7 +275,7 @@ namespace Coursework
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show(ex.Message);
+				MessageBox.Show("Произошла ошибка: " + ex.Message);
 			}
 		}
 
@@ -287,23 +292,26 @@ namespace Coursework
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show("trouble" + ex.Message);
+				MessageBox.Show("Произошла ошибка: " + ex.Message);
 			}
 
 			this.Hide();
 
 			// Создание новой формы на основе
 			// текущей формы 
-			new Form2(this, N, Mu, Mv,Um, Vm, du, dv, u, v, a, Tc, up1, up2, vp1, vp2, Ap1, Ap2,gamma, _mu, pq, H).Show();
+			new Form2(this, funcs, N, Mu, Mv, Um, Vm, du, dv, u, v, a, Tc,
+				up1, up2, vp1, vp2, Ap1, Ap2, gamma, _mu, H, pq).Show();
 
 			// Вызов метода, приводящего форму
 			// к начальному виду.
 			Begin();
 		}
 
-		void ChangeValueFromFileI(ref int value, string newvalue, TextBox Invalue, Label lvalue)
+		void ChangeValueFromFileI(ref int value, string newvalue,
+			TextBox Invalue, Label lvalue)
 		{
 			int num;
+
 			if (!CheckValidityFailedI(newvalue, out num))
 			{
 				value = num;
@@ -312,9 +320,11 @@ namespace Coursework
 			}
 		}
 
-		void ChangeValueFromFileF(ref float value, string newvalue, TextBox Invalue, Label lvalue)
+		void ChangeValueFromFileF(ref float value, string newvalue,
+			TextBox Invalue, Label lvalue)
 		{
 			float num;
+
 			if (!CheckValidityFailedF(newvalue, out num))
 			{
 				value = num;
@@ -374,13 +384,14 @@ namespace Coursework
 				return true;
 			}
 
-			// Если вводится число меньше 0 либо больше
+			// Если вводится число меньше минимального, либо больше
 			// максимального возможного значения, 
 			// изменение не допускается.
 			if (number < min || number > max)
 			{
 				MessageBox.Show("Число находится вне " +
 					"границ, допустимых для этого параметра!");
+
 				return true;
 			}
 
@@ -407,13 +418,14 @@ namespace Coursework
 				return true;
 			}
 
-			// Если вводится число меньше 0 либо больше
+			// Если вводится число меньше минимального, либо больше
 			// максимального возможного значения, 
 			// изменение не допускается.
 			if (number < min || number > max)
 			{
 				MessageBox.Show("Число находится вне " +
 					"границ, допустимых для этого параметра!");
+
 				return true;
 			}
 

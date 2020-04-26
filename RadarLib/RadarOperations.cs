@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 using System.IO;
 using System.Numerics;
 
@@ -10,6 +11,9 @@ namespace RadarLib
 {
 	public class RadarOperations
 	{
+		Stopwatch stopwatch = new Stopwatch();
+		TimeSpan timeSpan = new TimeSpan();
+
 		float mu;
 		int m, n, pq, pqm, dataSize, outSize;
 
@@ -28,11 +32,17 @@ namespace RadarLib
 			pathYy = "YY.txt";
 			pathRx = "Rx.txt";
 			pathRy = "Ry.txt";
+
+			pqm = pq * m;
+			dataSize = pq * n * m;
+			outSize = pq * m * m;
+
+			outMatrix = new Complex[outSize];
+			data = new Complex[dataSize];
 		}
 
 		void ReadData()
 		{
-			/// Блок try catch обрабатывает возможные исключения
 			try
 			{
 				FileStream streamYx = new FileStream(pathYx, FileMode.Open);
@@ -45,6 +55,7 @@ namespace RadarLib
 					StringSplitOptions.RemoveEmptyEntries);
 				string[] linesYy = readYy.ReadToEnd().Split(new char[] { ' ' },
 					StringSplitOptions.RemoveEmptyEntries);
+
 				int it = 0;
 
 				for (int j = 0; j < m; j++)
@@ -81,8 +92,6 @@ namespace RadarLib
 				StreamWriter writeRx = new StreamWriter(streamRx);
 				StreamWriter writeRy = new StreamWriter(streamRy);
 
-				Console.WriteLine("Dumping out the results...\n");
-
 				for (int j = 0; j < m; j++)
 				{
 					for (int k = 0; k < pq; k++)
@@ -107,16 +116,10 @@ namespace RadarLib
 			}
 		}
 
-		public void Start()
+		public string Start()
 		{
-			pqm = pq * m;
-			dataSize = pq * n * m;
-			outSize = pq * m * m;
+			stopwatch.Start();
 
-			outMatrix = new Complex[outSize];
-			data = new Complex[dataSize];
-
-			/// Блок try catch обрабатывает возможные исключения
 			try
 			{
 				ReadData();
@@ -129,6 +132,16 @@ namespace RadarLib
 			{
 				throw;
 			}
+
+			stopwatch.Stop();
+
+			timeSpan = stopwatch.Elapsed;
+
+			string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+			timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds,
+			timeSpan.Milliseconds / 10);
+
+			return elapsedTime;
 		}
 
 		void complexMAD(ref Complex a, Complex b, Complex c)

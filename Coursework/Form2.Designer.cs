@@ -46,7 +46,7 @@
 			// 
 			// generateMatrix
 			// 
-			this.generateMatrix.Location = new System.Drawing.Point(340, 165);
+			this.generateMatrix.Location = new System.Drawing.Point(440, 165);
 			this.generateMatrix.Name = "generateMatrix";
 			this.generateMatrix.Size = new System.Drawing.Size(200, 85);
 			this.generateMatrix.TabIndex = 1;
@@ -56,7 +56,7 @@
 			// 
 			// visualize
 			// 
-			this.visualize.Location = new System.Drawing.Point(340, 435);
+			this.visualize.Location = new System.Drawing.Point(440, 435);
 			this.visualize.Name = "visualize";
 			this.visualize.Size = new System.Drawing.Size(200, 85);
 			this.visualize.TabIndex = 2;
@@ -67,7 +67,7 @@
 			// 
 			// progress
 			// 
-			this.progress.Location = new System.Drawing.Point(980, 497);
+			this.progress.Location = new System.Drawing.Point(1080, 497);
 			this.progress.Name = "progress";
 			this.progress.Size = new System.Drawing.Size(200, 23);
 			this.progress.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
@@ -76,7 +76,7 @@
 			// 
 			// generateL
 			// 
-			this.generateL.Location = new System.Drawing.Point(340, 300);
+			this.generateL.Location = new System.Drawing.Point(440, 300);
 			this.generateL.Name = "generateL";
 			this.generateL.Size = new System.Drawing.Size(200, 85);
 			this.generateL.TabIndex = 4;
@@ -87,7 +87,7 @@
 			// 
 			// generateData
 			// 
-			this.generateData.Location = new System.Drawing.Point(340, 30);
+			this.generateData.Location = new System.Drawing.Point(440, 30);
 			this.generateData.Name = "generateData";
 			this.generateData.Size = new System.Drawing.Size(200, 85);
 			this.generateData.TabIndex = 5;
@@ -97,7 +97,7 @@
 			// 
 			// getData
 			// 
-			this.getData.Location = new System.Drawing.Point(660, 30);
+			this.getData.Location = new System.Drawing.Point(760, 30);
 			this.getData.Name = "getData";
 			this.getData.Size = new System.Drawing.Size(200, 85);
 			this.getData.TabIndex = 6;
@@ -112,7 +112,7 @@
 			// 
 			// getMatrix
 			// 
-			this.getMatrix.Location = new System.Drawing.Point(660, 165);
+			this.getMatrix.Location = new System.Drawing.Point(760, 165);
 			this.getMatrix.Name = "getMatrix";
 			this.getMatrix.Size = new System.Drawing.Size(200, 85);
 			this.getMatrix.TabIndex = 7;
@@ -122,7 +122,7 @@
 			// 
 			// getL
 			// 
-			this.getL.Location = new System.Drawing.Point(660, 300);
+			this.getL.Location = new System.Drawing.Point(760, 300);
 			this.getL.Name = "getL";
 			this.getL.Size = new System.Drawing.Size(200, 85);
 			this.getL.TabIndex = 8;
@@ -132,7 +132,7 @@
 			// 
 			// saveData
 			// 
-			this.saveData.Location = new System.Drawing.Point(980, 30);
+			this.saveData.Location = new System.Drawing.Point(1080, 30);
 			this.saveData.Name = "saveData";
 			this.saveData.Size = new System.Drawing.Size(200, 85);
 			this.saveData.TabIndex = 9;
@@ -142,7 +142,7 @@
 			// 
 			// saveMatrix
 			// 
-			this.saveMatrix.Location = new System.Drawing.Point(980, 165);
+			this.saveMatrix.Location = new System.Drawing.Point(1080, 165);
 			this.saveMatrix.Name = "saveMatrix";
 			this.saveMatrix.Size = new System.Drawing.Size(200, 85);
 			this.saveMatrix.TabIndex = 10;
@@ -152,7 +152,7 @@
 			// 
 			// saveL
 			// 
-			this.saveL.Location = new System.Drawing.Point(980, 300);
+			this.saveL.Location = new System.Drawing.Point(1080, 300);
 			this.saveL.Name = "saveL";
 			this.saveL.Size = new System.Drawing.Size(200, 85);
 			this.saveL.TabIndex = 11;
@@ -164,13 +164,14 @@
 			// 
 			this.log.Location = new System.Drawing.Point(25, 30);
 			this.log.Name = "log";
-			this.log.Size = new System.Drawing.Size(293, 490);
+			this.log.ReadOnly = true;
+			this.log.Size = new System.Drawing.Size(373, 490);
 			this.log.TabIndex = 12;
 			this.log.Text = "";
 			// 
 			// formBack
 			// 
-			this.formBack.Location = new System.Drawing.Point(980, 580);
+			this.formBack.Location = new System.Drawing.Point(1080, 580);
 			this.formBack.Name = "formBack";
 			this.formBack.Size = new System.Drawing.Size(200, 85);
 			this.formBack.TabIndex = 13;
@@ -182,6 +183,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoSize = true;
 			this.ClientSize = new System.Drawing.Size(1338, 740);
 			this.Controls.Add(this.formBack);
 			this.Controls.Add(this.log);

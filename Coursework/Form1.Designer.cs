@@ -124,7 +124,7 @@
 			// 
 			// InN
 			// 
-			this.InN.Location = new System.Drawing.Point(60, 360);
+			this.InN.Location = new System.Drawing.Point(380, 150);
 			this.InN.Name = "InN";
 			this.InN.Size = new System.Drawing.Size(100, 26);
 			this.InN.TabIndex = 9;
@@ -132,7 +132,7 @@
 			// 
 			// lN
 			// 
-			this.lN.Location = new System.Drawing.Point(170, 360);
+			this.lN.Location = new System.Drawing.Point(490, 150);
 			this.lN.Name = "lN";
 			this.lN.Size = new System.Drawing.Size(200, 100);
 			this.lN.TabIndex = 10;
@@ -158,7 +158,7 @@
 			// 
 			// lUm
 			// 
-			this.lUm.Location = new System.Drawing.Point(490, 150);
+			this.lUm.Location = new System.Drawing.Point(170, 360);
 			this.lUm.Name = "lUm";
 			this.lUm.Size = new System.Drawing.Size(200, 100);
 			this.lUm.TabIndex = 13;
@@ -166,7 +166,7 @@
 			// 
 			// lVm
 			// 
-			this.lVm.Location = new System.Drawing.Point(490, 255);
+			this.lVm.Location = new System.Drawing.Point(170, 465);
 			this.lVm.Name = "lVm";
 			this.lVm.Size = new System.Drawing.Size(200, 100);
 			this.lVm.TabIndex = 14;
@@ -174,7 +174,7 @@
 			// 
 			// ldu
 			// 
-			this.ldu.Location = new System.Drawing.Point(490, 360);
+			this.ldu.Location = new System.Drawing.Point(170, 570);
 			this.ldu.Name = "ldu";
 			this.ldu.Size = new System.Drawing.Size(200, 100);
 			this.ldu.TabIndex = 15;
@@ -182,7 +182,7 @@
 			// 
 			// ldv
 			// 
-			this.ldv.Location = new System.Drawing.Point(490, 465);
+			this.ldv.Location = new System.Drawing.Point(170, 675);
 			this.ldv.Name = "ldv";
 			this.ldv.Size = new System.Drawing.Size(200, 100);
 			this.ldv.TabIndex = 16;
@@ -270,7 +270,7 @@
 			// 
 			// lgamma
 			// 
-			this.lgamma.Location = new System.Drawing.Point(170, 570);
+			this.lgamma.Location = new System.Drawing.Point(490, 465);
 			this.lgamma.Name = "lgamma";
 			this.lgamma.Size = new System.Drawing.Size(200, 100);
 			this.lgamma.TabIndex = 27;
@@ -278,7 +278,7 @@
 			// 
 			// l_mu
 			// 
-			this.l_mu.Location = new System.Drawing.Point(170, 675);
+			this.l_mu.Location = new System.Drawing.Point(490, 360);
 			this.l_mu.Name = "l_mu";
 			this.l_mu.Size = new System.Drawing.Size(200, 100);
 			this.l_mu.TabIndex = 28;
@@ -286,7 +286,7 @@
 			// 
 			// lH
 			// 
-			this.lH.Location = new System.Drawing.Point(810, 570);
+			this.lH.Location = new System.Drawing.Point(490, 570);
 			this.lH.Name = "lH";
 			this.lH.Size = new System.Drawing.Size(200, 100);
 			this.lH.TabIndex = 29;
@@ -310,7 +310,7 @@
 			// 
 			// InUm
 			// 
-			this.InUm.Location = new System.Drawing.Point(380, 150);
+			this.InUm.Location = new System.Drawing.Point(60, 360);
 			this.InUm.Name = "InUm";
 			this.InUm.Size = new System.Drawing.Size(100, 26);
 			this.InUm.TabIndex = 32;
@@ -318,7 +318,7 @@
 			// 
 			// InVm
 			// 
-			this.InVm.Location = new System.Drawing.Point(380, 255);
+			this.InVm.Location = new System.Drawing.Point(60, 465);
 			this.InVm.Name = "InVm";
 			this.InVm.Size = new System.Drawing.Size(100, 26);
 			this.InVm.TabIndex = 33;
@@ -326,7 +326,7 @@
 			// 
 			// Indu
 			// 
-			this.Indu.Location = new System.Drawing.Point(380, 360);
+			this.Indu.Location = new System.Drawing.Point(60, 570);
 			this.Indu.Name = "Indu";
 			this.Indu.Size = new System.Drawing.Size(100, 26);
 			this.Indu.TabIndex = 34;
@@ -334,7 +334,7 @@
 			// 
 			// Indv
 			// 
-			this.Indv.Location = new System.Drawing.Point(380, 465);
+			this.Indv.Location = new System.Drawing.Point(60, 675);
 			this.Indv.Name = "Indv";
 			this.Indv.Size = new System.Drawing.Size(100, 26);
 			this.Indv.TabIndex = 35;
@@ -366,7 +366,7 @@
 			// 
 			// lpq
 			// 
-			this.lpq.Location = new System.Drawing.Point(170, 465);
+			this.lpq.Location = new System.Drawing.Point(490, 255);
 			this.lpq.Name = "lpq";
 			this.lpq.Size = new System.Drawing.Size(200, 100);
 			this.lpq.TabIndex = 39;
@@ -430,7 +430,7 @@
 			// 
 			// Ingamma
 			// 
-			this.Ingamma.Location = new System.Drawing.Point(60, 570);
+			this.Ingamma.Location = new System.Drawing.Point(380, 465);
 			this.Ingamma.Name = "Ingamma";
 			this.Ingamma.Size = new System.Drawing.Size(100, 26);
 			this.Ingamma.TabIndex = 47;
@@ -438,7 +438,7 @@
 			// 
 			// In_mu
 			// 
-			this.In_mu.Location = new System.Drawing.Point(60, 675);
+			this.In_mu.Location = new System.Drawing.Point(380, 360);
 			this.In_mu.Name = "In_mu";
 			this.In_mu.Size = new System.Drawing.Size(100, 26);
 			this.In_mu.TabIndex = 48;
@@ -446,7 +446,7 @@
 			// 
 			// InH
 			// 
-			this.InH.Location = new System.Drawing.Point(700, 570);
+			this.InH.Location = new System.Drawing.Point(380, 570);
 			this.InH.Name = "InH";
 			this.InH.Size = new System.Drawing.Size(100, 26);
 			this.InH.TabIndex = 49;
@@ -454,7 +454,7 @@
 			// 
 			// Inpq
 			// 
-			this.Inpq.Location = new System.Drawing.Point(60, 465);
+			this.Inpq.Location = new System.Drawing.Point(380, 255);
 			this.Inpq.Name = "Inpq";
 			this.Inpq.Size = new System.Drawing.Size(100, 26);
 			this.Inpq.TabIndex = 50;

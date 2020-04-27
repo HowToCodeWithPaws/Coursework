@@ -108,51 +108,77 @@ namespace Coursework
 			InH.Text = H.ToString();
 			Inpq.Text = pq.ToString();
 
-			toolTipN.SetToolTip(lN, "КОЛИЧЕСТВО ВЕКТОРОВ НАБЛЮДЕНИЙ, ПО КОТОРЫМ " +
-				"ФОРМИРУЕТСЯ СТАТИСТИКА");
-			toolTipMu.SetToolTip(lMu, "КОЛИЧЕСТВО ПРИЕМНЫХ ЭЛЕМЕНТОВ ПО ДЛИНЕ");
-			toolTipMv.SetToolTip(lMv, "КОЛИЧЕСТВО ПРИЕМНЫХ ЭЛЕМЕНТОВ ПО ШИРИНЕ");
-			toolTipUm.SetToolTip(lUm, "ШИРИНА ДН МОДУЛЯ ПО ОДНОЙ ОСИ");
-			toolTipVm.SetToolTip(lVm, "ШИРИНА ДН МОДУЛЯ ПО ДРУГОЙ ОСИ");
-			toolTipDu.SetToolTip(ldu, "СДВИГ ДО ЦЕНТРА СЕКТОРА ПО ОДНОЙ КООРДИНАТЕ");
-			toolTipDv.SetToolTip(ldv, "СДВИГ ДО ЦЕНТРА СЕКТОРА ПО ДРУГОЙ КООРДИНАТЕ");
-			toolTipU.SetToolTip(lu, "ПОЛОЖЕНИЕ ЦЕЛИ ПО ОДНОЙ КООРДИНАТЕ");
-			toolTipV.SetToolTip(lv, "ПОЛОЖЕНИЕ ЦЕЛИ ПО ДРКГОЙ КООРДИНАТЕ");
-			toolTipA.SetToolTip(la, "МОЩНОСТЬ СИГНАЛА");
-			toolTipTc.SetToolTip(lTc, "НАЧАЛО ПРИХОДА СИГНАЛА");
-			toolTipVp1.SetToolTip(lvp1, "ПОЛОЖЕНИЕ ПОМЕХ ПО ДРУГОЙ КООРДИНАТЕ");
-			toolTipVp2.SetToolTip(lvp2, "ПОЛОЖЕНИЕ ПОМЕХ ПО ДРУГОЙ КООРДИНАТЕ");
-			toolTipUp1.SetToolTip(lup1, "ПОЛОЖЕНИЕ ПОМЕХ ПО ОДНОЙ КООРДИНАТЕ");
-			toolTipUp2.SetToolTip(lup2, "ПОЛОЖЕНИЕ ПОМЕХ ПО ОДНОЙ КООРДИНАТЕ");
-			toolTipAp1.SetToolTip(lAp1, "МОЩНОСТЬ ПОМЕХ");
-			toolTipAp2.SetToolTip(lAp2, "МОЩНОСТЬ ПОМЕХ");
-			toolTipGamma.SetToolTip(lgamma, "ПАРАМЕТР ГАММА");
-			toolTip_Mu.SetToolTip(l_mu, "ПАРАМЕТР РЕГУЛЯРИЗАЦИИ МАТРИЦЫ МЮ");
-			toolTipH.SetToolTip(lH, "ПОРОГОВОЕ ЗНАЧЕНИЕ МОЩНОСТИ СИГНАЛА");
-			toolTipPq.SetToolTip(lpq, "ПАРАМЕТР ПКУ");
+			toolTipN.SetToolTip(lN, "Количество векторов наблюдений," +
+				"\nпо которым формируется статистика." +
+				"\nЧисло должно быть целое и больше 0");
+			toolTipMu.SetToolTip(lMu, "Количество модулей, на которые" +
+				"\nразбивается антенная решетка по длине" +
+				"\nЧисло должно быть целое и больше 0");
+			toolTipMv.SetToolTip(lMv, "Количество модулей, на которые" +
+				"\nразбивается антенная решетка по ширине" +
+				"\nЧисло должно быть целое и больше 0");
+			toolTipUm.SetToolTip(lUm, "Ширина главного лепестка диаграммы" +
+				"\nнаправленности модуля по одному углу." +
+				"\nРекомендуемое значение: эффективная" +
+				"\nразрешающая способность модуля " +
+				"\nпо одному измерению - 1/6 радиана");
+			toolTipVm.SetToolTip(lVm, "Ширина главного лепестка диаграммы" +
+				"\nнаправленности модуля по другому углу." +
+				"\nРекомендуемое значение: эффективная" +
+				"\nразрешающая способность модуля " +
+				"\nпо одному измерению - 1/6 радиана");
+			toolTipDu.SetToolTip(ldu, "Сдвиг до центра просматриваемого сектора" +
+				"\nпо одному углу");
+			toolTipDv.SetToolTip(ldv, "Сдвиг до центра просматриваемого сектора" +
+				"\nпо другому углу");
+			toolTipU.SetToolTip(lu, "Предполагаемое положение цели по одному углу," +
+				"\nизменяется от -1/12 до 1/12 радиана с шагом 1/48 радиана");
+			toolTipV.SetToolTip(lv, "Предполагаемое положение цели по другому углу," +
+				"\nизменяется от -1/12 до 1/12 радиана с шагом 1/48 радиана");
+			toolTipA.SetToolTip(la, "Мощность приходящего сигнала." +
+				"\nЧисло должно быть больше 0");
+			toolTipTc.SetToolTip(lTc, "Начало прихода сигнала");
+			toolTipVp1.SetToolTip(lvp1, "Положение помех по другому углу");
+			toolTipVp2.SetToolTip(lvp2, "Положение помех по другому углу");
+			toolTipUp1.SetToolTip(lup1, "Положение помех по одному углу");
+			toolTipUp2.SetToolTip(lup2, "Положение помех по одному углу");
+			toolTipAp1.SetToolTip(lAp1, "Мощность помех. Число должно быть больше 0");
+			toolTipAp2.SetToolTip(lAp2, "Мощность помех. Число должно быть больше 0");
+			toolTipGamma.SetToolTip(lgamma, "Параметр гамма");
+			toolTip_Mu.SetToolTip(l_mu, "Параметр регуляризации корреляционной матрицы." +
+				"\nЧисло должно быть больше 0");
+			toolTipH.SetToolTip(lH, "Пороговое значение мощности сигнала для вывода точки." +
+				"\nЧисло должно быть больше 0");
+			toolTipPq.SetToolTip(lpq, "Количество блоков в 36 областях," +
+				"\nпо которым составляется корреляционная матрица." +
+				"\nРекомендуемое значение:" +
+				"\n36 * 2000 отсчетов по времени / N векторов выборки," +
+				"\nв противном случае размерности матриц будут конфликтующими.");
 		}
 
 		public void GetFromFile()
 		{
 			try
 			{
-				ChangeValueFromFileI(ref N, inputStrings[0], InN, lN);
+				ChangeValueFromFileI(ref N, inputStrings[0], InN, lN, 1);
 
-				ChangeValueFromFileI(ref Mu, inputStrings[1], InMu, lMu);
+				ChangeValueFromFileI(ref Mu, inputStrings[1], InMu, lMu, 1);
 
-				ChangeValueFromFileI(ref Mv, inputStrings[2], InMv, lMv);
+				ChangeValueFromFileI(ref Mv, inputStrings[2], InMv, lMv, 1);
 
-				ChangeValueFromFileF(ref Um, inputStrings[3], InUm, lUm);
+				ChangeValueFromFileF(ref Um, inputStrings[3], InUm, lUm, 0 + float.Epsilon);
 
-				ChangeValueFromFileF(ref Vm, inputStrings[4], InVm, lVm);
+				ChangeValueFromFileF(ref Vm, inputStrings[4], InVm, lVm, 0 + float.Epsilon);
 
 				ChangeValueFromFileF(ref du, inputStrings[5], Indu, ldu);
 
 				ChangeValueFromFileF(ref dv, inputStrings[6], Indv, ldv);
 
-				ChangeValueFromFileF(ref u, inputStrings[7], Inu, lu);
+				ChangeValueFromFileF(ref u, inputStrings[7], Inu, lu,
+					(float)(-1 / 12.0), (float)(1 / 12.0));
 
-				ChangeValueFromFileF(ref v, inputStrings[8], Inv, lv);
+				ChangeValueFromFileF(ref v, inputStrings[8], Inv, lv,
+					(float)(-1 / 12.0), (float)(1 / 12.0));
 
 				ChangeValueFromFileF(ref a, inputStrings[9], Ina, la);
 
@@ -174,9 +200,9 @@ namespace Coursework
 
 				ChangeValueFromFileF(ref _mu, inputStrings[18], In_mu, l_mu);
 
-				ChangeValueFromFileF(ref H, inputStrings[19], InH, lH);
+				ChangeValueFromFileF(ref H, inputStrings[19], InH, lH, 0 + float.Epsilon);
 
-				ChangeValueFromFileI(ref pq, inputStrings[20], Inpq, lpq);
+				ChangeValueFromFileI(ref pq, inputStrings[20], Inpq, lpq, 1);
 
 			}
 			catch (IndexOutOfRangeException)
@@ -190,10 +216,10 @@ namespace Coursework
 		{
 			string path = "";
 
-			if (openFileInput.ShowDialog()
+			if (saveFileInput.ShowDialog()
 				== DialogResult.OK)
 			{
-				path = openFileInput.FileName;
+				path =saveFileInput.FileName;
 			}
 
 			try
@@ -236,6 +262,7 @@ namespace Coursework
 			}
 			finally { MessageBox.Show("Работа с файлом окончена."); }
 		}
+
 		private void inputUpload_Click(object sender, EventArgs e)
 		{
 			if (openFileInput.ShowDialog()
@@ -308,11 +335,12 @@ namespace Coursework
 		}
 
 		void ChangeValueFromFileI(ref int value, string newvalue,
-			TextBox Invalue, Label lvalue)
+			TextBox Invalue, Label lvalue,
+			int min = int.MinValue, int max = int.MaxValue)
 		{
 			int num;
 
-			if (!CheckValidityFailedI(newvalue, out num))
+			if (!CheckValidityFailedI(newvalue, out num, min, max))
 			{
 				value = num;
 				lvalue.Text = $"{lvalue.Name.Substring(1)} = {value}";
@@ -321,11 +349,12 @@ namespace Coursework
 		}
 
 		void ChangeValueFromFileF(ref float value, string newvalue,
-			TextBox Invalue, Label lvalue)
+			TextBox Invalue, Label lvalue,
+			float min = float.MinValue,	float max = float.MaxValue)
 		{
 			float num;
 
-			if (!CheckValidityFailedF(newvalue, out num))
+			if (!CheckValidityFailedF(newvalue, out num, min, max))
 			{
 				value = num;
 				lvalue.Text = $"{lvalue.Name.Substring(1)} = {value}";
@@ -333,11 +362,12 @@ namespace Coursework
 			}
 		}
 
-		void ChangeValueI(ref int value, TextBox Invalue, Label lvalue)
+		void ChangeValueI(ref int value, TextBox Invalue, Label lvalue,
+			int min = int.MinValue, int max = int.MaxValue)
 		{
 			int num;
 
-			if (!CheckValidityFailedI(Invalue.Text, out num))
+			if (!CheckValidityFailedI(Invalue.Text, out num, min, max))
 			{
 				value = num;
 				lvalue.Text = $"{lvalue.Name.Substring(1)} = {value}";
@@ -349,11 +379,12 @@ namespace Coursework
 			}
 		}
 
-		void ChangeValueF(ref float value, TextBox Invalue, Label lvalue)
+		void ChangeValueF(ref float value, TextBox Invalue, Label lvalue,
+			float min = float.MinValue, float max = float.MaxValue)
 		{
 			float num;
 
-			if (!CheckValidityFailedF(Invalue.Text, out num))
+			if (!CheckValidityFailedF(Invalue.Text, out num, min, max))
 			{
 				value = num;
 				lvalue.Text = $"{lvalue.Name.Substring(1)} = {value}";
@@ -365,7 +396,7 @@ namespace Coursework
 		}
 
 		public bool CheckValidityFailedF(string newText, out float number,
-			float min = float.MinValue, float max = float.MaxValue)
+			float min, float max)
 		{
 			number = 0;
 
@@ -399,7 +430,7 @@ namespace Coursework
 		}
 
 		public bool CheckValidityFailedI(string newText, out int number,
-			int min = int.MinValue, int max = int.MaxValue)
+			int min, int max)
 		{
 			number = 0;
 
@@ -434,7 +465,7 @@ namespace Coursework
 
 		private void InMu_Leave(object sender, EventArgs e)
 		{
-			ChangeValueI(ref Mu, InMu, lMu);
+			ChangeValueI(ref Mu, InMu, lMu, 1);
 		}
 		private void In_mu_Leave(object sender, EventArgs e)
 		{
@@ -443,12 +474,12 @@ namespace Coursework
 
 		private void InUm_Leave(object sender, EventArgs e)
 		{
-			ChangeValueF(ref Um, InUm, lUm);
+			ChangeValueF(ref Um, InUm, lUm, 0 + float.Epsilon);
 		}
 
 		private void InVm_Leave(object sender, EventArgs e)
 		{
-			ChangeValueF(ref Vm, InVm, lVm);
+			ChangeValueF(ref Vm, InVm, lVm, 0 + float.Epsilon);
 		}
 
 		private void Indu_Leave(object sender, EventArgs e)
@@ -463,12 +494,12 @@ namespace Coursework
 
 		private void Inu_Leave(object sender, EventArgs e)
 		{
-			ChangeValueF(ref u, Inu, lu);
+			ChangeValueF(ref u, Inu, lu, (float)(-1 / 12.0), (float)(1 / 12.0));
 		}
 
 		private void Inv_Leave(object sender, EventArgs e)
 		{
-			ChangeValueF(ref v, Inv, lv);
+			ChangeValueF(ref v, Inv, lv, (float)(-1 / 12.0), (float)(1 / 12.0));
 		}
 
 		private void Ina_Leave(object sender, EventArgs e)
@@ -483,7 +514,7 @@ namespace Coursework
 
 		private void InH_Leave(object sender, EventArgs e)
 		{
-			ChangeValueF(ref H, InH, lH);
+			ChangeValueF(ref H, InH, lH, 0+float.Epsilon);
 		}
 
 		private void Inup1_Leave(object sender, EventArgs e)
@@ -523,17 +554,17 @@ namespace Coursework
 
 		private void Inpq_Leave(object sender, EventArgs e)
 		{
-			ChangeValueI(ref pq, Inpq, lpq);
+			ChangeValueI(ref pq, Inpq, lpq, 1);
 		}
 
 		private void InN_Leave(object sender, EventArgs e)
 		{
-			ChangeValueI(ref N, InN, lN);
+			ChangeValueI(ref N, InN, lN, 1);
 		}
 
 		private void InMv_Leave(object sender, EventArgs e)
 		{
-			ChangeValueI(ref Mv, InMv, lMv);
+			ChangeValueI(ref Mv, InMv, lMv, 1);
 		}
 	}
 }

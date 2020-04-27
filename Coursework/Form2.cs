@@ -22,7 +22,8 @@ namespace Coursework
 
 		MatlabFuncs funcs;
 
-		float Um, Vm, du, dv, u, v, a, Tc, up1, up2, vp1, vp2, Ap1, Ap2, gamma, _mu, H;
+		float Um, Vm, du, dv, u, v, a, Tc, up1,
+			up2, vp1, vp2, Ap1, Ap2, gamma, _mu, H;
 
 		int N, Mu, Mv, pq, M;
 
@@ -97,7 +98,7 @@ namespace Coursework
 			catch (Exception e)
 			{
 				MessageBox.Show("Произошла ошибка при генерации наблюдений." +
-					" Начните заново, либо перейдите к другому шагу." + e.Message);
+					" Начните заново, либо перейдите к другому шагу.\n" + e.Message);
 				progress.Visible = false;
 				log.Text += "\nПроизошла ошибка при генерации наблюдений";
 			}
@@ -127,7 +128,7 @@ namespace Coursework
 			catch (Exception e)
 			{
 				MessageBox.Show("Произошла ошибка при расчете корреляционной матрицы." +
-					" Начните заново, либо перейдите к другому шагу." + e.Message);
+					" Начните заново, либо перейдите к другому шагу.\n" + e.Message);
 				progress.Visible = false;
 				log.Text += "\nПроизошла ошибка при расчете корреляционной матрицы";
 			}
@@ -159,7 +160,7 @@ namespace Coursework
 			catch (Exception e)
 			{
 				MessageBox.Show("Произошла ошибка при расчете статистики наблюдений." +
-					" Начните заново, либо перейдите к другому шагу." + e.Message);
+					" Начните заново, либо перейдите к другому шагу.\n" + e.Message);
 				progress.Visible = false;
 				log.Text += "\nПроизошла ошибка при расчете статистики наблюдений";
 			}
@@ -188,7 +189,7 @@ namespace Coursework
 			catch (Exception e)
 			{
 				MessageBox.Show("Произошла ошибка при визуализации." +
-					" Начните заново, либо перейдите к другому шагу." + e.Message);
+					" Начните заново, либо перейдите к другому шагу.\n" + e.Message);
 				progress.Visible = false;
 				log.Text += "\nПроизошла ошибка при визуализации";
 			}
@@ -217,501 +218,270 @@ namespace Coursework
 
 		private void getData_Click(object sender, EventArgs e)
 		{
-			/// Блок try catch обрабатывает возможные исключения,
-			/// возникающие при работе с файлами.
-			try
+			log.Text += "\nДобавляем файлы наблюдений";
+
+			if (OpenFile("Sx.txt", false, 0) && OpenFile("Sy.txt", false, 0)
+				&& OpenFile("Ux.txt", false, 0) && OpenFile("Uy.txt", false, 0)
+				&& OpenFile("YX.txt", true, M * N * pq) 
+				&& OpenFile("YY.txt", true, M * N * pq))
 			{
-				log.Text += "\nДобавляем файлы наблюдений";
-
-				string pathSx, pathSy, pathUx, pathUy, pathYX, pathYY;
-				pathSy = pathSx = pathUx = pathUy = pathYX = pathYY = "";
-
-				MessageBox.Show("Вам нужно выбрать файл Sx");
-
-				if (openFileInput.ShowDialog()
-					   == DialogResult.OK)
-				{
-					pathSx = openFileInput.FileName;
-				}
-
-				MessageBox.Show("Файл Sx выбран. Теперь нужно выбрать файл Sy");
-
-				if (openFileInput.ShowDialog()
-						== DialogResult.OK)
-				{
-					pathSy = openFileInput.FileName;
-				}
-
-				MessageBox.Show("Файл Sy выбран. Теперь нужно выбрать файл Ux");
-
-				if (openFileInput.ShowDialog()
-						== DialogResult.OK)
-				{
-					pathUx = openFileInput.FileName;
-				}
-
-				MessageBox.Show("Файл Ux выбран. Теперь нужно выбрать файл Uy");
-
-				if (openFileInput.ShowDialog()
-					   == DialogResult.OK)
-				{
-					pathUy = openFileInput.FileName;
-				}
-
-				MessageBox.Show("Файл Uy выбран. Теперь нужно выбрать файл YX");
-
-				if (openFileInput.ShowDialog()
-					   == DialogResult.OK)
-				{
-					pathYX = openFileInput.FileName;
-				}
-
-				MessageBox.Show("Файл YX выбран. Теперь нужно выбрать файл YY");
-
-				if (openFileInput.ShowDialog()
-					  == DialogResult.OK)
-				{
-					pathYY = openFileInput.FileName;
-				}
-
-				if (CheckData(pathYY) && CheckData(pathYX)
-					&& CheckData(pathSx) && CheckData(pathSy)
-					&& CheckData(pathUx) && CheckData(pathUy))
-				{
-					File.Copy(pathSx, "Sx.txt", true);
-					File.Copy(pathSy, "Sy.txt", true);
-					File.Copy(pathUx, "Ux.txt", true);
-					File.Copy(pathUy, "Uy.txt", true);
-					File.Copy(pathYX, "YX.txt", true);
-					File.Copy(pathYY, "YY.txt", true);
-
-					log.Text += "\nФайлы наблюдений добавлены";
-					generateMatrix.Visible = true;
-				}
+				log.Text += "\nФайлы наблюдений добавлены";
+				generateMatrix.Visible = true;
 			}
-			catch (ArgumentException)
+			else
 			{
-				MessageBox.Show("Вы не выбрали файл.");
-
-				log.Text += "\nПроизошла ошибка добавления файлов.";
-			}
-			catch (FileNotFoundException)
-			{
-				MessageBox.Show("Файл не существует. " +
-					"Начните заново.");
-				log.Text += "\nПроизошла ошибка добавления файлов.";
-			}
-			catch (IOException)
-			{
-				MessageBox.Show("Ошибка в работе с файлом." +
-					" Начните заново.");
-				log.Text += "\nПроизошла ошибка добавления файлов.";
-			}
-			catch (UnauthorizedAccessException)
-			{
-				MessageBox.Show("Ошибка доступа к файлу:" +
-					" нет разрешения на доступ. Начните заново.");
-				log.Text += "\nПроизошла ошибка добавления файлов.";
-			}
-			catch (System.Security.SecurityException)
-			{
-				MessageBox.Show("Ошибка безопасности при " +
-				"работе с файлом. Начните заново.");
-				log.Text += "\nПроизошла ошибка добавления файлов.";
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show("Произошла ошибка: " + ex.Message);
 				log.Text += "\nПроизошла ошибка добавления файлов.";
 			}
 		}
 
 		private void getMatrix_Click(object sender, EventArgs e)
 		{
-			/// Блок try catch обрабатывает возможные исключения,
-			/// возникающие при работе с файлами.
-			try
+			log.Text += "\nДобавляем файлы матрицы";
+
+			if (OpenFile("Rx.txt", true, M * M * pq) 
+				&& OpenFile("Ry.txt", true, M * M * pq))
 			{
-				log.Text += "\nДобавляем файлы матрицы";
-
-				string pathRx, pathRy;
-				pathRy = pathRx = "";
-
-				MessageBox.Show("Вам нужно выбрать файл Rx");
-
-				if (openFileInput.ShowDialog()
-					   == DialogResult.OK)
-				{
-					pathRx = openFileInput.FileName;
-				}
-
-				MessageBox.Show("Файл Rx выбран. Теперь нужно выбрать файл Ry");
-
-				if (openFileInput.ShowDialog()
-						== DialogResult.OK)
-				{
-					pathRy = openFileInput.FileName;
-				}
-
-				if (CheckData(pathRx) && CheckData(pathRy))
-				{
-					File.Copy(pathRx, "Rx.txt", true);
-					File.Copy(pathRy, "Ry.txt", true);
-
-					log.Text += "\nФайлы матрицы добавлены";
-					generateL.Visible = true;
-				}
+				log.Text += "\nФайлы матрицы добавлены";
+				generateL.Visible = true;
 			}
-			catch (ArgumentException)
+			else
 			{
-				MessageBox.Show("Вы не выбрали файл.");
-
-				log.Text += "\nПроизошла ошибка добавления файлов.";
-			}
-			catch (FileNotFoundException)
-			{
-				MessageBox.Show("Файл не существует. " +
-					"Начните заново.");
-				log.Text += "\nПроизошла ошибка добавления файлов.";
-			}
-			catch (IOException)
-			{
-				MessageBox.Show("Ошибка в работе с файлом." +
-					" Начните заново.");
-				log.Text += "\nПроизошла ошибка добавления файлов.";
-			}
-			catch (UnauthorizedAccessException)
-			{
-				MessageBox.Show("Ошибка доступа к файлу:" +
-					" нет разрешения на доступ. Начните заново.");
-				log.Text += "\nПроизошла ошибка добавления файлов.";
-			}
-			catch (System.Security.SecurityException)
-			{
-				MessageBox.Show("Ошибка безопасности при " +
-				"работе с файлом. Начните заново.");
-				log.Text += "\nПроизошла ошибка добавления файлов.";
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show("Произошла ошибка: " + ex.Message);
 				log.Text += "\nПроизошла ошибка добавления файлов.";
 			}
 		}
 
 		private void getL_Click(object sender, EventArgs e)
 		{
-			/// Блок try catch обрабатывает возможные исключения,
-			/// возникающие при работе с файлами.
-			try
-			{
-				log.Text += "\nДобавляем файл статистики";
+			log.Text += "\nДобавляем файл статистики";
 
-				string pathL; ;
-				pathL = "";
-
-				MessageBox.Show("Вам нужно выбрать файл L");
-
-				if (openFileInput.ShowDialog()
-					   == DialogResult.OK)
-				{
-					pathL = openFileInput.FileName;
-				}
-
-				if (CheckData(pathL))
-				{
-					File.Copy(pathL, "Lfile.txt", true);
-
-					log.Text += "\nФайл статистики добавлен";
-					visualize.Visible = true;
-				}
-			}
-			catch (ArgumentException)
+			if (OpenFile("Lfile.txt", true, 9 * 9 * N / 9))
 			{
-				MessageBox.Show("Вы не выбрали файл.");
-
-				log.Text += "\nПроизошла ошибка добавления файлов.";
+				log.Text += "\nФайл статистики добавлен";
+				visualize.Visible = true;
 			}
-			catch (FileNotFoundException)
+			else
 			{
-				MessageBox.Show("Файл не существует. " +
-					"Начните заново.");
-				log.Text += "\nПроизошла ошибка добавления файлов.";
-			}
-			catch (IOException)
-			{
-				MessageBox.Show("Ошибка в работе с файлом." +
-					" Начните заново.");
-				log.Text += "\nПроизошла ошибка добавления файлов.";
-			}
-			catch (UnauthorizedAccessException)
-			{
-				MessageBox.Show("Ошибка доступа к файлу:" +
-					" нет разрешения на доступ. Начните заново.");
-				log.Text += "\nПроизошла ошибка добавления файлов.";
-			}
-			catch (System.Security.SecurityException)
-			{
-				MessageBox.Show("Ошибка безопасности при " +
-				"работе с файлом. Начните заново.");
-				log.Text += "\nПроизошла ошибка добавления файлов.";
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show("Произошла ошибка: " + ex.Message);
 				log.Text += "\nПроизошла ошибка добавления файлов.";
 			}
 		}
 
 		private void saveData_Click(object sender, EventArgs e)
 		{
-			/// Блок try catch обрабатывает возможные исключения,
-			/// возникающие при работе с файлами.
-			try
-			{
-				log.Text += "\nСохраняем файлы наблюдений";
+			log.Text += "\nНачинаем сохранение файлов наблюдений";
 
-				string pathSx, pathSy, pathUx, pathUy, pathYX, pathYY;
-				pathSy = pathSx = pathUx = pathUy = pathYX = pathYY = "";
+			SaveFile("Sx.txt");
+			SaveFile("Sy.txt");
+			SaveFile("Ux.txt");
+			SaveFile("Uy.txt");
+			SaveFile("YX.txt");
+			SaveFile("YY.txt");
 
-				MessageBox.Show("Вам нужно выбрать, куда сохранить файл Sx");
-
-				if (openFileInput.ShowDialog()
-					   == DialogResult.OK)
-				{
-					pathSx = openFileInput.FileName;
-				}
-
-				MessageBox.Show("Путь для файла Sx выбран. " +
-					"Теперь нужно выбрать, куда сохранить файл Sy");
-
-				if (openFileInput.ShowDialog()
-						== DialogResult.OK)
-				{
-					pathSy = openFileInput.FileName;
-				}
-
-				MessageBox.Show("Путь для файла Sy выбран. " +
-					"Теперь нужно выбрать, куда сохранить файл Ux");
-
-				if (openFileInput.ShowDialog()
-						== DialogResult.OK)
-				{
-					pathUx = openFileInput.FileName;
-				}
-
-				MessageBox.Show("Путь для файла Ux выбран." +
-					" Теперь нужно выбрать, куда сохранить файл Uy");
-
-				if (openFileInput.ShowDialog()
-					   == DialogResult.OK)
-				{
-					pathUy = openFileInput.FileName;
-				}
-
-
-				MessageBox.Show("Путь для файла Uy выбран." +
-					" Теперь нужно выбрать, куда сохранить файл YX");
-
-				if (openFileInput.ShowDialog()
-					   == DialogResult.OK)
-				{
-					pathYX = openFileInput.FileName;
-				}
-
-				MessageBox.Show("Путь для файла YX выбран." +
-					" Теперь нужно выбрать, куда сохранить файл YY");
-
-				if (openFileInput.ShowDialog()
-					  == DialogResult.OK)
-				{
-					pathYY = openFileInput.FileName;
-				}
-
-				File.Copy("Sx.txt", pathSx, true);
-				File.Copy("Sy.txt", pathSy, true);
-				File.Copy("Ux.txt", pathUx, true);
-				File.Copy("Uy.txt", pathUy, true);
-				File.Copy("YX.txt", pathYX, true);
-				File.Copy("YY.txt", pathYY, true);
-
-				log.Text += "\nФайлы наблюдений сохранены";
-			}
-			catch (ArgumentException)
-			{
-				MessageBox.Show("Вы не выбрали путь для файла.");
-
-				log.Text += "\nПроизошла ошибка сохранения файлов.";
-			}
-			catch (FileNotFoundException)
-			{
-				MessageBox.Show("Файл не существует. " +
-					"Начните заново.");
-				log.Text += "\nПроизошла ошибка сохранения файлов.";
-			}
-			catch (IOException)
-			{
-				MessageBox.Show("Ошибка в работе с файлом." +
-					" Начните заново.");
-				log.Text += "\nПроизошла ошибка сохранения файлов.";
-			}
-			catch (UnauthorizedAccessException)
-			{
-				MessageBox.Show("Ошибка доступа к файлу:" +
-					" нет разрешения на доступ. Начните заново.");
-				log.Text += "\nПроизошла ошибка сохранения файлов.";
-			}
-			catch (System.Security.SecurityException)
-			{
-				MessageBox.Show("Ошибка безопасности при " +
-				"работе с файлом. Начните заново.");
-				log.Text += "\nПроизошла ошибка сохранения файлов.";
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show("Произошла ошибка: " + ex.Message);
-				log.Text += "\nПроизошла ошибка сохранения файлов.";
-			}
+			log.Text += "\nСохранение файлов наблюдений закончено";
 		}
 
 		private void saveMatrix_Click(object sender, EventArgs e)
 		{
-			/// Блок try catch обрабатывает возможные исключения,
-			/// возникающие при работе с файлами.
-			try
-			{
-				log.Text += "\nСохраняем файлы матрицы";
+			log.Text += "\nНачинаем сохранение файлов матрицы";
 
-				string pathRx, pathRy;
-				pathRy = pathRx = "";
+			SaveFile("Rx.txt");
+			SaveFile("Ry.txt");
 
-				MessageBox.Show("Вам нужно выбрать," +
-					" куда сохранить файл Rx");
-
-				if (openFileInput.ShowDialog()
-					   == DialogResult.OK)
-				{
-					pathRx = openFileInput.FileName;
-				}
-
-				MessageBox.Show("Файл Rx выбран. " +
-					"Теперь нужно выбрать, куда сохранить файл Ry");
-
-				if (openFileInput.ShowDialog()
-						== DialogResult.OK)
-				{
-					pathRy = openFileInput.FileName;
-				}
-
-				File.Copy("Rx.txt", pathRx, true);
-				File.Copy("Ry.txt", pathRy, true);
-
-				log.Text += "\nФайлы матрицы сохранены";
-			}
-			catch (ArgumentException)
-			{
-				MessageBox.Show("Вы не выбрали путь для файла.");
-
-				log.Text += "\nПроизошла ошибка сохранения файлов.";
-			}
-			catch (FileNotFoundException)
-			{
-				MessageBox.Show("Файл не существует. " +
-					"Начните заново.");
-				log.Text += "\nПроизошла ошибка сохранения файлов.";
-			}
-			catch (IOException)
-			{
-				MessageBox.Show("Ошибка в работе с файлом." +
-					" Начните заново.");
-				log.Text += "\nПроизошла ошибка сохранения файлов.";
-			}
-			catch (UnauthorizedAccessException)
-			{
-				MessageBox.Show("Ошибка доступа к файлу:" +
-					" нет разрешения на доступ. Начните заново.");
-				log.Text += "\nПроизошла ошибка сохранения файлов.";
-			}
-			catch (System.Security.SecurityException)
-			{
-				MessageBox.Show("Ошибка безопасности при " +
-				"работе с файлом. Начните заново.");
-				log.Text += "\nПроизошла ошибка сохранения файлов.";
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show("Произошла ошибка: " + ex.Message);
-				log.Text += "\nПроизошла ошибка сохранения файлов.";
-			}
+			log.Text += "\nСохранение файлов матрицы закончено";
 		}
 
 		private void saveL_Click(object sender, EventArgs e)
 		{
-			/// Блок try catch обрабатывает возможные исключения,
-			/// возникающие при работе с файлами.
+			log.Text += "\nНачинаем сохранение файла статистики";
+
+			SaveFile("Lfile.txt");
+
+			log.Text += "\nСохранение файлов статистики закончено";
+		}
+
+		public bool CheckData(string path, bool checkLen, int expectedLen)
+		{
+			StreamReader filestr = 
+				new StreamReader(new FileStream(path, FileMode.Open));
+
+			float num;
+			int length = 0;
+
+			while (true)
+			{
+				var t = NextWord(filestr);
+
+				if (t == "") break;
+
+				if (!float.TryParse(t, out num))
+				{
+					MessageBox.Show($"В файле {path} находятся данные" +
+						$" не в требуемом числовом формате");
+
+					return false;
+				}
+
+				length++;
+			}
+
+			filestr.Dispose();
+
+			if (checkLen && (expectedLen > length))
+			{
+				MessageBox.Show($"В файле {path} находятся данные" +
+						$" не в требуемом количестве {length}");
+
+				return false;
+			}
+
+			return true;
+		}
+
+		string NextWord(StreamReader s)
+		{
+			int c = s.Peek();
+
+			while (c != -1 && Char.IsWhiteSpace(Convert.ToChar(c)))
+			{
+				s.Read();
+				c = s.Peek();
+			}
+
+			if (c == -1) return "";
+
+			StringBuilder b = new StringBuilder();
+
+			while (c != -1 && !Char.IsWhiteSpace(Convert.ToChar(c)))
+			{
+				b.Append(Convert.ToChar(c));
+				s.Read();
+				c = s.Peek();
+			}
+
+			return b.ToString();
+		}
+
+		bool OpenFile(string name, bool checkLen, int len)
+		{
 			try
 			{
-				log.Text += "\nСохраняем файл статистики";
+				log.Text += "\nДобавляем файл " + name;
+				MessageBox.Show("Вам нужно выбрать файл " + name);
 
-				string pathL; ;
-				pathL = "";
+				openFile.FileName = null;
+				string path;
 
-				MessageBox.Show("Вам нужно выбрать, куда сохранить файл L");
+				openFile.ShowDialog();
+				path = openFile.FileName;
 
-				if (openFileInput.ShowDialog()
-					   == DialogResult.OK)
+				if (CheckData(path, checkLen, len))
 				{
-					pathL = openFileInput.FileName;
+					File.Copy(path, name, true);
+					log.Text += "\nФайл " + name + " добавлен";
+					return true;
 				}
-
-				if (CheckData(pathL))
-				{
-					File.Copy("Lfile.txt", pathL, true);
-
-					log.Text += "\nФайл статистики сохранен";
-				}
+				else return false;
 			}
-			catch (ArgumentException)
+			catch (ArgumentException ex)
 			{
-				MessageBox.Show("Вы не выбрали путь для файла.");
+				MessageBox.Show("Вы не выбрали путь для файла.\n" + ex.Message);
 
-				log.Text += "\nПроизошла ошибка сохранения файлов.";
+				log.Text += "\nОшибка при добавлении файла " + name;
+
+				return false;
 			}
-			catch (FileNotFoundException)
+			catch (FileNotFoundException ex)
 			{
 				MessageBox.Show("Файл не существует. " +
-					"Начните заново.");
-				log.Text += "\nПроизошла ошибка сохранения файлов.";
+					"Начните заново.\n" + ex.Message);
+				log.Text += "\nОшибка при добавлении файла " + name;
+
+				return false;
 			}
-			catch (IOException)
+			catch (IOException ex)
 			{
 				MessageBox.Show("Ошибка в работе с файлом." +
-					" Начните заново.");
-				log.Text += "\nПроизошла ошибка сохранения файлов.";
+					" Начните заново.\n" + ex.Message);
+				log.Text += "\nОшибка при добавлении файла " + name;
+
+				return false;
 			}
-			catch (UnauthorizedAccessException)
+			catch (UnauthorizedAccessException ex)
 			{
 				MessageBox.Show("Ошибка доступа к файлу:" +
-					" нет разрешения на доступ. Начните заново.");
-				log.Text += "\nПроизошла ошибка сохранения файлов.";
+					" нет разрешения на доступ. Начните заново.\n" + ex.Message);
+				log.Text += "\nОшибка при добавлении файла " + name;
+
+				return false;
 			}
-			catch (System.Security.SecurityException)
+			catch (System.Security.SecurityException ex)
 			{
 				MessageBox.Show("Ошибка безопасности при " +
-				"работе с файлом. Начните заново.");
-				log.Text += "\nПроизошла ошибка сохранения файлов.";
+				"работе с файлом. Начните заново.\n" + ex.Message);
+				log.Text += "\nОшибка при добавлении файла " + name;
+
+				return false;
 			}
 			catch (Exception ex)
 			{
 				MessageBox.Show("Произошла ошибка: " + ex.Message);
-				log.Text += "\nПроизошла ошибка сохранения файлов.";
+				log.Text += "\nОшибка при добавлении файла " + name;
+
+				return false;
 			}
 		}
 
-		//TODO
-		public bool CheckData(string path)
+		void SaveFile(string name)
 		{
-			return true;
+			try
+			{
+				log.Text += "\nСохраняем файл " + name;
+				MessageBox.Show("Вам нужно выбрать, куда сохранить файл " + name);
+
+				saveFile.FileName = null;
+				string path;
+
+				saveFile.ShowDialog();
+				path = saveFile.FileName;
+
+				File.Copy(name, path, true);
+
+				log.Text += "\nФайл " + name + " сохранен";
+			}
+			catch (ArgumentException ex)
+			{
+				MessageBox.Show("Вы не выбрали путь для файла.\n" + ex.Message);
+
+				log.Text += "\nОшибка при сохранении файла " + name;
+			}
+			catch (FileNotFoundException ex)
+			{
+				MessageBox.Show("Файл не существует. " +
+					"Начните заново.\n" + ex.Message);
+				log.Text += "\nОшибка при сохранении файла " + name;
+			}
+			catch (IOException ex)
+			{
+				MessageBox.Show("Ошибка в работе с файлом." +
+					" Начните заново.\n" + ex.Message);
+				log.Text += "\nОшибка при сохранении файла " + name;
+			}
+			catch (UnauthorizedAccessException ex)
+			{
+				MessageBox.Show("Ошибка доступа к файлу:" +
+					" нет разрешения на доступ. Начните заново.\n" + ex.Message);
+				log.Text += "\nОшибка при сохранении файла " + name;
+			}
+			catch (System.Security.SecurityException ex)
+			{
+				MessageBox.Show("Ошибка безопасности при " +
+				"работе с файлом. Начните заново.\n" + ex.Message);
+				log.Text += "\nОшибка при сохранении файла " + name;
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Произошла ошибка: " + ex.Message);
+				log.Text += "\nОшибка при сохранении файла " + name;
+			}
 		}
 
 		static private List<Control> GetAllControlsOfType<T>(Control container)

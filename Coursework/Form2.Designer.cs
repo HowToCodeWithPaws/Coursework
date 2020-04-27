@@ -34,7 +34,7 @@
 			this.generateL = new System.Windows.Forms.Button();
 			this.generateData = new System.Windows.Forms.Button();
 			this.getData = new System.Windows.Forms.Button();
-			this.openFileInput = new System.Windows.Forms.OpenFileDialog();
+			this.openFile = new System.Windows.Forms.OpenFileDialog();
 			this.getMatrix = new System.Windows.Forms.Button();
 			this.getL = new System.Windows.Forms.Button();
 			this.saveData = new System.Windows.Forms.Button();
@@ -42,6 +42,7 @@
 			this.saveL = new System.Windows.Forms.Button();
 			this.log = new System.Windows.Forms.RichTextBox();
 			this.formBack = new System.Windows.Forms.Button();
+			this.saveFile = new System.Windows.Forms.SaveFileDialog();
 			this.SuspendLayout();
 			// 
 			// generateMatrix
@@ -105,10 +106,10 @@
 			this.getData.UseVisualStyleBackColor = true;
 			this.getData.Click += new System.EventHandler(this.getData_Click);
 			// 
-			// openFileInput
+			// openFile
 			// 
-			this.openFileInput.DefaultExt = "txt";
-			this.openFileInput.Filter = "TXT files (*.txt)|*.txt";
+			this.openFile.DefaultExt = "txt";
+			this.openFile.Filter = "TXT files (*.txt)|*.txt";
 			// 
 			// getMatrix
 			// 
@@ -179,6 +180,11 @@
 			this.formBack.UseVisualStyleBackColor = true;
 			this.formBack.Click += new System.EventHandler(this.formBack_Click);
 			// 
+			// saveFile
+			// 
+			this.saveFile.DefaultExt = "txt";
+			this.saveFile.Filter = "TXT files (*.txt)|*.txt";
+			// 
 			// Form2
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -212,7 +218,7 @@
 		private System.Windows.Forms.Button generateL;
 		private System.Windows.Forms.Button generateData;
 		private System.Windows.Forms.Button getData;
-		private System.Windows.Forms.OpenFileDialog openFileInput;
+		private System.Windows.Forms.OpenFileDialog openFile;
 		private System.Windows.Forms.Button getMatrix;
 		private System.Windows.Forms.Button getL;
 		private System.Windows.Forms.Button saveData;
@@ -220,5 +226,6 @@
 		private System.Windows.Forms.Button saveL;
 		private System.Windows.Forms.RichTextBox log;
 		private System.Windows.Forms.Button formBack;
+		private System.Windows.Forms.SaveFileDialog saveFile;
 	}
 }

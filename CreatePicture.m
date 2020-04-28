@@ -64,11 +64,10 @@ z=ll(z1)'+(t1-1)*N;
  
 delete(gca)
 marker='o';
-string=' ';
+string='сигнал';
 miv=H;
 mav=Hm;
 % Get the current colormap
- 
 map=colormap;
  
 hold on
@@ -85,13 +84,16 @@ hold off
 % Re-format the colorbar
 h=colorbar;
  
-set(h,'ylim',[1 length(map)]);
+%set(h,'ylim',[1 length(map)]);
 yal=linspace(1,length(map),10);
-set(h,'ytick',yal);
+%set(h,'ytick',yal);
+
 % Create the yticklabels
-ytl=linspace(miv,mav,10);
-s=char(10,4);
-for i=1:10
+ytl=linspace(miv,mav,11);
+
+s=char(11,4);
+
+for i=1:11
     if abs(min(log10(abs(ytl)))) <= 3
         B=sprintf('%-4.3f',ytl(i));
     else
@@ -99,18 +101,11 @@ for i=1:10
     end
     s(i,1:length(B))=B;
 end
+
 set(h,'yticklabel',s,'fontsize',9);
 grid on
-set(get(h,'title'),'string',string,'fontweight','bold')
+set(get(h,'title'),'string',string)
 view(3)
-%axis([ii(1) ii(end) kk(1) kk(end) ll(1) ll(end)]);
- 
-% for i=1:lu*lv
-%     nrmX(i)=norm(Rx(:,64*(i-1) +(1:64))-gRx(:,64*(i-1) +(1:64)));
-%     nrmY(i)=norm(Ry(:,64*(i-1) +(1:64))-gRy(:,64*(i-1) +(1:64)));
-% 
-% end
-% disp([max(nrmX') max(nrmY')]);
-%----------------------------------------------------
+
 Toc=toc;
 end

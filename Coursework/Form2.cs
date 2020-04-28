@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using RadarLib;
 using System.Diagnostics;
 using System.IO;
-using CreateFiles;
+using MatlabFuncs;
 using MathWorks.MATLAB.NET.Utility;
 using MathWorks.MATLAB.NET.Arrays;
 
@@ -20,14 +20,14 @@ namespace Coursework
 	{
 		Form1 prevForm;
 
-		MatlabFuncs funcs;
+		Funcs funcs;
 
 		float Um, Vm, du, dv, u, v, a, Tc, up1,
 			up2, vp1, vp2, Ap1, Ap2, gamma, _mu, H;
 
 		int N, Mu, Mv, pq, M;
 
-		public Form2(Form1 form, MatlabFuncs funcs, int N, int Mu, int Mv,
+		public Form2(Form1 form, Funcs funcs, int N, int Mu, int Mv,
 			float Um, float Vm, float du, float dv, float u, float v,
 			float a, float Tc, float up1, float up2, float vp1, float vp2,
 			float Ap1, float Ap2, float gamma, float _mu, float H, int pq)
@@ -147,8 +147,7 @@ namespace Coursework
 
 				await Task.Run(() =>
 				{
-					res = funcs.CreateL(1, N, Mu, Mv, Um, Vm, du, dv,
-					u, v, a, Tc, up1, up2, vp1, vp2, Ap1, Ap2, gamma, _mu);
+					res = funcs.CreateL(1, N, Mu, Mv, Um, Vm, _mu);
 				});
 
 				progress.Visible = false;
@@ -179,7 +178,7 @@ namespace Coursework
 
 				await Task.Run(() =>
 				{
-					res = funcs.CreatePicture(1, N, Mu, Mv, Um, Vm, H);
+					res = funcs.CreatePicture(1, N, Um, Vm, H);
 				});
 
 				progress.Visible = false;

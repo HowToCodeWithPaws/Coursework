@@ -13,7 +13,7 @@ namespace Coursework
 {
 	public partial class Form1 : Form
 	{
-		CreateFiles.MatlabFuncs funcs = new CreateFiles.MatlabFuncs();
+		MatlabFuncs.Funcs funcs = new MatlabFuncs.Funcs();
 
 		string[] inputStrings;
 

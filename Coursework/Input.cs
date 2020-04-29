@@ -11,9 +11,16 @@ using System.IO;
 
 namespace Coursework
 {
-	public partial class Form1 : Form
+	public partial class Input : Form
 	{
-		MatlabFuncs.Funcs funcs = new MatlabFuncs.Funcs();
+		Color backColor = Color.FromArgb(46, 76, 86);
+		Color panelColor = Color.FromArgb(89, 139, 155);
+		Color hoverColor = Color.FromArgb(125, 167, 181);
+		Color textColor = Color.FromArgb(160, 238, 230);
+
+		Homescreen prevForm;
+
+		MatlabFuncs.Funcs funcs;
 
 		string[] inputStrings;
 
@@ -23,35 +30,37 @@ namespace Coursework
 
 		int N, Mu, Mv, pq;
 
-		public Form1()
+		public Input(Homescreen homescreen, MatlabFuncs.Funcs funcs)
 		{
+			this.funcs = funcs;
+			prevForm = homescreen;
+
 			System.Globalization.CultureInfo.CurrentCulture
 				= new System.Globalization.CultureInfo("en-US", false);
-			InitializeComponent();
-			Begin();
-		}
 
-		private void info_Click(object sender, EventArgs e)
-		{
-			MessageBox.Show("Это программа для симуляции и визуализации работы" +
-				" радиолокатора. Она разделена на несколько стадий:" +
-				" задание параметров симуляции, создание наблюдений, расчет " +
-				"корреляционной матрицы, формирование статистики и визуализация." +
-				" На всех этапах кроме последнего генерируются файлы, которые" +
-				" можно сохранить в какое-то удобное место, кроме того, этап можно" +
-				"пропустить при условии, что у вас есть файлы, которые должны быть" +
-				" сформированы на пропускаемом этапе и файл с параметрами симуляции." +
-				" Если файлы не будут согласованы друг с другом или с параметрами" +
-				" симуляции, будет выведено сообщение об ошибке, и вы сможете загрузить" +
-				" другие файлы, либо сгенерировать их. Также при противоречивых или " +
-				"некорректных для симуляции параметрах могут быть получены некорректные" +
-				" результаты, но всегда есть возможность задать их заново и повторить" +
-				" работу программы. Рекомендуется не задавать слишком большие числа," +
-				" потому что тогда программа может работать чудовищно долго.");
+			this.BackColor = backColor;
+
+			InitializeComponent();
+
+			Begin();
 		}
 
 		public void Begin()
 		{
+			panel.BackColor = panelColor;
+
+			foreach (Button b in GetAllControlsOfType<Button>(this))
+			{
+				b.FlatAppearance.MouseOverBackColor = hoverColor;
+				b.ForeColor = textColor;
+				//		b.FlatAppearance.MouseDownBackColor = Color.FromArgb(68, 138, 162);
+			}
+
+			foreach (Label l in GetAllControlsOfType<Label>(this))
+			{
+				l.ForeColor = textColor;
+			}
+
 			du = dv = Um = Vm = 0.1666667f;
 			u = v = vp1 = vp2 = gamma = 0;
 			a = 0.42f;
@@ -108,48 +117,48 @@ namespace Coursework
 			InH.Text = H.ToString();
 			Inpq.Text = pq.ToString();
 
-			toolTipN.SetToolTip(lN, "Количество векторов наблюдений," +
+			toolTip.SetToolTip(lN, "Количество векторов наблюдений," +
 				"\nпо которым формируется статистика." +
 				"\nЧисло должно быть целое и больше 0");
-			toolTipMu.SetToolTip(lMu, "Количество модулей, на которые" +
+			toolTip.SetToolTip(lMu, "Количество модулей, на которые" +
 				"\nразбивается антенная решетка по длине" +
 				"\nЧисло должно быть целое и больше 0");
-			toolTipMv.SetToolTip(lMv, "Количество модулей, на которые" +
+			toolTip.SetToolTip(lMv, "Количество модулей, на которые" +
 				"\nразбивается антенная решетка по ширине" +
 				"\nЧисло должно быть целое и больше 0");
-			toolTipUm.SetToolTip(lUm, "Ширина главного лепестка диаграммы" +
+			toolTip.SetToolTip(lUm, "Ширина главного лепестка диаграммы" +
 				"\nнаправленности модуля по одному углу." +
 				"\nРекомендуемое значение: эффективная" +
 				"\nразрешающая способность модуля " +
 				"\nпо одному измерению - 1/6 радиана");
-			toolTipVm.SetToolTip(lVm, "Ширина главного лепестка диаграммы" +
+			toolTip.SetToolTip(lVm, "Ширина главного лепестка диаграммы" +
 				"\nнаправленности модуля по другому углу." +
 				"\nРекомендуемое значение: эффективная" +
 				"\nразрешающая способность модуля " +
 				"\nпо одному измерению - 1/6 радиана");
-			toolTipDu.SetToolTip(ldu, "Сдвиг до центра просматриваемого сектора" +
+			toolTip.SetToolTip(ldu, "Сдвиг до центра просматриваемого сектора" +
 				"\nпо одному углу");
-			toolTipDv.SetToolTip(ldv, "Сдвиг до центра просматриваемого сектора" +
+			toolTip.SetToolTip(ldv, "Сдвиг до центра просматриваемого сектора" +
 				"\nпо другому углу");
-			toolTipU.SetToolTip(lu, "Предполагаемое положение цели по одному углу," +
+			toolTip.SetToolTip(lu, "Предполагаемое положение цели по одному углу," +
 				"\nизменяется от -1/12 до 1/12 радиана с шагом 1/48 радиана");
-			toolTipV.SetToolTip(lv, "Предполагаемое положение цели по другому углу," +
+			toolTip.SetToolTip(lv, "Предполагаемое положение цели по другому углу," +
 				"\nизменяется от -1/12 до 1/12 радиана с шагом 1/48 радиана");
-			toolTipA.SetToolTip(la, "Мощность приходящего сигнала." +
+			toolTip.SetToolTip(la, "Мощность приходящего сигнала." +
 				"\nЧисло должно быть больше 0");
-			toolTipTc.SetToolTip(lTc, "Начало прихода сигнала");
-			toolTipVp1.SetToolTip(lvp1, "Положение помех по другому углу");
-			toolTipVp2.SetToolTip(lvp2, "Положение помех по другому углу");
-			toolTipUp1.SetToolTip(lup1, "Положение помех по одному углу");
-			toolTipUp2.SetToolTip(lup2, "Положение помех по одному углу");
-			toolTipAp1.SetToolTip(lAp1, "Мощность помех. Число должно быть больше 0");
-			toolTipAp2.SetToolTip(lAp2, "Мощность помех. Число должно быть больше 0");
-			toolTipGamma.SetToolTip(lgamma, "Параметр гамма");
-			toolTip_Mu.SetToolTip(l_mu, "Параметр регуляризации корреляционной матрицы." +
+			toolTip.SetToolTip(lTc, "Начало прихода сигнала");
+			toolTip.SetToolTip(lvp1, "Положение помех по другому углу");
+			toolTip.SetToolTip(lvp2, "Положение помех по другому углу");
+			toolTip.SetToolTip(lup1, "Положение помех по одному углу");
+			toolTip.SetToolTip(lup2, "Положение помех по одному углу");
+			toolTip.SetToolTip(lAp1, "Мощность помех. Число должно быть больше 0");
+			toolTip.SetToolTip(lAp2, "Мощность помех. Число должно быть больше 0");
+			toolTip.SetToolTip(lgamma, "Параметр гамма");
+			toolTip.SetToolTip(l_mu, "Параметр регуляризации корреляционной матрицы." +
 				"\nЧисло должно быть больше 0");
-			toolTipH.SetToolTip(lH, "Пороговое значение мощности сигнала для вывода точки." +
+			toolTip.SetToolTip(lH, "Пороговое значение мощности сигнала для вывода точки." +
 				"\nЧисло должно быть больше 0");
-			toolTipPq.SetToolTip(lpq, "Количество блоков в 36 областях," +
+			toolTip.SetToolTip(lpq, "Количество блоков в 36 областях," +
 				"\nпо которым составляется корреляционная матрица." +
 				"\nРекомендуемое значение:" +
 				"\n36 * 2000 отсчетов по времени / N векторов выборки," +
@@ -212,14 +221,14 @@ namespace Coursework
 			finally { MessageBox.Show("Все корректные данные добавлены"); }
 		}
 
-		private void inputDownload_Click(object sender, EventArgs e)
+		private void bSave_Click(object sender, EventArgs e)
 		{
 			string path = "";
 
 			if (saveFileInput.ShowDialog()
 				== DialogResult.OK)
 			{
-				path =saveFileInput.FileName;
+				path = saveFileInput.FileName;
 			}
 
 			try
@@ -263,7 +272,7 @@ namespace Coursework
 			finally { MessageBox.Show("Работа с файлом окончена."); }
 		}
 
-		private void inputUpload_Click(object sender, EventArgs e)
+		private void bGet_Click(object sender, EventArgs e)
 		{
 			if (openFileInput.ShowDialog()
 				== DialogResult.OK)
@@ -306,7 +315,7 @@ namespace Coursework
 			}
 		}
 
-		private void proceed_Click(object sender, EventArgs e)
+		private void bProceed_Click(object sender, EventArgs e)
 		{
 			try
 			{
@@ -326,7 +335,7 @@ namespace Coursework
 
 			// Создание новой формы на основе
 			// текущей формы 
-			new Form2(this, funcs, N, Mu, Mv, Um, Vm, du, dv, u, v, a, Tc,
+			new Operations(this, prevForm, funcs, N, Mu, Mv, Um, Vm, du, dv, u, v, a, Tc,
 				up1, up2, vp1, vp2, Ap1, Ap2, gamma, _mu, H, pq).Show();
 
 			// Вызов метода, приводящего форму
@@ -565,6 +574,32 @@ namespace Coursework
 		private void InMv_Leave(object sender, EventArgs e)
 		{
 			ChangeValueI(ref Mv, InMv, lMv, 1);
+		}
+
+		private void Input_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			prevForm.Show();
+		}
+
+		private void bExit_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+
+		static private List<Control> GetAllControlsOfType<T>(Control container)
+		{
+			List<Control> controlList = new List<Control>();
+			foreach (Control c in container.Controls)
+			{
+				controlList.AddRange(GetAllControlsOfType<T>(c));
+
+				if (c is T)
+				{
+					controlList.Add(c);
+				}
+			}
+
+			return controlList;
 		}
 	}
 }

@@ -16,9 +16,15 @@ using MathWorks.MATLAB.NET.Arrays;
 
 namespace Coursework
 {
-	public partial class Form2 : Form
+	public partial class Operations : Form
 	{
-		Form1 prevForm;
+		Color backColor = Color.FromArgb(46, 76, 86);
+		Color panelColor = Color.FromArgb(89, 139, 155);
+		Color hoverColor = Color.FromArgb(125, 167, 181);
+		Color textColor = Color.FromArgb(160, 238, 230);
+
+		Input prevForm;
+		Homescreen homescreen;
 
 		Funcs funcs;
 
@@ -27,7 +33,9 @@ namespace Coursework
 
 		int N, Mu, Mv, pq, M;
 
-		public Form2(Form1 form, Funcs funcs, int N, int Mu, int Mv,
+		bool dataE, matrixE, statE;
+
+		public Operations(Input form, Homescreen homescreen, Funcs funcs, int N, int Mu, int Mv,
 			float Um, float Vm, float du, float dv, float u, float v,
 			float a, float Tc, float up1, float up2, float vp1, float vp2,
 			float Ap1, float Ap2, float gamma, float _mu, float H, int pq)
@@ -55,21 +63,29 @@ namespace Coursework
 			this.gamma = gamma;
 			this.funcs = funcs;
 			prevForm = form;
+			this.homescreen = homescreen;
 			M = Mu * Mv;
 
 			InitializeComponent();
 
 			log.Text = "Параметры симуляции определены";
-			generateData.Visible = true;
-			getData.Visible = true;
-			saveData.Visible = false;
-			generateMatrix.Visible = false;
-			getMatrix.Visible = true;
-			saveMatrix.Visible = false;
-			generateL.Visible = false;
-			getL.Visible = true;
-			saveL.Visible = false;
-			visualize.Visible = false;
+
+			dataE = matrixE = statE = bSaveData.Enabled
+				= bGenMatrix.Enabled = bSaveMatrix.Enabled
+				= bGenStat.Enabled = bSaveStat.Enabled
+				= bVisualize.Enabled = false;
+
+			this.BackColor = backColor;
+			panel.BackColor = panelColor;
+			log.BackColor = backColor;
+			log.ForeColor = textColor;
+
+			foreach (Button b in GetAllControlsOfType<Button>(this))
+			{
+				b.FlatAppearance.MouseOverBackColor = hoverColor;
+				b.ForeColor = textColor;
+				//		b.FlatAppearance.MouseDownBackColor = Color.FromArgb(68, 138, 162);
+			}
 		}
 
 		public async void BeginData()
@@ -91,9 +107,8 @@ namespace Coursework
 				progress.Visible = false;
 				log.Text += $"\nНаблюдения сгенерированы за "
 					+ TimeFormat(double.Parse(res[0].ToString()));
-				saveData.Visible = true;
-				generateMatrix.Visible = true;
-				getMatrix.Visible = true;
+
+				dataE = true;
 			}
 			catch (Exception e)
 			{
@@ -121,9 +136,7 @@ namespace Coursework
 
 				progress.Visible = false;
 				log.Text += $"\nВычисление матрицы закончено за {res}";
-				saveMatrix.Visible = true;
-				generateL.Visible = true;
-				getL.Visible = true;
+				matrixE = true;
 			}
 			catch (Exception e)
 			{
@@ -153,8 +166,7 @@ namespace Coursework
 				progress.Visible = false;
 				log.Text += $"\nРасчет статистики наблюдений закончен за "
 					+ TimeFormat(double.Parse(res[0].ToString()));
-				saveL.Visible = true;
-				visualize.Visible = true;
+				statE = true;
 			}
 			catch (Exception e)
 			{
@@ -195,78 +207,89 @@ namespace Coursework
 			finally { Enable(); }
 		}
 
-		private void generateData_Click(object sender, EventArgs e)
+		private void bGetData_Click(object sender, EventArgs e)
+		{
+			log.Text += "\nДобавляем файлы наблюдений";
+
+			progress.Visible = true;
+
+			if (OpenFile("Sx.txt", false, 0) && OpenFile("Sy.txt", false, 0)
+				&& OpenFile("Ux.txt", false, 0) && OpenFile("Uy.txt", false, 0)
+				&& OpenFile("YX.txt", true, M * N * pq)
+				&& OpenFile("YY.txt", true, M * N * pq))
+			{
+				progress.Visible = false;
+				log.Text += "\nФайлы наблюдений добавлены";
+				dataE = bGenMatrix.Enabled = bSaveData.Enabled = true;
+			}
+			else
+			{
+				progress.Visible = false;
+				log.Text += "\nПроизошла ошибка добавления файлов.";
+			}
+		}
+
+		private void bGetMatrix_Click(object sender, EventArgs e)
+		{
+			log.Text += "\nДобавляем файлы матрицы";
+			progress.Visible = true;
+
+			if (OpenFile("Rx.txt", true, M * M * pq)
+				&& OpenFile("Ry.txt", true, M * M * pq))
+			{
+				progress.Visible = false;
+				log.Text += "\nФайлы матрицы добавлены";
+				matrixE = bGenStat.Enabled = bSaveMatrix.Enabled = true;
+			}
+			else
+			{
+				progress.Visible = false;
+				log.Text += "\nПроизошла ошибка добавления файлов.";
+			}
+		}
+
+		private void bGetStat_Click(object sender, EventArgs e)
+		{
+			log.Text += "\nДобавляем файл статистики";
+			progress.Visible = true;
+
+			if (OpenFile("Lfile.txt", true, 9 * 9 * N / 9))
+			{
+				progress.Visible = false;
+				log.Text += "\nФайл статистики добавлен";
+				statE = bVisualize.Enabled = bSaveStat.Enabled = true;
+			}
+			else
+			{
+				progress.Visible = false;
+				log.Text += "\nПроизошла ошибка добавления файлов.";
+			}
+		}
+
+		private void bGenData_Click(object sender, EventArgs e)
 		{
 			BeginData();
 		}
 
-		private void generateMatrix_Click(object sender, EventArgs e)
+		private void bGenMatrix_Click(object sender, EventArgs e)
 		{
 			BeginMatrix();
 		}
 
-		private void generateL_Click(object sender, EventArgs e)
+		private void bGenStat_Click(object sender, EventArgs e)
 		{
 			BeginL();
 		}
 
-		private void visualize_Click(object sender, EventArgs e)
+		private void bVisualize_Click(object sender, EventArgs e)
 		{
 			BeginVis();
 		}
 
-		private void getData_Click(object sender, EventArgs e)
-		{
-			log.Text += "\nДобавляем файлы наблюдений";
-
-			if (OpenFile("Sx.txt", false, 0) && OpenFile("Sy.txt", false, 0)
-				&& OpenFile("Ux.txt", false, 0) && OpenFile("Uy.txt", false, 0)
-				&& OpenFile("YX.txt", true, M * N * pq) 
-				&& OpenFile("YY.txt", true, M * N * pq))
-			{
-				log.Text += "\nФайлы наблюдений добавлены";
-				generateMatrix.Visible = true;
-			}
-			else
-			{
-				log.Text += "\nПроизошла ошибка добавления файлов.";
-			}
-		}
-
-		private void getMatrix_Click(object sender, EventArgs e)
-		{
-			log.Text += "\nДобавляем файлы матрицы";
-
-			if (OpenFile("Rx.txt", true, M * M * pq) 
-				&& OpenFile("Ry.txt", true, M * M * pq))
-			{
-				log.Text += "\nФайлы матрицы добавлены";
-				generateL.Visible = true;
-			}
-			else
-			{
-				log.Text += "\nПроизошла ошибка добавления файлов.";
-			}
-		}
-
-		private void getL_Click(object sender, EventArgs e)
-		{
-			log.Text += "\nДобавляем файл статистики";
-
-			if (OpenFile("Lfile.txt", true, 9 * 9 * N / 9))
-			{
-				log.Text += "\nФайл статистики добавлен";
-				visualize.Visible = true;
-			}
-			else
-			{
-				log.Text += "\nПроизошла ошибка добавления файлов.";
-			}
-		}
-
-		private void saveData_Click(object sender, EventArgs e)
+		private void bSaveData_Click(object sender, EventArgs e)
 		{
 			log.Text += "\nНачинаем сохранение файлов наблюдений";
+			progress.Visible = true;
 
 			SaveFile("Sx.txt");
 			SaveFile("Sy.txt");
@@ -275,31 +298,49 @@ namespace Coursework
 			SaveFile("YX.txt");
 			SaveFile("YY.txt");
 
+			progress.Visible = false;
 			log.Text += "\nСохранение файлов наблюдений закончено";
 		}
 
-		private void saveMatrix_Click(object sender, EventArgs e)
+		private void bSaveMatrix_Click(object sender, EventArgs e)
 		{
 			log.Text += "\nНачинаем сохранение файлов матрицы";
+			progress.Visible = true;
 
 			SaveFile("Rx.txt");
 			SaveFile("Ry.txt");
 
+			progress.Visible = false;
 			log.Text += "\nСохранение файлов матрицы закончено";
 		}
 
-		private void saveL_Click(object sender, EventArgs e)
+		private void bSaveStat_Click(object sender, EventArgs e)
 		{
 			log.Text += "\nНачинаем сохранение файла статистики";
+			progress.Visible = true;
 
 			SaveFile("Lfile.txt");
 
+			progress.Visible = false;
 			log.Text += "\nСохранение файлов статистики закончено";
+		}
+
+		private void bBackToHomepage_Click(object sender, EventArgs e)
+		{
+			prevForm.Close();
+			this.Close();
+			homescreen.Show();
+		}
+
+		private void bBackToInput_Click(object sender, EventArgs e)
+		{
+			this.Close();
+			prevForm.Show();
 		}
 
 		public bool CheckData(string path, bool checkLen, int expectedLen)
 		{
-			StreamReader filestr = 
+			StreamReader filestr =
 				new StreamReader(new FileStream(path, FileMode.Open));
 
 			float num;
@@ -366,9 +407,8 @@ namespace Coursework
 				log.Text += "\nДобавляем файл " + name;
 				MessageBox.Show("Вам нужно выбрать файл " + name);
 
-				openFile.FileName = null;
 				string path;
-
+				openFile.FileName = null;
 				openFile.ShowDialog();
 				path = openFile.FileName;
 
@@ -436,9 +476,8 @@ namespace Coursework
 				log.Text += "\nСохраняем файл " + name;
 				MessageBox.Show("Вам нужно выбрать, куда сохранить файл " + name);
 
-				saveFile.FileName = null;
 				string path;
-
+				saveFile.FileName = null;
 				saveFile.ShowDialog();
 				path = saveFile.FileName;
 
@@ -505,6 +544,10 @@ namespace Coursework
 			{
 				b.Enabled = true;
 			}
+
+			bVisualize.Enabled = bSaveStat.Enabled = statE;
+			bGenStat.Enabled = bSaveMatrix.Enabled = matrixE;
+			bGenMatrix.Enabled = bSaveData.Enabled = dataE;
 		}
 
 		void Disable()
@@ -518,24 +561,14 @@ namespace Coursework
 		public string TimeFormat(double time)
 		{
 			double hours = Math.Floor(time / 3600);
-			double minutes = Math.Floor(Math.Floor((time - hours) / 60));
-			double seconds = time - hours - minutes;
+			double minutes = Math.Floor(Math.Floor((time - 3600 * hours) / 60));
+			double seconds = time - 3600 * hours - 60 * minutes;
 
 			string hrs = hours >= 10 ? $"{hours}" : $"0{hours}";
 			string mts = minutes >= 10 ? $"{minutes}" : $"0{minutes}";
 			string scs = seconds >= 10 ? $"{seconds}" : $"0{seconds}";
 
 			return hrs + ":" + mts + ":" + scs;
-		}
-
-		private void formBack_Click(object sender, EventArgs e)
-		{
-			this.Close();
-		}
-
-		private void Form2_FormClosing(object sender, FormClosingEventArgs e)
-		{
-			prevForm.Show();
 		}
 	}
 }

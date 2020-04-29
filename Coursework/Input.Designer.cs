@@ -1,6 +1,6 @@
 ﻿namespace Coursework
 {
-	partial class Form1
+	partial class Input
 	{
 		/// <summary>
 		/// Обязательная переменная конструктора.
@@ -29,8 +29,6 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			this.inputUpload = new System.Windows.Forms.Button();
-			this.inputDownload = new System.Windows.Forms.Button();
 			this.InN = new System.Windows.Forms.TextBox();
 			this.lN = new System.Windows.Forms.Label();
 			this.lMv = new System.Windows.Forms.Label();
@@ -73,58 +71,20 @@
 			this.In_mu = new System.Windows.Forms.TextBox();
 			this.InH = new System.Windows.Forms.TextBox();
 			this.Inpq = new System.Windows.Forms.TextBox();
-			this.toolTipTc = new System.Windows.Forms.ToolTip(this.components);
-			this.toolTipMu = new System.Windows.Forms.ToolTip(this.components);
-			this.toolTipMv = new System.Windows.Forms.ToolTip(this.components);
-			this.toolTipN = new System.Windows.Forms.ToolTip(this.components);
-			this.toolTipPq = new System.Windows.Forms.ToolTip(this.components);
-			this.toolTipGamma = new System.Windows.Forms.ToolTip(this.components);
-			this.toolTip_Mu = new System.Windows.Forms.ToolTip(this.components);
-			this.toolTipUm = new System.Windows.Forms.ToolTip(this.components);
-			this.toolTipVm = new System.Windows.Forms.ToolTip(this.components);
-			this.toolTipDu = new System.Windows.Forms.ToolTip(this.components);
-			this.toolTipDv = new System.Windows.Forms.ToolTip(this.components);
-			this.toolTipU = new System.Windows.Forms.ToolTip(this.components);
-			this.toolTipV = new System.Windows.Forms.ToolTip(this.components);
-			this.toolTipA = new System.Windows.Forms.ToolTip(this.components);
-			this.toolTipH = new System.Windows.Forms.ToolTip(this.components);
-			this.toolTipUp1 = new System.Windows.Forms.ToolTip(this.components);
-			this.toolTipUp2 = new System.Windows.Forms.ToolTip(this.components);
-			this.toolTipVp1 = new System.Windows.Forms.ToolTip(this.components);
-			this.toolTipVp2 = new System.Windows.Forms.ToolTip(this.components);
-			this.toolTipAp1 = new System.Windows.Forms.ToolTip(this.components);
-			this.toolTipAp2 = new System.Windows.Forms.ToolTip(this.components);
-			this.proceed = new System.Windows.Forms.Button();
 			this.openFileInput = new System.Windows.Forms.OpenFileDialog();
 			this.saveFileInput = new System.Windows.Forms.SaveFileDialog();
-			this.info = new System.Windows.Forms.Button();
+			this.bExit = new System.Windows.Forms.Button();
+			this.bProceed = new System.Windows.Forms.Button();
+			this.bSave = new System.Windows.Forms.Button();
+			this.bGet = new System.Windows.Forms.Button();
+			this.panel = new System.Windows.Forms.Panel();
+			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+			this.panel.SuspendLayout();
 			this.SuspendLayout();
-			// 
-			// inputUpload
-			// 
-			this.inputUpload.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.inputUpload.Location = new System.Drawing.Point(380, 25);
-			this.inputUpload.Name = "inputUpload";
-			this.inputUpload.Size = new System.Drawing.Size(200, 85);
-			this.inputUpload.TabIndex = 0;
-			this.inputUpload.Text = "Загрузить параметры симуляции из файла";
-			this.inputUpload.UseVisualStyleBackColor = true;
-			this.inputUpload.Click += new System.EventHandler(this.inputUpload_Click);
-			// 
-			// inputDownload
-			// 
-			this.inputDownload.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.inputDownload.Location = new System.Drawing.Point(700, 25);
-			this.inputDownload.Name = "inputDownload";
-			this.inputDownload.Size = new System.Drawing.Size(200, 85);
-			this.inputDownload.TabIndex = 8;
-			this.inputDownload.Text = "Сохранить параметры симуляции в файл";
-			this.inputDownload.UseVisualStyleBackColor = true;
-			this.inputDownload.Click += new System.EventHandler(this.inputDownload_Click);
 			// 
 			// InN
 			// 
-			this.InN.Location = new System.Drawing.Point(380, 150);
+			this.InN.Location = new System.Drawing.Point(32, 699);
 			this.InN.Name = "InN";
 			this.InN.Size = new System.Drawing.Size(100, 26);
 			this.InN.TabIndex = 9;
@@ -132,7 +92,8 @@
 			// 
 			// lN
 			// 
-			this.lN.Location = new System.Drawing.Point(490, 150);
+			this.lN.Font = new System.Drawing.Font("Century Gothic", 8F);
+			this.lN.Location = new System.Drawing.Point(142, 699);
 			this.lN.Name = "lN";
 			this.lN.Size = new System.Drawing.Size(200, 100);
 			this.lN.TabIndex = 10;
@@ -141,7 +102,8 @@
 			// lMv
 			// 
 			this.lMv.BackColor = System.Drawing.Color.Transparent;
-			this.lMv.Location = new System.Drawing.Point(170, 255);
+			this.lMv.Font = new System.Drawing.Font("Century Gothic", 8F);
+			this.lMv.Location = new System.Drawing.Point(142, 174);
 			this.lMv.Name = "lMv";
 			this.lMv.Size = new System.Drawing.Size(200, 100);
 			this.lMv.TabIndex = 11;
@@ -150,7 +112,8 @@
 			// lMu
 			// 
 			this.lMu.BackColor = System.Drawing.Color.Transparent;
-			this.lMu.Location = new System.Drawing.Point(170, 150);
+			this.lMu.Font = new System.Drawing.Font("Century Gothic", 8F);
+			this.lMu.Location = new System.Drawing.Point(142, 69);
 			this.lMu.Name = "lMu";
 			this.lMu.Size = new System.Drawing.Size(200, 100);
 			this.lMu.TabIndex = 12;
@@ -158,7 +121,8 @@
 			// 
 			// lUm
 			// 
-			this.lUm.Location = new System.Drawing.Point(170, 360);
+			this.lUm.Font = new System.Drawing.Font("Century Gothic", 8F);
+			this.lUm.Location = new System.Drawing.Point(142, 279);
 			this.lUm.Name = "lUm";
 			this.lUm.Size = new System.Drawing.Size(200, 100);
 			this.lUm.TabIndex = 13;
@@ -166,7 +130,8 @@
 			// 
 			// lVm
 			// 
-			this.lVm.Location = new System.Drawing.Point(170, 465);
+			this.lVm.Font = new System.Drawing.Font("Century Gothic", 8F);
+			this.lVm.Location = new System.Drawing.Point(142, 384);
 			this.lVm.Name = "lVm";
 			this.lVm.Size = new System.Drawing.Size(200, 100);
 			this.lVm.TabIndex = 14;
@@ -174,7 +139,8 @@
 			// 
 			// ldu
 			// 
-			this.ldu.Location = new System.Drawing.Point(170, 570);
+			this.ldu.Font = new System.Drawing.Font("Century Gothic", 8F);
+			this.ldu.Location = new System.Drawing.Point(142, 489);
 			this.ldu.Name = "ldu";
 			this.ldu.Size = new System.Drawing.Size(200, 100);
 			this.ldu.TabIndex = 15;
@@ -182,7 +148,8 @@
 			// 
 			// ldv
 			// 
-			this.ldv.Location = new System.Drawing.Point(170, 675);
+			this.ldv.Font = new System.Drawing.Font("Century Gothic", 8F);
+			this.ldv.Location = new System.Drawing.Point(142, 594);
 			this.ldv.Name = "ldv";
 			this.ldv.Size = new System.Drawing.Size(200, 100);
 			this.ldv.TabIndex = 16;
@@ -190,7 +157,8 @@
 			// 
 			// lu
 			// 
-			this.lu.Location = new System.Drawing.Point(810, 150);
+			this.lu.Font = new System.Drawing.Font("Century Gothic", 8F);
+			this.lu.Location = new System.Drawing.Point(482, 69);
 			this.lu.Name = "lu";
 			this.lu.Size = new System.Drawing.Size(200, 100);
 			this.lu.TabIndex = 17;
@@ -198,7 +166,8 @@
 			// 
 			// lv
 			// 
-			this.lv.Location = new System.Drawing.Point(810, 255);
+			this.lv.Font = new System.Drawing.Font("Century Gothic", 8F);
+			this.lv.Location = new System.Drawing.Point(482, 174);
 			this.lv.Name = "lv";
 			this.lv.Size = new System.Drawing.Size(200, 100);
 			this.lv.TabIndex = 18;
@@ -206,7 +175,8 @@
 			// 
 			// la
 			// 
-			this.la.Location = new System.Drawing.Point(810, 360);
+			this.la.Font = new System.Drawing.Font("Century Gothic", 8F);
+			this.la.Location = new System.Drawing.Point(482, 279);
 			this.la.Name = "la";
 			this.la.Size = new System.Drawing.Size(200, 100);
 			this.la.TabIndex = 19;
@@ -214,7 +184,8 @@
 			// 
 			// lTc
 			// 
-			this.lTc.Location = new System.Drawing.Point(810, 465);
+			this.lTc.Font = new System.Drawing.Font("Century Gothic", 8F);
+			this.lTc.Location = new System.Drawing.Point(482, 384);
 			this.lTc.Name = "lTc";
 			this.lTc.Size = new System.Drawing.Size(200, 100);
 			this.lTc.TabIndex = 20;
@@ -222,7 +193,8 @@
 			// 
 			// lup1
 			// 
-			this.lup1.Location = new System.Drawing.Point(1130, 150);
+			this.lup1.Font = new System.Drawing.Font("Century Gothic", 8F);
+			this.lup1.Location = new System.Drawing.Point(822, 69);
 			this.lup1.Name = "lup1";
 			this.lup1.Size = new System.Drawing.Size(200, 100);
 			this.lup1.TabIndex = 21;
@@ -230,7 +202,8 @@
 			// 
 			// lup2
 			// 
-			this.lup2.Location = new System.Drawing.Point(1130, 255);
+			this.lup2.Font = new System.Drawing.Font("Century Gothic", 8F);
+			this.lup2.Location = new System.Drawing.Point(822, 174);
 			this.lup2.Name = "lup2";
 			this.lup2.Size = new System.Drawing.Size(200, 100);
 			this.lup2.TabIndex = 22;
@@ -238,7 +211,8 @@
 			// 
 			// lvp1
 			// 
-			this.lvp1.Location = new System.Drawing.Point(1130, 360);
+			this.lvp1.Font = new System.Drawing.Font("Century Gothic", 8F);
+			this.lvp1.Location = new System.Drawing.Point(822, 279);
 			this.lvp1.Name = "lvp1";
 			this.lvp1.Size = new System.Drawing.Size(200, 100);
 			this.lvp1.TabIndex = 23;
@@ -246,7 +220,8 @@
 			// 
 			// lvp2
 			// 
-			this.lvp2.Location = new System.Drawing.Point(1130, 465);
+			this.lvp2.Font = new System.Drawing.Font("Century Gothic", 8F);
+			this.lvp2.Location = new System.Drawing.Point(822, 384);
 			this.lvp2.Name = "lvp2";
 			this.lvp2.Size = new System.Drawing.Size(200, 100);
 			this.lvp2.TabIndex = 24;
@@ -254,7 +229,8 @@
 			// 
 			// lAp1
 			// 
-			this.lAp1.Location = new System.Drawing.Point(1130, 570);
+			this.lAp1.Font = new System.Drawing.Font("Century Gothic", 8F);
+			this.lAp1.Location = new System.Drawing.Point(822, 489);
 			this.lAp1.Name = "lAp1";
 			this.lAp1.Size = new System.Drawing.Size(200, 100);
 			this.lAp1.TabIndex = 25;
@@ -262,7 +238,8 @@
 			// 
 			// lAp2
 			// 
-			this.lAp2.Location = new System.Drawing.Point(1130, 675);
+			this.lAp2.Font = new System.Drawing.Font("Century Gothic", 8F);
+			this.lAp2.Location = new System.Drawing.Point(822, 594);
 			this.lAp2.Name = "lAp2";
 			this.lAp2.Size = new System.Drawing.Size(200, 100);
 			this.lAp2.TabIndex = 26;
@@ -270,7 +247,8 @@
 			// 
 			// lgamma
 			// 
-			this.lgamma.Location = new System.Drawing.Point(490, 465);
+			this.lgamma.Font = new System.Drawing.Font("Century Gothic", 8F);
+			this.lgamma.Location = new System.Drawing.Point(482, 696);
 			this.lgamma.Name = "lgamma";
 			this.lgamma.Size = new System.Drawing.Size(200, 100);
 			this.lgamma.TabIndex = 27;
@@ -278,7 +256,8 @@
 			// 
 			// l_mu
 			// 
-			this.l_mu.Location = new System.Drawing.Point(490, 360);
+			this.l_mu.Font = new System.Drawing.Font("Century Gothic", 8F);
+			this.l_mu.Location = new System.Drawing.Point(482, 594);
 			this.l_mu.Name = "l_mu";
 			this.l_mu.Size = new System.Drawing.Size(200, 100);
 			this.l_mu.TabIndex = 28;
@@ -286,7 +265,8 @@
 			// 
 			// lH
 			// 
-			this.lH.Location = new System.Drawing.Point(490, 570);
+			this.lH.Font = new System.Drawing.Font("Century Gothic", 8F);
+			this.lH.Location = new System.Drawing.Point(822, 699);
 			this.lH.Name = "lH";
 			this.lH.Size = new System.Drawing.Size(200, 100);
 			this.lH.TabIndex = 29;
@@ -294,7 +274,7 @@
 			// 
 			// InMu
 			// 
-			this.InMu.Location = new System.Drawing.Point(60, 150);
+			this.InMu.Location = new System.Drawing.Point(32, 69);
 			this.InMu.Name = "InMu";
 			this.InMu.Size = new System.Drawing.Size(100, 26);
 			this.InMu.TabIndex = 30;
@@ -302,7 +282,7 @@
 			// 
 			// InMv
 			// 
-			this.InMv.Location = new System.Drawing.Point(60, 255);
+			this.InMv.Location = new System.Drawing.Point(32, 174);
 			this.InMv.Name = "InMv";
 			this.InMv.Size = new System.Drawing.Size(100, 26);
 			this.InMv.TabIndex = 31;
@@ -310,7 +290,7 @@
 			// 
 			// InUm
 			// 
-			this.InUm.Location = new System.Drawing.Point(60, 360);
+			this.InUm.Location = new System.Drawing.Point(32, 279);
 			this.InUm.Name = "InUm";
 			this.InUm.Size = new System.Drawing.Size(100, 26);
 			this.InUm.TabIndex = 32;
@@ -318,7 +298,7 @@
 			// 
 			// InVm
 			// 
-			this.InVm.Location = new System.Drawing.Point(60, 465);
+			this.InVm.Location = new System.Drawing.Point(32, 384);
 			this.InVm.Name = "InVm";
 			this.InVm.Size = new System.Drawing.Size(100, 26);
 			this.InVm.TabIndex = 33;
@@ -326,7 +306,7 @@
 			// 
 			// Indu
 			// 
-			this.Indu.Location = new System.Drawing.Point(60, 570);
+			this.Indu.Location = new System.Drawing.Point(32, 489);
 			this.Indu.Name = "Indu";
 			this.Indu.Size = new System.Drawing.Size(100, 26);
 			this.Indu.TabIndex = 34;
@@ -334,7 +314,7 @@
 			// 
 			// Indv
 			// 
-			this.Indv.Location = new System.Drawing.Point(60, 675);
+			this.Indv.Location = new System.Drawing.Point(32, 594);
 			this.Indv.Name = "Indv";
 			this.Indv.Size = new System.Drawing.Size(100, 26);
 			this.Indv.TabIndex = 35;
@@ -342,7 +322,7 @@
 			// 
 			// Inu
 			// 
-			this.Inu.Location = new System.Drawing.Point(700, 150);
+			this.Inu.Location = new System.Drawing.Point(372, 69);
 			this.Inu.Name = "Inu";
 			this.Inu.Size = new System.Drawing.Size(100, 26);
 			this.Inu.TabIndex = 36;
@@ -350,7 +330,7 @@
 			// 
 			// Inv
 			// 
-			this.Inv.Location = new System.Drawing.Point(700, 255);
+			this.Inv.Location = new System.Drawing.Point(372, 174);
 			this.Inv.Name = "Inv";
 			this.Inv.Size = new System.Drawing.Size(100, 26);
 			this.Inv.TabIndex = 37;
@@ -358,7 +338,7 @@
 			// 
 			// Ina
 			// 
-			this.Ina.Location = new System.Drawing.Point(700, 360);
+			this.Ina.Location = new System.Drawing.Point(372, 279);
 			this.Ina.Name = "Ina";
 			this.Ina.Size = new System.Drawing.Size(100, 26);
 			this.Ina.TabIndex = 38;
@@ -366,7 +346,8 @@
 			// 
 			// lpq
 			// 
-			this.lpq.Location = new System.Drawing.Point(490, 255);
+			this.lpq.Font = new System.Drawing.Font("Century Gothic", 8F);
+			this.lpq.Location = new System.Drawing.Point(482, 489);
 			this.lpq.Name = "lpq";
 			this.lpq.Size = new System.Drawing.Size(200, 100);
 			this.lpq.TabIndex = 39;
@@ -374,7 +355,7 @@
 			// 
 			// InTc
 			// 
-			this.InTc.Location = new System.Drawing.Point(700, 465);
+			this.InTc.Location = new System.Drawing.Point(372, 384);
 			this.InTc.Name = "InTc";
 			this.InTc.Size = new System.Drawing.Size(100, 26);
 			this.InTc.TabIndex = 40;
@@ -382,7 +363,7 @@
 			// 
 			// Inup1
 			// 
-			this.Inup1.Location = new System.Drawing.Point(1020, 150);
+			this.Inup1.Location = new System.Drawing.Point(712, 69);
 			this.Inup1.Name = "Inup1";
 			this.Inup1.Size = new System.Drawing.Size(100, 26);
 			this.Inup1.TabIndex = 41;
@@ -390,7 +371,7 @@
 			// 
 			// Inup2
 			// 
-			this.Inup2.Location = new System.Drawing.Point(1020, 255);
+			this.Inup2.Location = new System.Drawing.Point(712, 174);
 			this.Inup2.Name = "Inup2";
 			this.Inup2.Size = new System.Drawing.Size(100, 26);
 			this.Inup2.TabIndex = 42;
@@ -398,7 +379,7 @@
 			// 
 			// Invp1
 			// 
-			this.Invp1.Location = new System.Drawing.Point(1020, 360);
+			this.Invp1.Location = new System.Drawing.Point(712, 279);
 			this.Invp1.Name = "Invp1";
 			this.Invp1.Size = new System.Drawing.Size(100, 26);
 			this.Invp1.TabIndex = 43;
@@ -406,7 +387,7 @@
 			// 
 			// Invp2
 			// 
-			this.Invp2.Location = new System.Drawing.Point(1020, 465);
+			this.Invp2.Location = new System.Drawing.Point(712, 384);
 			this.Invp2.Name = "Invp2";
 			this.Invp2.Size = new System.Drawing.Size(100, 26);
 			this.Invp2.TabIndex = 44;
@@ -414,7 +395,7 @@
 			// 
 			// InAp1
 			// 
-			this.InAp1.Location = new System.Drawing.Point(1020, 570);
+			this.InAp1.Location = new System.Drawing.Point(712, 489);
 			this.InAp1.Name = "InAp1";
 			this.InAp1.Size = new System.Drawing.Size(100, 26);
 			this.InAp1.TabIndex = 45;
@@ -422,7 +403,7 @@
 			// 
 			// InAp2
 			// 
-			this.InAp2.Location = new System.Drawing.Point(1020, 675);
+			this.InAp2.Location = new System.Drawing.Point(712, 594);
 			this.InAp2.Name = "InAp2";
 			this.InAp2.Size = new System.Drawing.Size(100, 26);
 			this.InAp2.TabIndex = 46;
@@ -430,7 +411,7 @@
 			// 
 			// Ingamma
 			// 
-			this.Ingamma.Location = new System.Drawing.Point(380, 465);
+			this.Ingamma.Location = new System.Drawing.Point(372, 699);
 			this.Ingamma.Name = "Ingamma";
 			this.Ingamma.Size = new System.Drawing.Size(100, 26);
 			this.Ingamma.TabIndex = 47;
@@ -438,7 +419,7 @@
 			// 
 			// In_mu
 			// 
-			this.In_mu.Location = new System.Drawing.Point(380, 360);
+			this.In_mu.Location = new System.Drawing.Point(372, 594);
 			this.In_mu.Name = "In_mu";
 			this.In_mu.Size = new System.Drawing.Size(100, 26);
 			this.In_mu.TabIndex = 48;
@@ -446,7 +427,7 @@
 			// 
 			// InH
 			// 
-			this.InH.Location = new System.Drawing.Point(380, 570);
+			this.InH.Location = new System.Drawing.Point(712, 699);
 			this.InH.Name = "InH";
 			this.InH.Size = new System.Drawing.Size(100, 26);
 			this.InH.TabIndex = 49;
@@ -454,21 +435,11 @@
 			// 
 			// Inpq
 			// 
-			this.Inpq.Location = new System.Drawing.Point(380, 255);
+			this.Inpq.Location = new System.Drawing.Point(372, 489);
 			this.Inpq.Name = "Inpq";
 			this.Inpq.Size = new System.Drawing.Size(100, 26);
 			this.Inpq.TabIndex = 50;
 			this.Inpq.Leave += new System.EventHandler(this.Inpq_Leave);
-			// 
-			// proceed
-			// 
-			this.proceed.Location = new System.Drawing.Point(1020, 25);
-			this.proceed.Name = "proceed";
-			this.proceed.Size = new System.Drawing.Size(200, 85);
-			this.proceed.TabIndex = 51;
-			this.proceed.Text = "перейти к созданию наблюдений";
-			this.proceed.UseVisualStyleBackColor = true;
-			this.proceed.Click += new System.EventHandler(this.proceed_Click);
 			// 
 			// openFileInput
 			// 
@@ -480,24 +451,97 @@
 			this.saveFileInput.DefaultExt = "txt";
 			this.saveFileInput.Filter = "TXT files (*.txt)|*.txt";
 			// 
-			// info
+			// bExit
 			// 
-			this.info.Location = new System.Drawing.Point(60, 25);
-			this.info.Name = "info";
-			this.info.Size = new System.Drawing.Size(200, 85);
-			this.info.TabIndex = 52;
-			this.info.Text = "информация";
-			this.info.UseVisualStyleBackColor = true;
-			this.info.Click += new System.EventHandler(this.info_Click);
+			this.bExit.BackColor = System.Drawing.Color.Transparent;
+			this.bExit.FlatAppearance.BorderSize = 0;
+			this.bExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+			this.bExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.bExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.bExit.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.bExit.Location = new System.Drawing.Point(0, 600);
+			this.bExit.Margin = new System.Windows.Forms.Padding(0);
+			this.bExit.Name = "bExit";
+			this.bExit.Size = new System.Drawing.Size(300, 200);
+			this.bExit.TabIndex = 1;
+			this.bExit.Text = "Назад";
+			this.bExit.UseVisualStyleBackColor = false;
+			this.bExit.Click += new System.EventHandler(this.bExit_Click);
 			// 
-			// Form1
+			// bProceed
+			// 
+			this.bProceed.BackColor = System.Drawing.Color.Transparent;
+			this.bProceed.FlatAppearance.BorderSize = 0;
+			this.bProceed.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+			this.bProceed.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.bProceed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.bProceed.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.bProceed.Location = new System.Drawing.Point(0, 400);
+			this.bProceed.Margin = new System.Windows.Forms.Padding(0);
+			this.bProceed.Name = "bProceed";
+			this.bProceed.Size = new System.Drawing.Size(300, 200);
+			this.bProceed.TabIndex = 2;
+			this.bProceed.Text = "Перейти к наблюдениям";
+			this.bProceed.UseVisualStyleBackColor = false;
+			this.bProceed.Click += new System.EventHandler(this.bProceed_Click);
+			// 
+			// bSave
+			// 
+			this.bSave.BackColor = System.Drawing.Color.Transparent;
+			this.bSave.FlatAppearance.BorderSize = 0;
+			this.bSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+			this.bSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.bSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.bSave.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.bSave.Location = new System.Drawing.Point(0, 200);
+			this.bSave.Margin = new System.Windows.Forms.Padding(0);
+			this.bSave.Name = "bSave";
+			this.bSave.Size = new System.Drawing.Size(300, 200);
+			this.bSave.TabIndex = 3;
+			this.bSave.Text = "Сохранить параметры симуляции";
+			this.bSave.UseVisualStyleBackColor = false;
+			this.bSave.Click += new System.EventHandler(this.bSave_Click);
+			// 
+			// bGet
+			// 
+			this.bGet.BackColor = System.Drawing.Color.Transparent;
+			this.bGet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+			this.bGet.FlatAppearance.BorderSize = 0;
+			this.bGet.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+			this.bGet.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.bGet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.bGet.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.bGet.Location = new System.Drawing.Point(0, 0);
+			this.bGet.Margin = new System.Windows.Forms.Padding(0);
+			this.bGet.Name = "bGet";
+			this.bGet.Size = new System.Drawing.Size(300, 200);
+			this.bGet.TabIndex = 4;
+			this.bGet.Text = "Загрузить параметры симуляции";
+			this.bGet.UseVisualStyleBackColor = false;
+			this.bGet.Click += new System.EventHandler(this.bGet_Click);
+			// 
+			// panel
+			// 
+			this.panel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.panel.AutoSize = true;
+			this.panel.BackColor = System.Drawing.Color.LightSlateGray;
+			this.panel.Controls.Add(this.bGet);
+			this.panel.Controls.Add(this.bSave);
+			this.panel.Controls.Add(this.bProceed);
+			this.panel.Controls.Add(this.bExit);
+			this.panel.Location = new System.Drawing.Point(1060, 0);
+			this.panel.Margin = new System.Windows.Forms.Padding(0);
+			this.panel.Name = "panel";
+			this.panel.Size = new System.Drawing.Size(300, 800);
+			this.panel.TabIndex = 52;
+			// 
+			// Input
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSize = true;
-			this.ClientSize = new System.Drawing.Size(1338, 740);
-			this.Controls.Add(this.info);
-			this.Controls.Add(this.proceed);
+			this.ClientSize = new System.Drawing.Size(1360, 800);
+			this.Controls.Add(this.panel);
 			this.Controls.Add(this.Inpq);
 			this.Controls.Add(this.InH);
 			this.Controls.Add(this.In_mu);
@@ -540,19 +584,18 @@
 			this.Controls.Add(this.lMv);
 			this.Controls.Add(this.lN);
 			this.Controls.Add(this.InN);
-			this.Controls.Add(this.inputDownload);
-			this.Controls.Add(this.inputUpload);
-			this.Name = "Form1";
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			this.Name = "Input";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Form1";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Input_FormClosing);
+			this.panel.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
 		}
 
 		#endregion
-
-		private System.Windows.Forms.Button inputUpload;
-		private System.Windows.Forms.Button inputDownload;
 		private System.Windows.Forms.TextBox InN;
 		private System.Windows.Forms.Label lN;
 		private System.Windows.Forms.Label lMv;
@@ -595,31 +638,14 @@
 		private System.Windows.Forms.TextBox In_mu;
 		private System.Windows.Forms.TextBox InH;
 		private System.Windows.Forms.TextBox Inpq;
-		private System.Windows.Forms.ToolTip toolTipTc;
-		private System.Windows.Forms.ToolTip toolTipMu;
-		private System.Windows.Forms.ToolTip toolTipMv;
-		private System.Windows.Forms.ToolTip toolTipN;
-		private System.Windows.Forms.ToolTip toolTipPq;
-		private System.Windows.Forms.ToolTip toolTipGamma;
-		private System.Windows.Forms.ToolTip toolTip_Mu;
-		private System.Windows.Forms.ToolTip toolTipUm;
-		private System.Windows.Forms.ToolTip toolTipVm;
-		private System.Windows.Forms.ToolTip toolTipDu;
-		private System.Windows.Forms.ToolTip toolTipDv;
-		private System.Windows.Forms.ToolTip toolTipU;
-		private System.Windows.Forms.ToolTip toolTipV;
-		private System.Windows.Forms.ToolTip toolTipA;
-		private System.Windows.Forms.ToolTip toolTipH;
-		private System.Windows.Forms.ToolTip toolTipUp1;
-		private System.Windows.Forms.ToolTip toolTipUp2;
-		private System.Windows.Forms.ToolTip toolTipVp1;
-		private System.Windows.Forms.ToolTip toolTipVp2;
-		private System.Windows.Forms.ToolTip toolTipAp1;
-		private System.Windows.Forms.ToolTip toolTipAp2;
-		private System.Windows.Forms.Button proceed;
 		private System.Windows.Forms.OpenFileDialog openFileInput;
 		private System.Windows.Forms.SaveFileDialog saveFileInput;
-		private System.Windows.Forms.Button info;
+		private System.Windows.Forms.Button bExit;
+		private System.Windows.Forms.Button bProceed;
+		private System.Windows.Forms.Button bSave;
+		private System.Windows.Forms.Button bGet;
+		private System.Windows.Forms.Panel panel;
+		private System.Windows.Forms.ToolTip toolTip;
 	}
 }
 

@@ -117,76 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="toolTipTc.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="toolTipMu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>154, 17</value>
-  </metadata>
-  <metadata name="toolTipMv.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>283, 17</value>
-  </metadata>
-  <metadata name="toolTipN.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>412, 17</value>
-  </metadata>
-  <metadata name="toolTipPq.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>541, 17</value>
-  </metadata>
-  <metadata name="toolTipGamma.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>670, 17</value>
-  </metadata>
-  <metadata name="toolTip_Mu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>799, 17</value>
-  </metadata>
-  <metadata name="toolTipUm.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>928, 17</value>
-  </metadata>
-  <metadata name="toolTipVm.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1076, 1</value>
-  </metadata>
-  <metadata name="toolTipDu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1205, 1</value>
-  </metadata>
-  <metadata name="toolTipDv.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 49</value>
-  </metadata>
-  <metadata name="toolTipU.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>146, 33</value>
-  </metadata>
-  <metadata name="toolTipV.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>275, 33</value>
-  </metadata>
-  <metadata name="toolTipA.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>404, 33</value>
-  </metadata>
-  <metadata name="toolTipH.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>533, 33</value>
-  </metadata>
-  <metadata name="toolTipUp1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>662, 33</value>
-  </metadata>
-  <metadata name="toolTipUp2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>791, 33</value>
-  </metadata>
-  <metadata name="toolTipVp1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>920, 33</value>
-  </metadata>
-  <metadata name="toolTipVp2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1059, 49</value>
-  </metadata>
-  <metadata name="toolTipAp1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1211, 1</value>
-  </metadata>
-  <metadata name="toolTipAp2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 49</value>
-  </metadata>
-  <metadata name="openFileInput.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1211, 49</value>
-  </metadata>
-  <metadata name="saveFileInput.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 97</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>333</value>
-  </metadata>
+  <data name="info.Text" xml:space="preserve">
+    <value>Это программа для симуляции и визуализации работы радиолокатора. 
+Она разделена на несколько стадий: задание параметров симуляции,создание наблюдений, расчет корреляционной матрицы, формирование статистики и визуализация.
+На всех этапах кроме последнего генерируются файлы, которые можно сохранить в какое-то удобное место, кроме того, этап можно пропустить при условии, что у вас есть файлы, которые должны быть сформированы на пропускаемом этапе и файл с параметрами симуляции.
+Если файлы не будут согласованы друг с другом или с параметрами симуляции, будет выведено сообщение об ошибке, и вы сможете загрузить другие файлы, либо сгенерировать их.
+Также при противоречивых или некорректных для симуляции параметрах могут быть получены некорректные результаты, но всегда есть возможность задать их заново и повторить работу программы.
+Рекомендуется не задавать слишком большие числа, потому что тогда программа может работать чудовищно долго.</value>
+  </data>
 </root>

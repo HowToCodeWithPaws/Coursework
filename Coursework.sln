@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coursework", "Coursework\Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadarLib", "RadarLib\RadarLib.csproj", "{161F82C7-13EA-430F-897C-460B49E1B32F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{B70E090B-AE32-426C-9A78-6D04DA004C1A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,14 +31,6 @@ Global
 		{161F82C7-13EA-430F-897C-460B49E1B32F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{161F82C7-13EA-430F-897C-460B49E1B32F}.Release|x64.ActiveCfg = Release|x64
 		{161F82C7-13EA-430F-897C-460B49E1B32F}.Release|x64.Build.0 = Release|x64
-		{B70E090B-AE32-426C-9A78-6D04DA004C1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B70E090B-AE32-426C-9A78-6D04DA004C1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B70E090B-AE32-426C-9A78-6D04DA004C1A}.Debug|x64.ActiveCfg = Debug|x64
-		{B70E090B-AE32-426C-9A78-6D04DA004C1A}.Debug|x64.Build.0 = Debug|x64
-		{B70E090B-AE32-426C-9A78-6D04DA004C1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B70E090B-AE32-426C-9A78-6D04DA004C1A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B70E090B-AE32-426C-9A78-6D04DA004C1A}.Release|x64.ActiveCfg = Release|x64
-		{B70E090B-AE32-426C-9A78-6D04DA004C1A}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

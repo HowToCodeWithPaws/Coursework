@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.progress = new System.Windows.Forms.ProgressBar();
 			this.openFile = new System.Windows.Forms.OpenFileDialog();
 			this.log = new System.Windows.Forms.RichTextBox();
@@ -45,6 +46,7 @@
 			this.bGetData = new System.Windows.Forms.Button();
 			this.bGenData = new System.Windows.Forms.Button();
 			this.bBackToHomepage = new System.Windows.Forms.Button();
+			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
 			this.panel.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -114,7 +116,7 @@
 			this.bBackToInput.Name = "bBackToInput";
 			this.bBackToInput.Size = new System.Drawing.Size(200, 200);
 			this.bBackToInput.TabIndex = 54;
-			this.bBackToInput.Text = "Назад";
+			this.bBackToInput.Text = "Вернуться к параметрам симуляции";
 			this.bBackToInput.UseVisualStyleBackColor = false;
 			this.bBackToInput.Click += new System.EventHandler(this.bBackToInput_Click);
 			// 
@@ -313,7 +315,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSize = true;
-			this.ClientSize = new System.Drawing.Size(1360, 800);
+			this.ClientSize = new System.Drawing.Size(1360, 673);
 			this.Controls.Add(this.panel);
 			this.Controls.Add(this.log);
 			this.Controls.Add(this.progress);
@@ -344,5 +346,6 @@
 		private System.Windows.Forms.Button bGetStat;
 		private System.Windows.Forms.Button bGenMatrix;
 		private System.Windows.Forms.Button bGenStat;
+		private System.Windows.Forms.ToolTip toolTip;
 	}
 }

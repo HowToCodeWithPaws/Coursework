@@ -35,7 +35,6 @@
 			this.saveFile = new System.Windows.Forms.SaveFileDialog();
 			this.panel = new System.Windows.Forms.Panel();
 			this.bBackToInput = new System.Windows.Forms.Button();
-			this.bVisualize = new System.Windows.Forms.Button();
 			this.bSaveMatrix = new System.Windows.Forms.Button();
 			this.bSaveStat = new System.Windows.Forms.Button();
 			this.bGetMatrix = new System.Windows.Forms.Button();
@@ -47,6 +46,7 @@
 			this.bGenData = new System.Windows.Forms.Button();
 			this.bBackToHomepage = new System.Windows.Forms.Button();
 			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+			this.bVisualize = new System.Windows.Forms.Button();
 			this.panel.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -120,23 +120,6 @@
 			this.bBackToInput.UseVisualStyleBackColor = false;
 			this.bBackToInput.Click += new System.EventHandler(this.bBackToInput_Click);
 			// 
-			// bVisualize
-			// 
-			this.bVisualize.BackColor = System.Drawing.Color.Transparent;
-			this.bVisualize.FlatAppearance.BorderSize = 0;
-			this.bVisualize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-			this.bVisualize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-			this.bVisualize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.bVisualize.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.bVisualize.Location = new System.Drawing.Point(0, 600);
-			this.bVisualize.Margin = new System.Windows.Forms.Padding(0);
-			this.bVisualize.Name = "bVisualize";
-			this.bVisualize.Size = new System.Drawing.Size(200, 200);
-			this.bVisualize.TabIndex = 11;
-			this.bVisualize.Text = "Визуализировать полученные данные";
-			this.bVisualize.UseVisualStyleBackColor = false;
-			this.bVisualize.Click += new System.EventHandler(this.bVisualize_Click);
-			// 
 			// bSaveMatrix
 			// 
 			this.bSaveMatrix.BackColor = System.Drawing.Color.Transparent;
@@ -203,7 +186,7 @@
 			this.bGetStat.Name = "bGetStat";
 			this.bGetStat.Size = new System.Drawing.Size(200, 200);
 			this.bGetStat.TabIndex = 7;
-			this.bGetStat.Text = "Загрузить файл статистики наблюдений";
+			this.bGetStat.Text = "Загрузить и визуализировать файл статистики наблюдений";
 			this.bGetStat.UseVisualStyleBackColor = false;
 			this.bGetStat.Click += new System.EventHandler(this.bGetStat_Click);
 			// 
@@ -237,7 +220,7 @@
 			this.bGenStat.Name = "bGenStat";
 			this.bGenStat.Size = new System.Drawing.Size(200, 200);
 			this.bGenStat.TabIndex = 5;
-			this.bGenStat.Text = "Сгенерировать статистику наблюдений";
+			this.bGenStat.Text = "Сгенерировать и визуализировать статистику наблюдений";
 			this.bGenStat.UseVisualStyleBackColor = false;
 			this.bGenStat.Click += new System.EventHandler(this.bGenStat_Click);
 			// 
@@ -310,6 +293,23 @@
 			this.bBackToHomepage.UseVisualStyleBackColor = false;
 			this.bBackToHomepage.Click += new System.EventHandler(this.bBackToHomepage_Click);
 			// 
+			// bVisualize
+			// 
+			this.bVisualize.BackColor = System.Drawing.Color.Transparent;
+			this.bVisualize.FlatAppearance.BorderSize = 0;
+			this.bVisualize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+			this.bVisualize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.bVisualize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.bVisualize.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.bVisualize.Location = new System.Drawing.Point(0, 600);
+			this.bVisualize.Margin = new System.Windows.Forms.Padding(0);
+			this.bVisualize.Name = "bVisualize";
+			this.bVisualize.Size = new System.Drawing.Size(200, 200);
+			this.bVisualize.TabIndex = 11;
+			this.bVisualize.Text = "Визуализировать полученные данные";
+			this.bVisualize.UseVisualStyleBackColor = false;
+			this.bVisualize.Click += new System.EventHandler(this.bVisualize_Click);
+			// 
 			// Operations
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -339,7 +339,6 @@
 		private System.Windows.Forms.Button bGenData;
 		private System.Windows.Forms.Button bBackToHomepage;
 		private System.Windows.Forms.Button bBackToInput;
-		private System.Windows.Forms.Button bVisualize;
 		private System.Windows.Forms.Button bSaveMatrix;
 		private System.Windows.Forms.Button bSaveStat;
 		private System.Windows.Forms.Button bGetMatrix;
@@ -347,5 +346,6 @@
 		private System.Windows.Forms.Button bGenMatrix;
 		private System.Windows.Forms.Button bGenStat;
 		private System.Windows.Forms.ToolTip toolTip;
+		private System.Windows.Forms.Button bVisualize;
 	}
 }

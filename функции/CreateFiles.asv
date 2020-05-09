@@ -1,24 +1,21 @@
  function Toc=CreateFiles(N,Mu,Mv,Um,Vm,du,dv,u,v,a,Tc,up1,up2,vp1,vp2,Ap1,Ap2,gamma,mu)
 tic;
 
-up = [up1 up2];
-vp = [vp1 vp2];
-Ap = [Ap1 Ap2];
-
 M = Mu*Mv; % ОБЩЕЕ ЧИСЛО МОДУЛЕЙ
 
 arr = essentCounts(N,Um, Vm);
-Nu = cell2mat(arr(1));
-Nv=cell2mat(arr(2));
-Ns=cell2mat(arr(3));
-lu = cell2mat(arr(4));
-lv = cell2mat(arr(5));
-lt  = cell2mat(arr(6));
-ii = cell2mat(arr(7));
-kk = cell2mat(arr(8));
-ll = cell2mat(arr(9));
-Kc=cell2mat(arr(10));
-ls = cell2mat(arr(11));
+Nu = cell2mat(arr(1
+Ns=cell2mat(arr(1));
+lu = cell2mat(arr(2));
+lv = cell2mat(arr(3));
+lt  = cell2mat(arr(4));
+ii = cell2mat(arr(5));
+Nu=length(ii); % КОЛИЧЕСТВО ПРОВЕРЯЕМЫХ ГИПОТЕЗ ПО ОДНОМУ УГЛУ
+kk = cell2mat(arr(6));
+Nv=length(kk); % КОЛИЧЕСТВО ПРОВЕРЯЕМЫХ ГИПОТЕЗ ПО ДРУГОМУ УГЛУ
+ll = arr(7);
+Kc=arr(8);
+ls = arr(9);
 
 %--ФОРМИРОВАНИЕ МАССИВА ВЕКТРОВ ОГИБАЮЩЕЙ СИГНАЛА ДЛЯ ВСЕХ ГИПОТЕЗ ПО УГЛУ-
 U=zeros(M,Nu*Nv);
@@ -30,8 +27,8 @@ U=zeros(M,Nu*Nv);
 g=sinx(pi*ii(i)/Um).*sinx(pi*kk(k)/Vm);
 U=repmat(g,M,1).*exp(j*2*pi*[p' q']*[ii(i)/Um ; kk(k)/Vm]);
 
-VisFiles(N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,imag(U),0, 'Комплексные составляющие пробных сигналов по углам', [0 200 500 400]);
-VisFiles(N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,real(U),0, 'Вещественные составляющие пробных сигналов по углам', [390 200 500 400]);
+VisFiles(N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,imag(U),0, 'Комплексные составляющие пробных сигналов по углам', [10 200 500 400]);
+VisFiles(N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,real(U),0, 'Вещественные составляющие пробных сигналов по углам', [400 200 500 400]);
 
 rU=real(U);
 iU=imag(U);
@@ -54,7 +51,7 @@ S(:,l)=S(:,l)/sqrt(ls);
  
 end
  
-VisFiles(N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,S,0, 'Пробные сигналы по времени', [780 200 500 400]);
+VisFiles(N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,S,0, 'Пробные сигналы по времени', [810 200 500 400]);
  
 rS=real(S);
 iS=imag(S);

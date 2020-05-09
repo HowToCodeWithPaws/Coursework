@@ -1,0 +1,39 @@
+function Toc=CreatePicture(N,Um,Vm, expH, filecode)
+tic;
+
+arr = essentCounts(N,Um, Vm);
+Nu = cell2mat(arr(1));
+Nv=cell2mat(arr(2));
+Ns=cell2mat(arr(3));
+lu = cell2mat(arr(4));
+lv = cell2mat(arr(5));
+lt  = cell2mat(arr(6));
+ii = cell2mat(arr(7));
+kk = cell2mat(arr(8));
+ll = cell2mat(arr(9));
+
+if filecode == 1
+    load Ux.txt;
+    load Uy.txt;
+    load Sx.txt;
+    load Sy.txt;
+
+    S= reshape(Sx,N,Ns)+j*reshape(Sy,N,Ns);
+    
+    VisFiles(N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,Uy,0, 'Комплексные составляющие пробных сигналов по углам', [10 200 500 400]);
+    VisFiles(N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,Ux,0, 'Вещественные составляющие пробных сигналов по углам', [390 200 500 400]);
+    VisFiles(N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,S,0, 'Пробные сигналы по времени', [790 200 500 400]);
+else
+    if filecode==2
+        load Rx.txt;
+load Ry.txt;
+ 
+Rinv=reshape(Rx,M,M,lu,lv,lt)+j*reshape(Ry,M,M,lu,lv,lt);
+    else
+        if filecode ==3
+
+load Lfile.txt;
+ms = VisFiles(N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,Lfile,expH, name, [20 50 500 400]);
+
+Toc=[toc ms];
+end

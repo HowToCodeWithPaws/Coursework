@@ -140,8 +140,7 @@ namespace Coursework
 
 			dataE = matrixE = statE = bSaveData.Enabled
 				= bGenMatrix.Enabled = bSaveMatrix.Enabled
-				= bGenStat.Enabled = bSaveStat.Enabled
-				= bVisualize.Enabled = false;
+				= bGenStat.Enabled = bSaveStat.Enabled =false;
 
 			this.BackColor = log.BackColor = backColor;
 			panel.BackColor = panelColor;
@@ -241,7 +240,10 @@ namespace Coursework
 			{
 				progress.Visible = false;
 				log.Text += "\nФайл статистики добавлен";
-				statE = bVisualize.Enabled = bSaveStat.Enabled = true;
+
+				statE = bSaveStat.Enabled = true;
+
+				BeginVis();
 			}
 			else
 			{
@@ -574,7 +576,7 @@ namespace Coursework
 			}
 			finally { Enable(); }
 		}
-
+		
 		/// <summary>
 		/// Обработчик нажатия на кнопку визуализации данных.
 		/// Вызывает асинхронный метод визуализации.
@@ -814,8 +816,7 @@ namespace Coursework
 			{
 				b.Enabled = true;
 			}
-
-			bVisualize.Enabled = bSaveStat.Enabled = statE;
+bSaveStat.Enabled = statE;
 			bGenStat.Enabled = bSaveMatrix.Enabled = matrixE;
 			bGenMatrix.Enabled = bSaveData.Enabled = dataE;
 		}

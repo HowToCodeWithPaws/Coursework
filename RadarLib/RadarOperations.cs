@@ -42,10 +42,9 @@ namespace RadarLib
 		/// <param name="pathRy"> Параметр для пути к файлу, в
 		/// котором находятся мнимые компоненты обратной 
 		/// корреляционной матрицы. </param>
-		/// <returns> Метод возвращает строку с отформатированным
-		/// временем работы по расчету и записи обратной
-		/// корреляционной матрицы. </returns>
-		public static string Start(int m, int n, int pq, float mu,
+		/// <returns> Метод возвращает время работы по расчету и 
+		/// записи обратной корреляционной матрицы. </returns>
+		public static TimeSpan Start(int m, int n, int pq, float mu,
 			string pathYx = "YX.txt", string pathYy = "YY.txt",
 			string pathRx = "Rx.txt", string pathRy = "Ry.txt")
 		{
@@ -75,13 +74,7 @@ namespace RadarLib
 
 			stopwatch.Stop();
 
-			TimeSpan timeSpan = stopwatch.Elapsed;
-
-			string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-			timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds,
-			timeSpan.Milliseconds / 10);
-
-			return elapsedTime;
+			return stopwatch.Elapsed;
 		}
 
 		/// <summary>

@@ -43,7 +43,7 @@ namespace Coursework
 		/// Поля для параметров симуляции.
 		/// </summary>
 		float Um, Vm, du, dv, u, v, a, Tc, up1,
-			up2, vp1, vp2, Ap1, Ap2, gamma, _mu, H;
+			up2, vp1, vp2, Ap1, Ap2, gamma, _mu, H, minH, maxH;
 		int N, Mu, Mv, pq, M;
 
 		/// <summary>
@@ -140,18 +140,21 @@ namespace Coursework
 
 			dataE = matrixE = statE = bSaveData.Enabled
 				= bGenMatrix.Enabled = bSaveMatrix.Enabled
-				= bGenStat.Enabled = bSaveStat.Enabled 
-				= bVisualize.Enabled = false;
+				= bGenStat.Enabled = bSaveStat.Enabled
+				= bVisualize.Enabled = sliderH.Visible = false;
 
 			this.BackColor = log.BackColor = backColor;
-			panel.BackColor = panelColor;
-			log.ForeColor = textColor;
+			panel.BackColor = sliderH.BackColor =
+				min.BackColor = max.BackColor = panelColor;
+			log.ForeColor = min.ForeColor = max.ForeColor = textColor;
 
 			foreach (Button b in GetAllControlsOfType<Button>(this))
 			{
 				b.FlatAppearance.MouseOverBackColor = hoverColor;
 				b.ForeColor = textColor;
 			}
+
+			bVisualize.Text = $"Порог сигнала = {H}\nВизуализировать статистику наблюдений";
 
 			toolTip.SetToolTip(bBackToHomepage, "Внимание!" +
 				"\nПри возвращении прогресс текущей сессии будет потерян." +
@@ -175,29 +178,60 @@ namespace Coursework
 		/// <param name="e"></param>
 		private void bGetData_Click(object sender, EventArgs e)
 		{
+			AddData();
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		async void AddData()
+		{
 			log.Text += "\nДобавляем файлы наблюдений";
 
-			progress.Visible = true;
+			try
+			{
+				Disable();
+				progress.Visible = true;
 
-			if (OpenFile("Sx.txt", false, 0) && OpenFile("Sy.txt", false, 0)
+				if (OpenFile("Sx.txt", false, 0) && OpenFile("Sy.txt", false, 0)
 				&& OpenFile("Ux.txt", false, 0) && OpenFile("Uy.txt", false, 0)
 				&& OpenFile("YX.txt", true, M * N * pq)
 				&& OpenFile("YY.txt", true, M * N * pq))
-			{
-				progress.Visible = false;
-				log.Text += "\nФайлы наблюдений добавлены";
-				dataE = bGenMatrix.Enabled = bSaveData.Enabled = true;
-			}
-			else
-			{
-				progress.Visible = false;
-				log.Text += "\nПроизошла ошибка добавления файлов.";
-			}
-		}
+				{
+					MWArray[] res = null;
 
-		private void sliderH_Scroll(object sender, EventArgs e)
-		{
+					await Task.Run(() =>
+					{
+						res = funcs.CreatePicture(1, N, Mu, Mv, Um, Vm, 0, 1);
+					});
 
+					var a = res[0].ToArray();
+
+					TimeSpan timeSpan = TimeSpan.FromSeconds(double.Parse(a.GetValue(0, 0).ToString()));
+
+					string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+						timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds,
+						timeSpan.Milliseconds / 10);
+
+					log.Text += "\nФайлы наблюдений добавлены и визуализированы за " + elapsedTime;
+					dataE = bGenMatrix.Enabled = bSaveData.Enabled = true;
+				}
+				else
+				{
+					log.Text += "\nПроизошла ошибка добавления файлов.";
+				}
+			}
+			catch (Exception e)
+			{
+				MessageBox.Show("Произошла ошибка визуализации наблюдений." +
+					" Начните заново, либо перейдите к другому шагу.\n" + e.Message);
+				log.Text += "\nПроизошла ошибка визуализации наблюдений";
+			}
+			finally
+			{
+				Enable();
+				progress.Visible = false;
+			}
 		}
 
 		/// <summary>
@@ -211,20 +245,57 @@ namespace Coursework
 		/// <param name="e"></param>
 		private void bGetMatrix_Click(object sender, EventArgs e)
 		{
-			log.Text += "\nДобавляем файлы матрицы";
-			progress.Visible = true;
+			AddMatrix();
+		}
 
-			if (OpenFile("Rx.txt", true, M * M * pq)
+		/// <summary>
+		/// 
+		/// </summary>
+		async void AddMatrix()
+		{
+			log.Text += "\nДобавляем файлы матрицы";
+
+			try
+			{
+				Disable();
+				progress.Visible = true;
+
+				if (OpenFile("Rx.txt", true, M * M * pq)
 				&& OpenFile("Ry.txt", true, M * M * pq))
-			{
-				progress.Visible = false;
-				log.Text += "\nФайлы матрицы добавлены";
-				matrixE = bGenStat.Enabled = bSaveMatrix.Enabled = true;
+				{
+					MWArray[] res = null;
+
+					await Task.Run(() =>
+					{
+						res = funcs.CreatePicture(1, N, Mu, Mv, Um, Vm, 0, 2);
+					});
+
+					var a = res[0].ToArray();
+
+					TimeSpan timeSpan = TimeSpan.FromSeconds(double.Parse(a.GetValue(0, 0).ToString()));
+
+					string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+						timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds,
+						timeSpan.Milliseconds / 10);
+
+					log.Text += "\nФайлы матрицы добавлены и визуализированы за " + elapsedTime;
+					matrixE = bGenStat.Enabled = bSaveMatrix.Enabled = true;
+				}
+				else
+				{
+					log.Text += "\nПроизошла ошибка добавления файлов.";
+				}
 			}
-			else
+			catch (Exception e)
 			{
+				MessageBox.Show("Произошла ошибка визуализации матрицы." +
+					" Начните заново, либо перейдите к другому шагу.\n" + e.Message);
+				log.Text += "\nПроизошла ошибка визуализации матрицы";
+			}
+			finally
+			{
+				Enable();
 				progress.Visible = false;
-				log.Text += "\nПроизошла ошибка добавления файлов.";
 			}
 		}
 
@@ -239,22 +310,66 @@ namespace Coursework
 		/// <param name="e"></param>
 		private void bGetStat_Click(object sender, EventArgs e)
 		{
+			AddStat();
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		async void AddStat()
+		{
 			log.Text += "\nДобавляем файл статистики";
-			progress.Visible = true;
 
-			if (OpenFile("Lfile.txt", true, 9 * 9 * N / 9))
+			try
 			{
-				progress.Visible = false;
-				log.Text += "\nФайл статистики добавлен";
+				Disable();
+				progress.Visible = true;
 
-				statE = bSaveStat.Enabled = bVisualize.Enabled = true;
+				if (OpenFile("Lfile.txt", true, 9 * 9 * N / 9))
+				{
+					MWArray[] res = null;
 
-				BeginVis();
+					await Task.Run(() =>
+					{
+						res = funcs.CreatePicture(1, N, Mu, Mv, Um, Vm, H, 3);
+					});
+
+					var a = res[0].ToArray();
+
+					TimeSpan timeSpan = TimeSpan.FromSeconds(double.Parse(a.GetValue(0, 0).ToString()));
+
+					string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+						timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds,
+						timeSpan.Milliseconds / 10);
+
+					log.Text += "\nФайл статистики добавлен и визуализирован за " + elapsedTime;
+
+					minH = float.Parse(a.GetValue(0, 1).ToString());
+					maxH = float.Parse(a.GetValue(0, 2).ToString());
+
+					min.Text = $"{minH:F3}";
+					max.Text = $"{maxH:F3}";
+
+					sliderH.Minimum = (int)Math.Floor(minH);
+					sliderH.Maximum = (int)Math.Ceiling(maxH);
+
+					statE = bSaveStat.Enabled = bVisualize.Enabled = sliderH.Visible = true;
+				}
+				else
+				{
+					log.Text += "\nПроизошла ошибка добавления файлов.";
+				}
 			}
-			else
+			catch (Exception e)
 			{
+				MessageBox.Show("Произошла ошибка визуализации статистики." +
+					" Начните заново, либо перейдите к другому шагу.\n" + e.Message);
+				log.Text += "\nПроизошла ошибка визуализации статистики";
+			}
+			finally
+			{
+				Enable();
 				progress.Visible = false;
-				log.Text += "\nПроизошла ошибка добавления файлов.";
 			}
 		}
 
@@ -512,9 +627,20 @@ namespace Coursework
 				progress.Visible = true;
 				log.Text += "\nНачинаем вычисление корреляционной матрицы";
 
-				string res = "";
+				TimeSpan count = TimeSpan.FromSeconds(0);
+				MWArray[] vis = null;
 
-				await Task.Run(() => { res = RadarOperations.Start(Mu * Mv, N, pq, _mu); });
+				await Task.Run(() =>
+				{
+					count = RadarOperations.Start(Mu * Mv, N, pq, _mu);
+					vis = funcs.CreatePicture(1, N, Mu, Mv, Um, Vm, 0, 2);
+				});
+
+				var a = vis[0].ToArray();
+
+				TimeSpan visSpan = TimeSpan.FromSeconds(double.Parse(a.GetValue(0, 0).ToString()));
+
+				TimeSpan res = count.Add(visSpan);
 
 				progress.Visible = false;
 				log.Text += $"\nВычисление матрицы закончено за {res}";
@@ -561,17 +687,30 @@ namespace Coursework
 
 				await Task.Run(() =>
 				{
-					res = funcs.CreateL(1, N, Mu, Mv, Um, Vm, _mu);
+					res = funcs.CreateL(1, N, Mu, Mv, Um, Vm, _mu, H);
 				});
 
-				TimeSpan timeSpan = TimeSpan.FromSeconds(double.Parse(res[0].ToString()));
+				var a = res[0].ToArray();
+
+				TimeSpan timeSpan = TimeSpan.FromSeconds(double.Parse(a.GetValue(0, 0).ToString()));
+
 				string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
 					timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds,
 					timeSpan.Milliseconds / 10);
 
 				progress.Visible = false;
 				log.Text += $"\nРасчет статистики наблюдений закончен за " + elapsedTime;
-				statE = true;
+
+				minH = float.Parse(a.GetValue(0, 1).ToString());
+				maxH = float.Parse(a.GetValue(0, 2).ToString());
+
+				sliderH.Minimum = (int)Math.Floor(minH);
+				sliderH.Maximum = (int)Math.Ceiling(maxH);
+
+				min.Text = $"{minH:F3}";
+				max.Text = $"{maxH:F3}";
+
+				statE = sliderH.Visible = true;
 			}
 			catch (Exception e)
 			{
@@ -582,7 +721,20 @@ namespace Coursework
 			}
 			finally { Enable(); }
 		}
-		
+
+		/// <summary>
+		/// Обработчик изменения значения на слайдере. Порог сигнала меняется на 
+		/// выставленный на слайдере, либо на минимальное/максимальное осмысленное
+		/// значение. Соответственно меняется текст на кнопке визуализации.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void sliderH_Scroll(object sender, EventArgs e)
+		{
+			H = sliderH.Value > maxH ? maxH : sliderH.Value <= minH ? minH : sliderH.Value;
+			bVisualize.Text = $"Порог сигнала = {H}\nВизуализировать статистику наблюдений";
+		}
+
 		/// <summary>
 		/// Обработчик нажатия на кнопку визуализации данных.
 		/// Вызывает асинхронный метод визуализации.
@@ -607,16 +759,19 @@ namespace Coursework
 			{
 				Disable();
 				progress.Visible = true;
-				log.Text += "\nНачинаем визуализацию";
+				log.Text += $"\nНачинаем визуализацию с порогом сигнала {H}";
 
 				MWArray[] res = null;
 
 				await Task.Run(() =>
 				{
-					res = funcs.CreatePicture(1, N, Um, Vm, H);
+					res = funcs.CreatePicture(1, N, Mu, Mv, Um, Vm, H, 3);
 				});
 
-				TimeSpan timeSpan = TimeSpan.FromSeconds(double.Parse(res[0].ToString()));
+				var a = res[0].ToArray();
+
+				TimeSpan timeSpan = TimeSpan.FromSeconds(double.Parse(a.GetValue(0, 0).ToString()));
+
 				string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
 					timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds,
 					timeSpan.Milliseconds / 10);

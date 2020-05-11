@@ -24,21 +24,21 @@ if filecode == 1
 
     S= reshape(Sx,N,Ns)+j*reshape(Sy,N,Ns);
     
-    VisFiles(ilecode, N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,Ux,expH, 'Вещественные составляющие пробных сигналов по углам', [390 200 500 400]);
-    VisFiles(filecode, N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,Uy,expH, 'Комплексные составляющие пробных сигналов по углам', [0 200 500 400]);
-    VisFiles(ilecode, N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,S,expH, 'Пробные сигналы по времени', [780 200 500 400]);
+    VisFiles(filecode, N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,Ux,expH, 'Вещественные составляющие пробных сигналов по углам', [0 200 500 400]);
+    VisFiles(filecode, N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,Uy,expH, 'Комплексные составляющие пробных сигналов по углам', [390 200 500 400]);
+    VisFiles(filecode, N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,S,expH, 'Пробные сигналы по времени', [780 200 500 400]);
 else
     if filecode==2
         load Rx.txt;
         load Ry.txt;
         
-        VisR(N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,Rx,expH, 'Вещественные составляющие обратной корреляционной матрицы', [0 100 500 400]);
-        VisR(N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,Ry,expH, 'Комплексные составляющие обратной корреляционной матрицы', [500 100 500 400]);
+        VisR(N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,Rx,expH, 'Вещественные составляющие обратной корреляционной матрицы', [0 200 500 400]);
+        VisR(N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,Ry,expH, 'Комплексные составляющие обратной корреляционной матрицы', [500 200 500 400]);
     else
         if filecode ==3
 
             load Lfile.txt;
-            ms = VisFiles(ilecode, N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,Lfile,expH, 'Статистика наблюдений', [20 50 500 400]);
+            ms = VisFiles(filecode, N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,Lfile,expH, 'Статистика наблюдений', [0 200 500 400]);
         end
     end
 end

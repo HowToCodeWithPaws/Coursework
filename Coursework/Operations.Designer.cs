@@ -48,6 +48,8 @@
 			this.bBackToHomepage = new System.Windows.Forms.Button();
 			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
 			this.sliderH = new System.Windows.Forms.TrackBar();
+			this.min = new System.Windows.Forms.Label();
+			this.max = new System.Windows.Forms.Label();
 			this.panel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.sliderH)).BeginInit();
 			this.SuspendLayout();
@@ -75,7 +77,7 @@
 			this.log.Location = new System.Drawing.Point(35, 38);
 			this.log.Name = "log";
 			this.log.ReadOnly = true;
-			this.log.Size = new System.Drawing.Size(688, 623);
+			this.log.Size = new System.Drawing.Size(688, 626);
 			this.log.TabIndex = 12;
 			this.log.Text = "";
 			// 
@@ -135,7 +137,6 @@
 			this.bVisualize.Name = "bVisualize";
 			this.bVisualize.Size = new System.Drawing.Size(200, 200);
 			this.bVisualize.TabIndex = 11;
-			this.bVisualize.Text = "Визуализировать полученные данные";
 			this.bVisualize.UseVisualStyleBackColor = false;
 			this.bVisualize.Click += new System.EventHandler(this.bVisualize_Click);
 			// 
@@ -314,19 +315,41 @@
 			// 
 			// sliderH
 			// 
-			this.sliderH.BackColor = System.Drawing.Color.DarkTurquoise;
-			this.sliderH.Location = new System.Drawing.Point(35, 664);
+			this.sliderH.BackColor = System.Drawing.Color.Teal;
+			this.sliderH.Location = new System.Drawing.Point(35, 670);
 			this.sliderH.Name = "sliderH";
 			this.sliderH.Size = new System.Drawing.Size(688, 69);
 			this.sliderH.TabIndex = 54;
 			this.sliderH.Scroll += new System.EventHandler(this.sliderH_Scroll);
+			// 
+			// min
+			// 
+			this.min.AutoSize = true;
+			this.min.BackColor = System.Drawing.Color.Transparent;
+			this.min.ForeColor = System.Drawing.Color.White;
+			this.min.Location = new System.Drawing.Point(40, 713);
+			this.min.Name = "min";
+			this.min.Size = new System.Drawing.Size(0, 20);
+			this.min.TabIndex = 55;
+			// 
+			// max
+			// 
+			this.max.AutoSize = true;
+			this.max.BackColor = System.Drawing.Color.Transparent;
+			this.max.ForeColor = System.Drawing.Color.White;
+			this.max.Location = new System.Drawing.Point(655, 713);
+			this.max.Name = "max";
+			this.max.Size = new System.Drawing.Size(0, 20);
+			this.max.TabIndex = 56;
 			// 
 			// Operations
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSize = true;
-			this.ClientSize = new System.Drawing.Size(1360, 673);
+			this.ClientSize = new System.Drawing.Size(1360, 800);
+			this.Controls.Add(this.max);
+			this.Controls.Add(this.min);
 			this.Controls.Add(this.sliderH);
 			this.Controls.Add(this.panel);
 			this.Controls.Add(this.log);
@@ -362,5 +385,7 @@
 		private System.Windows.Forms.ToolTip toolTip;
 		private System.Windows.Forms.Button bVisualize;
 		private System.Windows.Forms.TrackBar sliderH;
+		private System.Windows.Forms.Label min;
+		private System.Windows.Forms.Label max;
 	}
 }

@@ -30,8 +30,8 @@ U=zeros(M,Nu*Nv);
 g=sinx(pi*ii(i)/Um).*sinx(pi*kk(k)/Vm);
 U=repmat(g,M,1).*exp(j*2*pi*[p' q']*[ii(i)/Um ; kk(k)/Vm]);
 
-VisFiles(1, N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,imag(U),0, 'Комплексные составляющие пробных сигналов по углам', [0 200 500 400]);
-VisFiles(1, N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,real(U),0, 'Вещественные составляющие пробных сигналов по углам', [390 200 500 400]);
+VisFiles(1, N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,real(U),0, 'Вещественные составляющие пробных сигналов по углам', [0 200 500 400]);
+VisFiles(1, N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,imag(U),0, 'Комплексные составляющие пробных сигналов по углам', [390 200 500 400]);
 
 rU=real(U);
 iU=imag(U);

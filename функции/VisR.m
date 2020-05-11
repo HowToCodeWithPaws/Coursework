@@ -1,23 +1,30 @@
-function Toc=VisFiles(N,Um,Vm,Nu, Nv, Ns, lu, lv, lt,ii,kk,ll, Arr,expH, name, position)
+function Toc=VisR(N,Um,Vm,Nu, Nv, Ns, lu, lv, lt,ii,kk,ll, Arr,expH, name, position)
 tic;
 
-L = Arr; 
+h1 =figure('Name',name, 'Position', position,'NumberTitle','off');
+    figure(h1);
+    
+axis([-0.1 0.1 -0.1 0.1])
 
-if expH>max(L(:))
-    H=min(L(:));
+for i=1:100
+    
+    figure(h1);
+    
+L = Arr(:, i, :); 
+
+if expH>max(Arr(:))
+    H=min(Arr(:));
 else
     H= expH;
 end
 
-figure('Name',name, 'Position', position,'NumberTitle','off');
-Hm=max(L(:));
+Hm=max(Arr(:));
 %Hm=90;
 %L2=L(:,:,1,1,1);
 L2=L;
 ind=find(L2>H);
 v=L2(L2>H);
-vvv=v;
- 
+
 % [x1,y1,z1]=ind2sub([Nu Nv Ns],ind);
 [x1,y1,z1,u1,v1,t1]=ind2sub([Nu Nv Ns lu lv lt],ind);
 % x=ii(x1);
@@ -43,19 +50,8 @@ for i=1:length(x)
     if in==0;in=1;end
     if in > length(map);in=length(map);end
     
-    theta = x(i);
-    phi = y(i);
-    
-    X = cos(phi)*cos(theta);
-    Y = cos(phi)*sin(theta);
-    Z = sin(phi)*ones(size(theta));
-    
-    if in==Hm
-        marker = '';
-    end
-  plot3(X,Y,Z, marker,'color',map(in,:),'markerfacecolor',map(in,:))
-    
-%   plot3(x(i),y(i),z(i),marker,'color',map(in,:),'markerfacecolor',map(in,:))
+axis([-0.1 0.08 -0.1 0.08]);
+    plot(x(i),y(i),marker,'color',map(in,:),'markerfacecolor',map(in,:))
     
 end
 hold off
@@ -84,6 +80,7 @@ end
 set(h,'yticklabel',s,'fontsize',9);
 grid on
 set(get(h,'title'),'string',string)
-view(3)
-Toc=[min(L(:)) max(L(:))];
+view;
+end
+Toc=toc;
 end

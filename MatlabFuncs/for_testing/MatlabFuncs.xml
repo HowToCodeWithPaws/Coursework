@@ -1,0 +1,1537 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MatlabFuncs</name>
+    </assembly>
+    <members>
+        <member name="T:MatlabFuncs.Funcs">
+            <summary>
+            The Funcs class provides a CLS compliant, MWArray interface to the MATLAB functions
+            contained in the files:
+            <newpara></newpara>
+            C:\Users\Natalya\Desktop\Coursework\функции\CreateFiles.m
+            <newpara></newpara>
+            C:\Users\Natalya\Desktop\Coursework\функции\CreateL.m
+            <newpara></newpara>
+            C:\Users\Natalya\Desktop\Coursework\функции\CreatePicture.m
+            </summary>
+            <remarks>
+            @Version 1.0
+            </remarks>
+        </member>
+        <member name="M:MatlabFuncs.Funcs.#cctor">
+            <summary internal= "true">
+            The static constructor instantiates and initializes the MATLAB Runtime instance.
+            </summary>
+        </member>
+        <member name="M:MatlabFuncs.Funcs.#ctor">
+            <summary>
+            Constructs a new instance of the Funcs class.
+            </summary>
+        </member>
+        <member name="M:MatlabFuncs.Funcs.Finalize">
+            <summary internal= "true">
+            Class destructor called by the CLR garbage collector.
+            </summary>
+        </member>
+        <member name="M:MatlabFuncs.Funcs.Dispose">
+            <summary>
+            Frees the native resources associated with this object
+            </summary>
+        </member>
+        <member name="M:MatlabFuncs.Funcs.Dispose(System.Boolean)">
+            <summary internal= "true">
+            Internal dispose function
+            </summary>
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles">
+             <summary>
+             Provides a single output, 0-input MWArrayinterface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 1-input MWArrayinterface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 2-input MWArrayinterface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 3-input MWArrayinterface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 4-input MWArrayinterface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 5-input MWArrayinterface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 6-input MWArrayinterface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="du">Input argument #6</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 7-input MWArrayinterface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="du">Input argument #6</param>
+             <param name="dv">Input argument #7</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 8-input MWArrayinterface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="du">Input argument #6</param>
+             <param name="dv">Input argument #7</param>
+             <param name="u">Input argument #8</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 9-input MWArrayinterface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="du">Input argument #6</param>
+             <param name="dv">Input argument #7</param>
+             <param name="u">Input argument #8</param>
+             <param name="v">Input argument #9</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 10-input MWArrayinterface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="du">Input argument #6</param>
+             <param name="dv">Input argument #7</param>
+             <param name="u">Input argument #8</param>
+             <param name="v">Input argument #9</param>
+             <param name="a">Input argument #10</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 11-input MWArrayinterface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="du">Input argument #6</param>
+             <param name="dv">Input argument #7</param>
+             <param name="u">Input argument #8</param>
+             <param name="v">Input argument #9</param>
+             <param name="a">Input argument #10</param>
+             <param name="Tc">Input argument #11</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 12-input MWArrayinterface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="du">Input argument #6</param>
+             <param name="dv">Input argument #7</param>
+             <param name="u">Input argument #8</param>
+             <param name="v">Input argument #9</param>
+             <param name="a">Input argument #10</param>
+             <param name="Tc">Input argument #11</param>
+             <param name="up1">Input argument #12</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 13-input MWArrayinterface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="du">Input argument #6</param>
+             <param name="dv">Input argument #7</param>
+             <param name="u">Input argument #8</param>
+             <param name="v">Input argument #9</param>
+             <param name="a">Input argument #10</param>
+             <param name="Tc">Input argument #11</param>
+             <param name="up1">Input argument #12</param>
+             <param name="up2">Input argument #13</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 14-input MWArrayinterface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="du">Input argument #6</param>
+             <param name="dv">Input argument #7</param>
+             <param name="u">Input argument #8</param>
+             <param name="v">Input argument #9</param>
+             <param name="a">Input argument #10</param>
+             <param name="Tc">Input argument #11</param>
+             <param name="up1">Input argument #12</param>
+             <param name="up2">Input argument #13</param>
+             <param name="vp1">Input argument #14</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 15-input MWArrayinterface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="du">Input argument #6</param>
+             <param name="dv">Input argument #7</param>
+             <param name="u">Input argument #8</param>
+             <param name="v">Input argument #9</param>
+             <param name="a">Input argument #10</param>
+             <param name="Tc">Input argument #11</param>
+             <param name="up1">Input argument #12</param>
+             <param name="up2">Input argument #13</param>
+             <param name="vp1">Input argument #14</param>
+             <param name="vp2">Input argument #15</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 16-input MWArrayinterface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="du">Input argument #6</param>
+             <param name="dv">Input argument #7</param>
+             <param name="u">Input argument #8</param>
+             <param name="v">Input argument #9</param>
+             <param name="a">Input argument #10</param>
+             <param name="Tc">Input argument #11</param>
+             <param name="up1">Input argument #12</param>
+             <param name="up2">Input argument #13</param>
+             <param name="vp1">Input argument #14</param>
+             <param name="vp2">Input argument #15</param>
+             <param name="Ap1">Input argument #16</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 17-input MWArrayinterface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="du">Input argument #6</param>
+             <param name="dv">Input argument #7</param>
+             <param name="u">Input argument #8</param>
+             <param name="v">Input argument #9</param>
+             <param name="a">Input argument #10</param>
+             <param name="Tc">Input argument #11</param>
+             <param name="up1">Input argument #12</param>
+             <param name="up2">Input argument #13</param>
+             <param name="vp1">Input argument #14</param>
+             <param name="vp2">Input argument #15</param>
+             <param name="Ap1">Input argument #16</param>
+             <param name="Ap2">Input argument #17</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 18-input MWArrayinterface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="du">Input argument #6</param>
+             <param name="dv">Input argument #7</param>
+             <param name="u">Input argument #8</param>
+             <param name="v">Input argument #9</param>
+             <param name="a">Input argument #10</param>
+             <param name="Tc">Input argument #11</param>
+             <param name="up1">Input argument #12</param>
+             <param name="up2">Input argument #13</param>
+             <param name="vp1">Input argument #14</param>
+             <param name="vp2">Input argument #15</param>
+             <param name="Ap1">Input argument #16</param>
+             <param name="Ap2">Input argument #17</param>
+             <param name="gamma">Input argument #18</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 19-input MWArrayinterface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="du">Input argument #6</param>
+             <param name="dv">Input argument #7</param>
+             <param name="u">Input argument #8</param>
+             <param name="v">Input argument #9</param>
+             <param name="a">Input argument #10</param>
+             <param name="Tc">Input argument #11</param>
+             <param name="up1">Input argument #12</param>
+             <param name="up2">Input argument #13</param>
+             <param name="vp1">Input argument #14</param>
+             <param name="vp2">Input argument #15</param>
+             <param name="Ap1">Input argument #16</param>
+             <param name="Ap2">Input argument #17</param>
+             <param name="gamma">Input argument #18</param>
+             <param name="mu">Input argument #19</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(System.Int32)">
+             <summary>
+             Provides the standard 0-input MWArray interface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 1-input MWArray interface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 2-input MWArray interface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 3-input MWArray interface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 4-input MWArray interface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 5-input MWArray interface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 6-input MWArray interface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="du">Input argument #6</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 7-input MWArray interface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="du">Input argument #6</param>
+             <param name="dv">Input argument #7</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 8-input MWArray interface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="du">Input argument #6</param>
+             <param name="dv">Input argument #7</param>
+             <param name="u">Input argument #8</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 9-input MWArray interface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="du">Input argument #6</param>
+             <param name="dv">Input argument #7</param>
+             <param name="u">Input argument #8</param>
+             <param name="v">Input argument #9</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 10-input MWArray interface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="du">Input argument #6</param>
+             <param name="dv">Input argument #7</param>
+             <param name="u">Input argument #8</param>
+             <param name="v">Input argument #9</param>
+             <param name="a">Input argument #10</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 11-input MWArray interface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="du">Input argument #6</param>
+             <param name="dv">Input argument #7</param>
+             <param name="u">Input argument #8</param>
+             <param name="v">Input argument #9</param>
+             <param name="a">Input argument #10</param>
+             <param name="Tc">Input argument #11</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 12-input MWArray interface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="du">Input argument #6</param>
+             <param name="dv">Input argument #7</param>
+             <param name="u">Input argument #8</param>
+             <param name="v">Input argument #9</param>
+             <param name="a">Input argument #10</param>
+             <param name="Tc">Input argument #11</param>
+             <param name="up1">Input argument #12</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 13-input MWArray interface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="du">Input argument #6</param>
+             <param name="dv">Input argument #7</param>
+             <param name="u">Input argument #8</param>
+             <param name="v">Input argument #9</param>
+             <param name="a">Input argument #10</param>
+             <param name="Tc">Input argument #11</param>
+             <param name="up1">Input argument #12</param>
+             <param name="up2">Input argument #13</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 14-input MWArray interface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="du">Input argument #6</param>
+             <param name="dv">Input argument #7</param>
+             <param name="u">Input argument #8</param>
+             <param name="v">Input argument #9</param>
+             <param name="a">Input argument #10</param>
+             <param name="Tc">Input argument #11</param>
+             <param name="up1">Input argument #12</param>
+             <param name="up2">Input argument #13</param>
+             <param name="vp1">Input argument #14</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 15-input MWArray interface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="du">Input argument #6</param>
+             <param name="dv">Input argument #7</param>
+             <param name="u">Input argument #8</param>
+             <param name="v">Input argument #9</param>
+             <param name="a">Input argument #10</param>
+             <param name="Tc">Input argument #11</param>
+             <param name="up1">Input argument #12</param>
+             <param name="up2">Input argument #13</param>
+             <param name="vp1">Input argument #14</param>
+             <param name="vp2">Input argument #15</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 16-input MWArray interface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="du">Input argument #6</param>
+             <param name="dv">Input argument #7</param>
+             <param name="u">Input argument #8</param>
+             <param name="v">Input argument #9</param>
+             <param name="a">Input argument #10</param>
+             <param name="Tc">Input argument #11</param>
+             <param name="up1">Input argument #12</param>
+             <param name="up2">Input argument #13</param>
+             <param name="vp1">Input argument #14</param>
+             <param name="vp2">Input argument #15</param>
+             <param name="Ap1">Input argument #16</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 17-input MWArray interface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="du">Input argument #6</param>
+             <param name="dv">Input argument #7</param>
+             <param name="u">Input argument #8</param>
+             <param name="v">Input argument #9</param>
+             <param name="a">Input argument #10</param>
+             <param name="Tc">Input argument #11</param>
+             <param name="up1">Input argument #12</param>
+             <param name="up2">Input argument #13</param>
+             <param name="vp1">Input argument #14</param>
+             <param name="vp2">Input argument #15</param>
+             <param name="Ap1">Input argument #16</param>
+             <param name="Ap2">Input argument #17</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 18-input MWArray interface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="du">Input argument #6</param>
+             <param name="dv">Input argument #7</param>
+             <param name="u">Input argument #8</param>
+             <param name="v">Input argument #9</param>
+             <param name="a">Input argument #10</param>
+             <param name="Tc">Input argument #11</param>
+             <param name="up1">Input argument #12</param>
+             <param name="up2">Input argument #13</param>
+             <param name="vp1">Input argument #14</param>
+             <param name="vp2">Input argument #15</param>
+             <param name="Ap1">Input argument #16</param>
+             <param name="Ap2">Input argument #17</param>
+             <param name="gamma">Input argument #18</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 19-input MWArray interface to the CreateFiles MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="du">Input argument #6</param>
+             <param name="dv">Input argument #7</param>
+             <param name="u">Input argument #8</param>
+             <param name="v">Input argument #9</param>
+             <param name="a">Input argument #10</param>
+             <param name="Tc">Input argument #11</param>
+             <param name="up1">Input argument #12</param>
+             <param name="up2">Input argument #13</param>
+             <param name="vp1">Input argument #14</param>
+             <param name="vp2">Input argument #15</param>
+             <param name="Ap1">Input argument #16</param>
+             <param name="Ap2">Input argument #17</param>
+             <param name="gamma">Input argument #18</param>
+             <param name="mu">Input argument #19</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateFiles(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray[]@,MathWorks.MATLAB.NET.Arrays.MWArray[])">
+             <summary>
+             Provides an interface for the CreateFiles function in which the input and output
+             arguments are specified as an array of MWArrays.
+             </summary>
+             <remarks>
+             This method will allocate and return by reference the output argument
+             array.<newpara></newpara>
+             M-Documentation:
+             --Р¤РћР РњРР РћР’РђРќРР• РњРђРЎРЎРР’Рђ Р’Р•РљРўР РћР’ РћР“РР‘РђР®Р©Р•Р™
+             РЎРР“РќРђР›Рђ Р”Р›РЇ Р’РЎР•РҐ Р“РРџРћРўР•Р— РџРћ РЈР“Р›РЈ-
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return</param>
+             <param name= "argsOut">Array of MWArray output arguments</param>
+             <param name= "argsIn">Array of MWArray input arguments</param>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateL">
+             <summary>
+             Provides a single output, 0-input MWArrayinterface to the CreateL MATLAB
+             function.
+             </summary>
+             <remarks>
+             </remarks>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateL(MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 1-input MWArrayinterface to the CreateL MATLAB
+             function.
+             </summary>
+             <remarks>
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateL(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 2-input MWArrayinterface to the CreateL MATLAB
+             function.
+             </summary>
+             <remarks>
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateL(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 3-input MWArrayinterface to the CreateL MATLAB
+             function.
+             </summary>
+             <remarks>
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateL(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 4-input MWArrayinterface to the CreateL MATLAB
+             function.
+             </summary>
+             <remarks>
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateL(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 5-input MWArrayinterface to the CreateL MATLAB
+             function.
+             </summary>
+             <remarks>
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateL(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 6-input MWArrayinterface to the CreateL MATLAB
+             function.
+             </summary>
+             <remarks>
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="mu">Input argument #6</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateL(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 7-input MWArrayinterface to the CreateL MATLAB
+             function.
+             </summary>
+             <remarks>
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="mu">Input argument #6</param>
+             <param name="expH">Input argument #7</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateL(System.Int32)">
+             <summary>
+             Provides the standard 0-input MWArray interface to the CreateL MATLAB function.
+             </summary>
+             <remarks>
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateL(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 1-input MWArray interface to the CreateL MATLAB function.
+             </summary>
+             <remarks>
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateL(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 2-input MWArray interface to the CreateL MATLAB function.
+             </summary>
+             <remarks>
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateL(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 3-input MWArray interface to the CreateL MATLAB function.
+             </summary>
+             <remarks>
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateL(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 4-input MWArray interface to the CreateL MATLAB function.
+             </summary>
+             <remarks>
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateL(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 5-input MWArray interface to the CreateL MATLAB function.
+             </summary>
+             <remarks>
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateL(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 6-input MWArray interface to the CreateL MATLAB function.
+             </summary>
+             <remarks>
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="mu">Input argument #6</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateL(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 7-input MWArray interface to the CreateL MATLAB function.
+             </summary>
+             <remarks>
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="mu">Input argument #6</param>
+             <param name="expH">Input argument #7</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreateL(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray[]@,MathWorks.MATLAB.NET.Arrays.MWArray[])">
+             <summary>
+             Provides an interface for the CreateL function in which the input and output
+             arguments are specified as an array of MWArrays.
+             </summary>
+             <remarks>
+             This method will allocate and return by reference the output argument
+             array.<newpara></newpara>
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return</param>
+             <param name= "argsOut">Array of MWArray output arguments</param>
+             <param name= "argsIn">Array of MWArray input arguments</param>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreatePicture">
+             <summary>
+             Provides a single output, 0-input MWArrayinterface to the CreatePicture MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             hypothetical signals information
+             </remarks>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreatePicture(MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 1-input MWArrayinterface to the CreatePicture MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             hypothetical signals information
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreatePicture(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 2-input MWArrayinterface to the CreatePicture MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             hypothetical signals information
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreatePicture(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 3-input MWArrayinterface to the CreatePicture MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             hypothetical signals information
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreatePicture(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 4-input MWArrayinterface to the CreatePicture MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             hypothetical signals information
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreatePicture(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 5-input MWArrayinterface to the CreatePicture MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             hypothetical signals information
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreatePicture(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 6-input MWArrayinterface to the CreatePicture MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             hypothetical signals information
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="expH">Input argument #6</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreatePicture(MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides a single output, 7-input MWArrayinterface to the CreatePicture MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             hypothetical signals information
+             </remarks>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="expH">Input argument #6</param>
+             <param name="filecode">Input argument #7</param>
+             <returns>An MWArray containing the first output argument.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreatePicture(System.Int32)">
+             <summary>
+             Provides the standard 0-input MWArray interface to the CreatePicture MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             hypothetical signals information
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreatePicture(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 1-input MWArray interface to the CreatePicture MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             hypothetical signals information
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreatePicture(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 2-input MWArray interface to the CreatePicture MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             hypothetical signals information
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreatePicture(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 3-input MWArray interface to the CreatePicture MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             hypothetical signals information
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreatePicture(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 4-input MWArray interface to the CreatePicture MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             hypothetical signals information
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreatePicture(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 5-input MWArray interface to the CreatePicture MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             hypothetical signals information
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreatePicture(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 6-input MWArray interface to the CreatePicture MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             hypothetical signals information
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="expH">Input argument #6</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreatePicture(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray,MathWorks.MATLAB.NET.Arrays.MWArray)">
+             <summary>
+             Provides the standard 7-input MWArray interface to the CreatePicture MATLAB
+             function.
+             </summary>
+             <remarks>
+             M-Documentation:
+             hypothetical signals information
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return.</param>
+             <param name="N">Input argument #1</param>
+             <param name="Mu">Input argument #2</param>
+             <param name="Mv">Input argument #3</param>
+             <param name="Um">Input argument #4</param>
+             <param name="Vm">Input argument #5</param>
+             <param name="expH">Input argument #6</param>
+             <param name="filecode">Input argument #7</param>
+             <returns>An Array of length "numArgsOut" containing the output
+             arguments.</returns>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.CreatePicture(System.Int32,MathWorks.MATLAB.NET.Arrays.MWArray[]@,MathWorks.MATLAB.NET.Arrays.MWArray[])">
+             <summary>
+             Provides an interface for the CreatePicture function in which the input and
+             output
+             arguments are specified as an array of MWArrays.
+             </summary>
+             <remarks>
+             This method will allocate and return by reference the output argument
+             array.<newpara></newpara>
+             M-Documentation:
+             hypothetical signals information
+             </remarks>
+             <param name="numArgsOut">The number of output arguments to return</param>
+             <param name= "argsOut">Array of MWArray output arguments</param>
+             <param name= "argsIn">Array of MWArray input arguments</param>
+            
+        </member>
+        <member name="M:MatlabFuncs.Funcs.WaitForFiguresToDie">
+             <summary>
+             This method will cause a MATLAB figure window to behave as a modal dialog box.
+             The method will not return until all the figure windows associated with this
+             component have been closed.
+             </summary>
+             <remarks>
+             An application should only call this method when required to keep the
+             MATLAB figure window from disappearing.  Other techniques, such as calling
+             Console.ReadLine() from the application should be considered where
+             possible.</remarks>
+            
+        </member>
+    </members>
+</doc>

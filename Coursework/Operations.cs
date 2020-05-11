@@ -140,7 +140,8 @@ namespace Coursework
 
 			dataE = matrixE = statE = bSaveData.Enabled
 				= bGenMatrix.Enabled = bSaveMatrix.Enabled
-				= bGenStat.Enabled = bSaveStat.Enabled =false;
+				= bGenStat.Enabled = bSaveStat.Enabled 
+				= bVisualize.Enabled = false;
 
 			this.BackColor = log.BackColor = backColor;
 			panel.BackColor = panelColor;
@@ -194,6 +195,11 @@ namespace Coursework
 			}
 		}
 
+		private void sliderH_Scroll(object sender, EventArgs e)
+		{
+
+		}
+
 		/// <summary>
 		/// Обработчик нажатия на кнопку добавления файлов матрицы.
 		/// Вызывает метод открытия желаемых файлов с проверкой длины,
@@ -241,7 +247,7 @@ namespace Coursework
 				progress.Visible = false;
 				log.Text += "\nФайл статистики добавлен";
 
-				statE = bSaveStat.Enabled = true;
+				statE = bSaveStat.Enabled = bVisualize.Enabled = true;
 
 				BeginVis();
 			}
@@ -816,7 +822,7 @@ namespace Coursework
 			{
 				b.Enabled = true;
 			}
-bSaveStat.Enabled = statE;
+			bSaveStat.Enabled = bVisualize.Enabled = statE;
 			bGenStat.Enabled = bSaveMatrix.Enabled = matrixE;
 			bGenMatrix.Enabled = bSaveData.Enabled = dataE;
 		}

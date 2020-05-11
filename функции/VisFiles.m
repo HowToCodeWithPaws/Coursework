@@ -1,4 +1,4 @@
-function Toc=VisFiles(N,Um,Vm,Nu, Nv, Ns, lu, lv, lt,ii,kk,ll, Arr,expH, name, position)
+function Toc=VisFiles(filecode, N,Um,Vm,Nu, Nv, Ns, lu, lv, lt,ii,kk,ll, Arr,expH, name, position)
 tic;
 
 L = Arr; 
@@ -11,38 +11,44 @@ end
 
 figure('Name',name, 'Position', position,'NumberTitle','off');
 Hm=max(L(:));
-%Hm=90;
-%L2=L(:,:,1,1,1);
 L2=L;
 ind=find(L2>H);
 v=L2(L2>H);
-vvv=v;
  
-% [x1,y1,z1]=ind2sub([Nu Nv Ns],ind);
 [x1,y1,z1,u1,v1,t1]=ind2sub([Nu Nv Ns lu lv lt],ind);
-% x=ii(x1);
-% y=kk(y1);
-% z=ll(z1);
  
 x=ii(x1)'+(u1-1)*Um;
 y=kk(y1)'+(v1-1)*Vm;
 z=ll(z1)'+(t1-1)*N;
  
 delete(gca)
-marker='o';
 string='сигнал';
 miv=H;
 mav=Hm;
+
 % Get the current colormap
 map=colormap;
  
+%plot all the dots
 hold on
 for i=1:length(x)
     in=round((v(i)-miv)*(length(map)-1)/(mav-miv));
     %--- Catch the out-of-range numbers
     if in==0;in=1;end
     if in > length(map);in=length(map);end
-    plot3(x(i),y(i),z(i),marker,'color',map(in,:),'markerfacecolor',map(in,:))
+    
+    theta = x(i);
+    phi = y(i);
+    
+    X = cos(phi)*cos(theta);
+    Y = cos(phi)*sin(theta);
+    Z = sin(phi)*ones(size(theta));
+       
+    if filecode==3 && v(i)>=Hm
+         plot3(X,Y,Z, 'p','MarkerSize',15,'MarkerEdgeColor','black', 'color',map(in,:),'markerfacecolor',map(in,:))
+    else 
+        plot3(X,Y,Z, 'o','MarkerSize',6,'color',map(in,:),'markerfacecolor',map(in,:))
+    end
     
 end
 hold off
@@ -52,6 +58,7 @@ h=colorbar;
  
 %set(h,'ylim',[1 length(map)]);
 yal=linspace(1,length(map),10);
+
 %set(h,'ytick',yal);
 
 % Create the yticklabels
@@ -73,4 +80,5 @@ grid on
 set(get(h,'title'),'string',string)
 view(3)
 Toc=[min(L(:)) max(L(:))];
+
 end

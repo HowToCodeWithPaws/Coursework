@@ -35,6 +35,7 @@
 			this.saveFile = new System.Windows.Forms.SaveFileDialog();
 			this.panel = new System.Windows.Forms.Panel();
 			this.bBackToInput = new System.Windows.Forms.Button();
+			this.bVisualize = new System.Windows.Forms.Button();
 			this.bSaveMatrix = new System.Windows.Forms.Button();
 			this.bSaveStat = new System.Windows.Forms.Button();
 			this.bGetMatrix = new System.Windows.Forms.Button();
@@ -46,8 +47,9 @@
 			this.bGenData = new System.Windows.Forms.Button();
 			this.bBackToHomepage = new System.Windows.Forms.Button();
 			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-			this.bVisualize = new System.Windows.Forms.Button();
+			this.sliderH = new System.Windows.Forms.TrackBar();
 			this.panel.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.sliderH)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// progress
@@ -73,7 +75,7 @@
 			this.log.Location = new System.Drawing.Point(35, 38);
 			this.log.Name = "log";
 			this.log.ReadOnly = true;
-			this.log.Size = new System.Drawing.Size(688, 668);
+			this.log.Size = new System.Drawing.Size(688, 623);
 			this.log.TabIndex = 12;
 			this.log.Text = "";
 			// 
@@ -119,6 +121,23 @@
 			this.bBackToInput.Text = "Вернуться к параметрам симуляции";
 			this.bBackToInput.UseVisualStyleBackColor = false;
 			this.bBackToInput.Click += new System.EventHandler(this.bBackToInput_Click);
+			// 
+			// bVisualize
+			// 
+			this.bVisualize.BackColor = System.Drawing.Color.Transparent;
+			this.bVisualize.FlatAppearance.BorderSize = 0;
+			this.bVisualize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+			this.bVisualize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.bVisualize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.bVisualize.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.bVisualize.Location = new System.Drawing.Point(0, 600);
+			this.bVisualize.Margin = new System.Windows.Forms.Padding(0);
+			this.bVisualize.Name = "bVisualize";
+			this.bVisualize.Size = new System.Drawing.Size(200, 200);
+			this.bVisualize.TabIndex = 11;
+			this.bVisualize.Text = "Визуализировать полученные данные";
+			this.bVisualize.UseVisualStyleBackColor = false;
+			this.bVisualize.Click += new System.EventHandler(this.bVisualize_Click);
 			// 
 			// bSaveMatrix
 			// 
@@ -293,22 +312,14 @@
 			this.bBackToHomepage.UseVisualStyleBackColor = false;
 			this.bBackToHomepage.Click += new System.EventHandler(this.bBackToHomepage_Click);
 			// 
-			// bVisualize
+			// sliderH
 			// 
-			this.bVisualize.BackColor = System.Drawing.Color.Transparent;
-			this.bVisualize.FlatAppearance.BorderSize = 0;
-			this.bVisualize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-			this.bVisualize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-			this.bVisualize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.bVisualize.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.bVisualize.Location = new System.Drawing.Point(0, 600);
-			this.bVisualize.Margin = new System.Windows.Forms.Padding(0);
-			this.bVisualize.Name = "bVisualize";
-			this.bVisualize.Size = new System.Drawing.Size(200, 200);
-			this.bVisualize.TabIndex = 11;
-			this.bVisualize.Text = "Визуализировать полученные данные";
-			this.bVisualize.UseVisualStyleBackColor = false;
-			this.bVisualize.Click += new System.EventHandler(this.bVisualize_Click);
+			this.sliderH.BackColor = System.Drawing.Color.DarkTurquoise;
+			this.sliderH.Location = new System.Drawing.Point(35, 664);
+			this.sliderH.Name = "sliderH";
+			this.sliderH.Size = new System.Drawing.Size(688, 69);
+			this.sliderH.TabIndex = 54;
+			this.sliderH.Scroll += new System.EventHandler(this.sliderH_Scroll);
 			// 
 			// Operations
 			// 
@@ -316,6 +327,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSize = true;
 			this.ClientSize = new System.Drawing.Size(1360, 673);
+			this.Controls.Add(this.sliderH);
 			this.Controls.Add(this.panel);
 			this.Controls.Add(this.log);
 			this.Controls.Add(this.progress);
@@ -324,7 +336,9 @@
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Form2";
 			this.panel.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.sliderH)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
@@ -347,5 +361,6 @@
 		private System.Windows.Forms.Button bGenStat;
 		private System.Windows.Forms.ToolTip toolTip;
 		private System.Windows.Forms.Button bVisualize;
+		private System.Windows.Forms.TrackBar sliderH;
 	}
 }

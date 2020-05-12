@@ -47,11 +47,11 @@
 			this.bExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
 			this.bExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
 			this.bExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.bExit.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.bExit.Location = new System.Drawing.Point(0, 600);
+			this.bExit.Font = new System.Drawing.Font("Century Gothic", 12F);
+			this.bExit.Location = new System.Drawing.Point(0, 810);
 			this.bExit.Margin = new System.Windows.Forms.Padding(0);
 			this.bExit.Name = "bExit";
-			this.bExit.Size = new System.Drawing.Size(300, 200);
+			this.bExit.Size = new System.Drawing.Size(400, 270);
 			this.bExit.TabIndex = 1;
 			this.bExit.Text = "Выйти";
 			this.bExit.UseVisualStyleBackColor = false;
@@ -64,10 +64,10 @@
 			this.panel1.Controls.Add(this.bInfo);
 			this.panel1.Controls.Add(this.bProceed);
 			this.panel1.Controls.Add(this.bExit);
-			this.panel1.Location = new System.Drawing.Point(1060, 0);
+			this.panel1.Location = new System.Drawing.Point(1520, 0);
 			this.panel1.Margin = new System.Windows.Forms.Padding(0);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(300, 800);
+			this.panel1.Size = new System.Drawing.Size(400, 1080);
 			this.panel1.TabIndex = 0;
 			// 
 			// bMain
@@ -78,11 +78,11 @@
 			this.bMain.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
 			this.bMain.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
 			this.bMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.bMain.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.bMain.Font = new System.Drawing.Font("Century Gothic", 12F);
 			this.bMain.Location = new System.Drawing.Point(0, 0);
 			this.bMain.Margin = new System.Windows.Forms.Padding(0);
 			this.bMain.Name = "bMain";
-			this.bMain.Size = new System.Drawing.Size(300, 200);
+			this.bMain.Size = new System.Drawing.Size(400, 270);
 			this.bMain.TabIndex = 4;
 			this.bMain.Text = "Главная страница";
 			this.bMain.UseVisualStyleBackColor = false;
@@ -95,11 +95,11 @@
 			this.bInfo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
 			this.bInfo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
 			this.bInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.bInfo.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.bInfo.Location = new System.Drawing.Point(0, 200);
+			this.bInfo.Font = new System.Drawing.Font("Century Gothic", 12F);
+			this.bInfo.Location = new System.Drawing.Point(0, 270);
 			this.bInfo.Margin = new System.Windows.Forms.Padding(0);
 			this.bInfo.Name = "bInfo";
-			this.bInfo.Size = new System.Drawing.Size(300, 200);
+			this.bInfo.Size = new System.Drawing.Size(400, 270);
 			this.bInfo.TabIndex = 3;
 			this.bInfo.Text = "Информация о программе";
 			this.bInfo.UseVisualStyleBackColor = false;
@@ -112,11 +112,11 @@
 			this.bProceed.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
 			this.bProceed.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
 			this.bProceed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.bProceed.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.bProceed.Location = new System.Drawing.Point(0, 391);
+			this.bProceed.Font = new System.Drawing.Font("Century Gothic", 12F);
+			this.bProceed.Location = new System.Drawing.Point(0, 540);
 			this.bProceed.Margin = new System.Windows.Forms.Padding(0);
 			this.bProceed.Name = "bProceed";
-			this.bProceed.Size = new System.Drawing.Size(300, 200);
+			this.bProceed.Size = new System.Drawing.Size(400, 270);
 			this.bProceed.TabIndex = 2;
 			this.bProceed.Text = "Перейти к работе";
 			this.bProceed.UseVisualStyleBackColor = false;
@@ -133,10 +133,11 @@
 			// 
 			// author
 			// 
+			this.author.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.author.Font = new System.Drawing.Font("Century Gothic", 15F);
-			this.author.Location = new System.Drawing.Point(14, 672);
+			this.author.Location = new System.Drawing.Point(14, 954);
 			this.author.Name = "author";
-			this.author.Size = new System.Drawing.Size(434, 128);
+			this.author.Size = new System.Drawing.Size(549, 108);
 			this.author.TabIndex = 2;
 			this.author.Text = "Зубарева Наталия\r\nСтудентка группы БПИ-199\r\nndzubareva@edu.hse.ru";
 			// 
@@ -145,7 +146,7 @@
 			this.info.Font = new System.Drawing.Font("Century Gothic", 15F);
 			this.info.Location = new System.Drawing.Point(14, 60);
 			this.info.Name = "info";
-			this.info.Size = new System.Drawing.Size(1036, 720);
+			this.info.Size = new System.Drawing.Size(1409, 881);
 			this.info.TabIndex = 3;
 			this.info.Text = resources.GetString("info.Text");
 			// 
@@ -155,7 +156,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSize = true;
 			this.BackColor = System.Drawing.Color.SlateGray;
-			this.ClientSize = new System.Drawing.Size(1360, 800);
+			this.ClientSize = new System.Drawing.Size(1920, 1080);
 			this.Controls.Add(this.info);
 			this.Controls.Add(this.author);
 			this.Controls.Add(this.name);

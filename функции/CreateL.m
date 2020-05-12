@@ -53,7 +53,7 @@ Lfile=L(:,:);
 
 save Lfile.txt Lfile -ascii;
 
-ms = VisFiles(3, N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,Lfile,expH, 'Статистика наблюдений', [0 200 500 400]);
+ms = VisFiles(3, N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,Lfile,expH, 'Статистика наблюдений', [0 10 400 300]);
 
 Toc = [toc ms];
 end

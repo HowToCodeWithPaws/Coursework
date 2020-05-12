@@ -84,16 +84,16 @@
 			// 
 			// InN
 			// 
-			this.InN.Location = new System.Drawing.Point(32, 699);
+			this.InN.Location = new System.Drawing.Point(30, 970);
 			this.InN.Name = "InN";
-			this.InN.Size = new System.Drawing.Size(100, 26);
+			this.InN.Size = new System.Drawing.Size(150, 26);
 			this.InN.TabIndex = 9;
 			this.InN.Leave += new System.EventHandler(this.InN_Leave);
 			// 
 			// lN
 			// 
-			this.lN.Font = new System.Drawing.Font("Century Gothic", 8F);
-			this.lN.Location = new System.Drawing.Point(142, 699);
+			this.lN.Font = new System.Drawing.Font("Century Gothic", 10F);
+			this.lN.Location = new System.Drawing.Point(190, 970);
 			this.lN.Name = "lN";
 			this.lN.Size = new System.Drawing.Size(200, 100);
 			this.lN.TabIndex = 10;
@@ -102,8 +102,8 @@
 			// lMv
 			// 
 			this.lMv.BackColor = System.Drawing.Color.Transparent;
-			this.lMv.Font = new System.Drawing.Font("Century Gothic", 8F);
-			this.lMv.Location = new System.Drawing.Point(142, 174);
+			this.lMv.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.lMv.Location = new System.Drawing.Point(190, 220);
 			this.lMv.Name = "lMv";
 			this.lMv.Size = new System.Drawing.Size(200, 100);
 			this.lMv.TabIndex = 11;
@@ -112,8 +112,8 @@
 			// lMu
 			// 
 			this.lMu.BackColor = System.Drawing.Color.Transparent;
-			this.lMu.Font = new System.Drawing.Font("Century Gothic", 8F);
-			this.lMu.Location = new System.Drawing.Point(142, 69);
+			this.lMu.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.lMu.Location = new System.Drawing.Point(190, 70);
 			this.lMu.Name = "lMu";
 			this.lMu.Size = new System.Drawing.Size(200, 100);
 			this.lMu.TabIndex = 12;
@@ -121,8 +121,8 @@
 			// 
 			// lUm
 			// 
-			this.lUm.Font = new System.Drawing.Font("Century Gothic", 8F);
-			this.lUm.Location = new System.Drawing.Point(142, 279);
+			this.lUm.Font = new System.Drawing.Font("Century Gothic", 10F);
+			this.lUm.Location = new System.Drawing.Point(190, 370);
 			this.lUm.Name = "lUm";
 			this.lUm.Size = new System.Drawing.Size(200, 100);
 			this.lUm.TabIndex = 13;
@@ -130,8 +130,8 @@
 			// 
 			// lVm
 			// 
-			this.lVm.Font = new System.Drawing.Font("Century Gothic", 8F);
-			this.lVm.Location = new System.Drawing.Point(142, 384);
+			this.lVm.Font = new System.Drawing.Font("Century Gothic", 10F);
+			this.lVm.Location = new System.Drawing.Point(190, 520);
 			this.lVm.Name = "lVm";
 			this.lVm.Size = new System.Drawing.Size(200, 100);
 			this.lVm.TabIndex = 14;
@@ -139,8 +139,8 @@
 			// 
 			// ldu
 			// 
-			this.ldu.Font = new System.Drawing.Font("Century Gothic", 8F);
-			this.ldu.Location = new System.Drawing.Point(142, 489);
+			this.ldu.Font = new System.Drawing.Font("Century Gothic", 10F);
+			this.ldu.Location = new System.Drawing.Point(190, 670);
 			this.ldu.Name = "ldu";
 			this.ldu.Size = new System.Drawing.Size(200, 100);
 			this.ldu.TabIndex = 15;
@@ -148,8 +148,8 @@
 			// 
 			// ldv
 			// 
-			this.ldv.Font = new System.Drawing.Font("Century Gothic", 8F);
-			this.ldv.Location = new System.Drawing.Point(142, 594);
+			this.ldv.Font = new System.Drawing.Font("Century Gothic", 10F);
+			this.ldv.Location = new System.Drawing.Point(190, 820);
 			this.ldv.Name = "ldv";
 			this.ldv.Size = new System.Drawing.Size(200, 100);
 			this.ldv.TabIndex = 16;
@@ -157,8 +157,8 @@
 			// 
 			// lu
 			// 
-			this.lu.Font = new System.Drawing.Font("Century Gothic", 8F);
-			this.lu.Location = new System.Drawing.Point(482, 69);
+			this.lu.Font = new System.Drawing.Font("Century Gothic", 10F);
+			this.lu.Location = new System.Drawing.Point(730, 70);
 			this.lu.Name = "lu";
 			this.lu.Size = new System.Drawing.Size(200, 100);
 			this.lu.TabIndex = 17;
@@ -166,8 +166,8 @@
 			// 
 			// lv
 			// 
-			this.lv.Font = new System.Drawing.Font("Century Gothic", 8F);
-			this.lv.Location = new System.Drawing.Point(482, 174);
+			this.lv.Font = new System.Drawing.Font("Century Gothic", 10F);
+			this.lv.Location = new System.Drawing.Point(730, 220);
 			this.lv.Name = "lv";
 			this.lv.Size = new System.Drawing.Size(200, 100);
 			this.lv.TabIndex = 18;
@@ -175,8 +175,8 @@
 			// 
 			// la
 			// 
-			this.la.Font = new System.Drawing.Font("Century Gothic", 8F);
-			this.la.Location = new System.Drawing.Point(482, 279);
+			this.la.Font = new System.Drawing.Font("Century Gothic", 10F);
+			this.la.Location = new System.Drawing.Point(730, 370);
 			this.la.Name = "la";
 			this.la.Size = new System.Drawing.Size(200, 100);
 			this.la.TabIndex = 19;
@@ -184,8 +184,8 @@
 			// 
 			// lTc
 			// 
-			this.lTc.Font = new System.Drawing.Font("Century Gothic", 8F);
-			this.lTc.Location = new System.Drawing.Point(482, 384);
+			this.lTc.Font = new System.Drawing.Font("Century Gothic", 10F);
+			this.lTc.Location = new System.Drawing.Point(730, 520);
 			this.lTc.Name = "lTc";
 			this.lTc.Size = new System.Drawing.Size(200, 100);
 			this.lTc.TabIndex = 20;
@@ -193,8 +193,8 @@
 			// 
 			// lup1
 			// 
-			this.lup1.Font = new System.Drawing.Font("Century Gothic", 8F);
-			this.lup1.Location = new System.Drawing.Point(822, 69);
+			this.lup1.Font = new System.Drawing.Font("Century Gothic", 10F);
+			this.lup1.Location = new System.Drawing.Point(1270, 70);
 			this.lup1.Name = "lup1";
 			this.lup1.Size = new System.Drawing.Size(200, 100);
 			this.lup1.TabIndex = 21;
@@ -202,8 +202,8 @@
 			// 
 			// lup2
 			// 
-			this.lup2.Font = new System.Drawing.Font("Century Gothic", 8F);
-			this.lup2.Location = new System.Drawing.Point(822, 174);
+			this.lup2.Font = new System.Drawing.Font("Century Gothic", 10F);
+			this.lup2.Location = new System.Drawing.Point(1270, 220);
 			this.lup2.Name = "lup2";
 			this.lup2.Size = new System.Drawing.Size(200, 100);
 			this.lup2.TabIndex = 22;
@@ -211,8 +211,8 @@
 			// 
 			// lvp1
 			// 
-			this.lvp1.Font = new System.Drawing.Font("Century Gothic", 8F);
-			this.lvp1.Location = new System.Drawing.Point(822, 279);
+			this.lvp1.Font = new System.Drawing.Font("Century Gothic", 10F);
+			this.lvp1.Location = new System.Drawing.Point(1270, 370);
 			this.lvp1.Name = "lvp1";
 			this.lvp1.Size = new System.Drawing.Size(200, 100);
 			this.lvp1.TabIndex = 23;
@@ -220,8 +220,8 @@
 			// 
 			// lvp2
 			// 
-			this.lvp2.Font = new System.Drawing.Font("Century Gothic", 8F);
-			this.lvp2.Location = new System.Drawing.Point(822, 384);
+			this.lvp2.Font = new System.Drawing.Font("Century Gothic", 10F);
+			this.lvp2.Location = new System.Drawing.Point(1270, 520);
 			this.lvp2.Name = "lvp2";
 			this.lvp2.Size = new System.Drawing.Size(200, 100);
 			this.lvp2.TabIndex = 24;
@@ -229,8 +229,8 @@
 			// 
 			// lAp1
 			// 
-			this.lAp1.Font = new System.Drawing.Font("Century Gothic", 8F);
-			this.lAp1.Location = new System.Drawing.Point(822, 489);
+			this.lAp1.Font = new System.Drawing.Font("Century Gothic", 10F);
+			this.lAp1.Location = new System.Drawing.Point(1270, 670);
 			this.lAp1.Name = "lAp1";
 			this.lAp1.Size = new System.Drawing.Size(200, 100);
 			this.lAp1.TabIndex = 25;
@@ -238,8 +238,8 @@
 			// 
 			// lAp2
 			// 
-			this.lAp2.Font = new System.Drawing.Font("Century Gothic", 8F);
-			this.lAp2.Location = new System.Drawing.Point(822, 594);
+			this.lAp2.Font = new System.Drawing.Font("Century Gothic", 10F);
+			this.lAp2.Location = new System.Drawing.Point(1270, 820);
 			this.lAp2.Name = "lAp2";
 			this.lAp2.Size = new System.Drawing.Size(200, 100);
 			this.lAp2.TabIndex = 26;
@@ -247,8 +247,8 @@
 			// 
 			// lgamma
 			// 
-			this.lgamma.Font = new System.Drawing.Font("Century Gothic", 8F);
-			this.lgamma.Location = new System.Drawing.Point(482, 696);
+			this.lgamma.Font = new System.Drawing.Font("Century Gothic", 10F);
+			this.lgamma.Location = new System.Drawing.Point(730, 968);
 			this.lgamma.Name = "lgamma";
 			this.lgamma.Size = new System.Drawing.Size(200, 100);
 			this.lgamma.TabIndex = 27;
@@ -256,8 +256,8 @@
 			// 
 			// l_mu
 			// 
-			this.l_mu.Font = new System.Drawing.Font("Century Gothic", 8F);
-			this.l_mu.Location = new System.Drawing.Point(482, 594);
+			this.l_mu.Font = new System.Drawing.Font("Century Gothic", 10F);
+			this.l_mu.Location = new System.Drawing.Point(730, 820);
 			this.l_mu.Name = "l_mu";
 			this.l_mu.Size = new System.Drawing.Size(200, 100);
 			this.l_mu.TabIndex = 28;
@@ -266,7 +266,7 @@
 			// lH
 			// 
 			this.lH.Font = new System.Drawing.Font("Century Gothic", 8F);
-			this.lH.Location = new System.Drawing.Point(822, 699);
+			this.lH.Location = new System.Drawing.Point(1270, 970);
 			this.lH.Name = "lH";
 			this.lH.Size = new System.Drawing.Size(200, 100);
 			this.lH.TabIndex = 29;
@@ -274,80 +274,80 @@
 			// 
 			// InMu
 			// 
-			this.InMu.Location = new System.Drawing.Point(32, 69);
+			this.InMu.Location = new System.Drawing.Point(30, 70);
 			this.InMu.Name = "InMu";
-			this.InMu.Size = new System.Drawing.Size(100, 26);
+			this.InMu.Size = new System.Drawing.Size(150, 26);
 			this.InMu.TabIndex = 30;
 			this.InMu.Leave += new System.EventHandler(this.InMu_Leave);
 			// 
 			// InMv
 			// 
-			this.InMv.Location = new System.Drawing.Point(32, 174);
+			this.InMv.Location = new System.Drawing.Point(32, 220);
 			this.InMv.Name = "InMv";
-			this.InMv.Size = new System.Drawing.Size(100, 26);
+			this.InMv.Size = new System.Drawing.Size(150, 26);
 			this.InMv.TabIndex = 31;
 			this.InMv.Leave += new System.EventHandler(this.InMv_Leave);
 			// 
 			// InUm
 			// 
-			this.InUm.Location = new System.Drawing.Point(32, 279);
+			this.InUm.Location = new System.Drawing.Point(30, 370);
 			this.InUm.Name = "InUm";
-			this.InUm.Size = new System.Drawing.Size(100, 26);
+			this.InUm.Size = new System.Drawing.Size(150, 26);
 			this.InUm.TabIndex = 32;
 			this.InUm.Leave += new System.EventHandler(this.InUm_Leave);
 			// 
 			// InVm
 			// 
-			this.InVm.Location = new System.Drawing.Point(32, 384);
+			this.InVm.Location = new System.Drawing.Point(30, 520);
 			this.InVm.Name = "InVm";
-			this.InVm.Size = new System.Drawing.Size(100, 26);
+			this.InVm.Size = new System.Drawing.Size(150, 26);
 			this.InVm.TabIndex = 33;
 			this.InVm.Leave += new System.EventHandler(this.InVm_Leave);
 			// 
 			// Indu
 			// 
-			this.Indu.Location = new System.Drawing.Point(32, 489);
+			this.Indu.Location = new System.Drawing.Point(30, 670);
 			this.Indu.Name = "Indu";
-			this.Indu.Size = new System.Drawing.Size(100, 26);
+			this.Indu.Size = new System.Drawing.Size(150, 26);
 			this.Indu.TabIndex = 34;
 			this.Indu.Leave += new System.EventHandler(this.Indu_Leave);
 			// 
 			// Indv
 			// 
-			this.Indv.Location = new System.Drawing.Point(32, 594);
+			this.Indv.Location = new System.Drawing.Point(30, 820);
 			this.Indv.Name = "Indv";
-			this.Indv.Size = new System.Drawing.Size(100, 26);
+			this.Indv.Size = new System.Drawing.Size(150, 26);
 			this.Indv.TabIndex = 35;
 			this.Indv.Leave += new System.EventHandler(this.Indv_Leave);
 			// 
 			// Inu
 			// 
-			this.Inu.Location = new System.Drawing.Point(372, 69);
+			this.Inu.Location = new System.Drawing.Point(570, 70);
 			this.Inu.Name = "Inu";
-			this.Inu.Size = new System.Drawing.Size(100, 26);
+			this.Inu.Size = new System.Drawing.Size(150, 26);
 			this.Inu.TabIndex = 36;
 			this.Inu.Leave += new System.EventHandler(this.Inu_Leave);
 			// 
 			// Inv
 			// 
-			this.Inv.Location = new System.Drawing.Point(372, 174);
+			this.Inv.Location = new System.Drawing.Point(570, 220);
 			this.Inv.Name = "Inv";
-			this.Inv.Size = new System.Drawing.Size(100, 26);
+			this.Inv.Size = new System.Drawing.Size(150, 26);
 			this.Inv.TabIndex = 37;
 			this.Inv.Leave += new System.EventHandler(this.Inv_Leave);
 			// 
 			// Ina
 			// 
-			this.Ina.Location = new System.Drawing.Point(372, 279);
+			this.Ina.Location = new System.Drawing.Point(570, 370);
 			this.Ina.Name = "Ina";
-			this.Ina.Size = new System.Drawing.Size(100, 26);
+			this.Ina.Size = new System.Drawing.Size(150, 26);
 			this.Ina.TabIndex = 38;
 			this.Ina.Leave += new System.EventHandler(this.Ina_Leave);
 			// 
 			// lpq
 			// 
-			this.lpq.Font = new System.Drawing.Font("Century Gothic", 8F);
-			this.lpq.Location = new System.Drawing.Point(482, 489);
+			this.lpq.Font = new System.Drawing.Font("Century Gothic", 10F);
+			this.lpq.Location = new System.Drawing.Point(730, 670);
 			this.lpq.Name = "lpq";
 			this.lpq.Size = new System.Drawing.Size(200, 100);
 			this.lpq.TabIndex = 39;
@@ -355,89 +355,89 @@
 			// 
 			// InTc
 			// 
-			this.InTc.Location = new System.Drawing.Point(372, 384);
+			this.InTc.Location = new System.Drawing.Point(570, 520);
 			this.InTc.Name = "InTc";
-			this.InTc.Size = new System.Drawing.Size(100, 26);
+			this.InTc.Size = new System.Drawing.Size(150, 26);
 			this.InTc.TabIndex = 40;
 			this.InTc.Leave += new System.EventHandler(this.InTc_Leave);
 			// 
 			// Inup1
 			// 
-			this.Inup1.Location = new System.Drawing.Point(712, 69);
+			this.Inup1.Location = new System.Drawing.Point(1110, 70);
 			this.Inup1.Name = "Inup1";
-			this.Inup1.Size = new System.Drawing.Size(100, 26);
+			this.Inup1.Size = new System.Drawing.Size(150, 26);
 			this.Inup1.TabIndex = 41;
 			this.Inup1.Leave += new System.EventHandler(this.Inup1_Leave);
 			// 
 			// Inup2
 			// 
-			this.Inup2.Location = new System.Drawing.Point(712, 174);
+			this.Inup2.Location = new System.Drawing.Point(1110, 220);
 			this.Inup2.Name = "Inup2";
-			this.Inup2.Size = new System.Drawing.Size(100, 26);
+			this.Inup2.Size = new System.Drawing.Size(150, 26);
 			this.Inup2.TabIndex = 42;
 			this.Inup2.Leave += new System.EventHandler(this.Inup2_Leave);
 			// 
 			// Invp1
 			// 
-			this.Invp1.Location = new System.Drawing.Point(712, 279);
+			this.Invp1.Location = new System.Drawing.Point(1110, 370);
 			this.Invp1.Name = "Invp1";
-			this.Invp1.Size = new System.Drawing.Size(100, 26);
+			this.Invp1.Size = new System.Drawing.Size(150, 26);
 			this.Invp1.TabIndex = 43;
 			this.Invp1.Leave += new System.EventHandler(this.Invp1_Leave);
 			// 
 			// Invp2
 			// 
-			this.Invp2.Location = new System.Drawing.Point(712, 384);
+			this.Invp2.Location = new System.Drawing.Point(1110, 520);
 			this.Invp2.Name = "Invp2";
-			this.Invp2.Size = new System.Drawing.Size(100, 26);
+			this.Invp2.Size = new System.Drawing.Size(150, 26);
 			this.Invp2.TabIndex = 44;
 			this.Invp2.Leave += new System.EventHandler(this.Invp2_Leave);
 			// 
 			// InAp1
 			// 
-			this.InAp1.Location = new System.Drawing.Point(712, 489);
+			this.InAp1.Location = new System.Drawing.Point(1110, 670);
 			this.InAp1.Name = "InAp1";
-			this.InAp1.Size = new System.Drawing.Size(100, 26);
+			this.InAp1.Size = new System.Drawing.Size(150, 26);
 			this.InAp1.TabIndex = 45;
 			this.InAp1.Leave += new System.EventHandler(this.InAp1_Leave);
 			// 
 			// InAp2
 			// 
-			this.InAp2.Location = new System.Drawing.Point(712, 594);
+			this.InAp2.Location = new System.Drawing.Point(1110, 820);
 			this.InAp2.Name = "InAp2";
-			this.InAp2.Size = new System.Drawing.Size(100, 26);
+			this.InAp2.Size = new System.Drawing.Size(150, 26);
 			this.InAp2.TabIndex = 46;
 			this.InAp2.Leave += new System.EventHandler(this.InAp2_Leave);
 			// 
 			// Ingamma
 			// 
-			this.Ingamma.Location = new System.Drawing.Point(372, 699);
+			this.Ingamma.Location = new System.Drawing.Point(570, 968);
 			this.Ingamma.Name = "Ingamma";
-			this.Ingamma.Size = new System.Drawing.Size(100, 26);
+			this.Ingamma.Size = new System.Drawing.Size(150, 26);
 			this.Ingamma.TabIndex = 47;
 			this.Ingamma.Leave += new System.EventHandler(this.Ingamma_Leave);
 			// 
 			// In_mu
 			// 
-			this.In_mu.Location = new System.Drawing.Point(372, 594);
+			this.In_mu.Location = new System.Drawing.Point(570, 820);
 			this.In_mu.Name = "In_mu";
-			this.In_mu.Size = new System.Drawing.Size(100, 26);
+			this.In_mu.Size = new System.Drawing.Size(150, 26);
 			this.In_mu.TabIndex = 48;
 			this.In_mu.Leave += new System.EventHandler(this.In_mu_Leave);
 			// 
 			// InH
 			// 
-			this.InH.Location = new System.Drawing.Point(712, 699);
+			this.InH.Location = new System.Drawing.Point(1110, 970);
 			this.InH.Name = "InH";
-			this.InH.Size = new System.Drawing.Size(100, 26);
+			this.InH.Size = new System.Drawing.Size(150, 26);
 			this.InH.TabIndex = 49;
 			this.InH.Leave += new System.EventHandler(this.InH_Leave);
 			// 
 			// Inpq
 			// 
-			this.Inpq.Location = new System.Drawing.Point(372, 489);
+			this.Inpq.Location = new System.Drawing.Point(570, 670);
 			this.Inpq.Name = "Inpq";
-			this.Inpq.Size = new System.Drawing.Size(100, 26);
+			this.Inpq.Size = new System.Drawing.Size(150, 26);
 			this.Inpq.TabIndex = 50;
 			this.Inpq.Leave += new System.EventHandler(this.Inpq_Leave);
 			// 
@@ -453,16 +453,18 @@
 			// 
 			// bExit
 			// 
+			this.bExit.AutoSize = true;
 			this.bExit.BackColor = System.Drawing.Color.Transparent;
+			this.bExit.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.bExit.FlatAppearance.BorderSize = 0;
 			this.bExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
 			this.bExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
 			this.bExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.bExit.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.bExit.Location = new System.Drawing.Point(0, 600);
+			this.bExit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.bExit.Location = new System.Drawing.Point(0, 810);
 			this.bExit.Margin = new System.Windows.Forms.Padding(0);
 			this.bExit.Name = "bExit";
-			this.bExit.Size = new System.Drawing.Size(300, 200);
+			this.bExit.Size = new System.Drawing.Size(400, 270);
 			this.bExit.TabIndex = 1;
 			this.bExit.Text = "Назад";
 			this.bExit.UseVisualStyleBackColor = false;
@@ -470,16 +472,18 @@
 			// 
 			// bProceed
 			// 
+			this.bProceed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.bProceed.AutoSize = true;
 			this.bProceed.BackColor = System.Drawing.Color.Transparent;
 			this.bProceed.FlatAppearance.BorderSize = 0;
 			this.bProceed.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
 			this.bProceed.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
 			this.bProceed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.bProceed.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.bProceed.Location = new System.Drawing.Point(0, 400);
+			this.bProceed.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.bProceed.Location = new System.Drawing.Point(0, 540);
 			this.bProceed.Margin = new System.Windows.Forms.Padding(0);
 			this.bProceed.Name = "bProceed";
-			this.bProceed.Size = new System.Drawing.Size(300, 200);
+			this.bProceed.Size = new System.Drawing.Size(400, 270);
 			this.bProceed.TabIndex = 2;
 			this.bProceed.Text = "Перейти к наблюдениям";
 			this.bProceed.UseVisualStyleBackColor = false;
@@ -492,11 +496,11 @@
 			this.bSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
 			this.bSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
 			this.bSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.bSave.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.bSave.Location = new System.Drawing.Point(0, 200);
+			this.bSave.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.bSave.Location = new System.Drawing.Point(0, 270);
 			this.bSave.Margin = new System.Windows.Forms.Padding(0);
 			this.bSave.Name = "bSave";
-			this.bSave.Size = new System.Drawing.Size(300, 200);
+			this.bSave.Size = new System.Drawing.Size(400, 270);
 			this.bSave.TabIndex = 3;
 			this.bSave.Text = "Сохранить параметры симуляции";
 			this.bSave.UseVisualStyleBackColor = false;
@@ -506,15 +510,16 @@
 			// 
 			this.bGet.BackColor = System.Drawing.Color.Transparent;
 			this.bGet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+			this.bGet.Dock = System.Windows.Forms.DockStyle.Top;
 			this.bGet.FlatAppearance.BorderSize = 0;
 			this.bGet.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
 			this.bGet.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
 			this.bGet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.bGet.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.bGet.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.bGet.Location = new System.Drawing.Point(0, 0);
 			this.bGet.Margin = new System.Windows.Forms.Padding(0);
 			this.bGet.Name = "bGet";
-			this.bGet.Size = new System.Drawing.Size(300, 200);
+			this.bGet.Size = new System.Drawing.Size(400, 270);
 			this.bGet.TabIndex = 4;
 			this.bGet.Text = "Загрузить параметры симуляции";
 			this.bGet.UseVisualStyleBackColor = false;
@@ -522,17 +527,17 @@
 			// 
 			// panel
 			// 
-			this.panel.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.panel.AutoSize = true;
 			this.panel.BackColor = System.Drawing.Color.LightSlateGray;
 			this.panel.Controls.Add(this.bGet);
 			this.panel.Controls.Add(this.bSave);
 			this.panel.Controls.Add(this.bProceed);
 			this.panel.Controls.Add(this.bExit);
-			this.panel.Location = new System.Drawing.Point(1060, 0);
+			this.panel.Dock = System.Windows.Forms.DockStyle.Right;
+			this.panel.Location = new System.Drawing.Point(1520, 0);
 			this.panel.Margin = new System.Windows.Forms.Padding(0);
 			this.panel.Name = "panel";
-			this.panel.Size = new System.Drawing.Size(300, 800);
+			this.panel.Size = new System.Drawing.Size(400, 1080);
 			this.panel.TabIndex = 52;
 			// 
 			// Input
@@ -540,7 +545,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSize = true;
-			this.ClientSize = new System.Drawing.Size(1360, 800);
+			this.ClientSize = new System.Drawing.Size(1920, 1080);
 			this.Controls.Add(this.panel);
 			this.Controls.Add(this.Inpq);
 			this.Controls.Add(this.InH);
@@ -590,6 +595,7 @@
 			this.Text = "Form1";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Input_FormClosing);
 			this.panel.ResumeLayout(false);
+			this.panel.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

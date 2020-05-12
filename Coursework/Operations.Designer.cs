@@ -34,9 +34,13 @@
 			this.log = new System.Windows.Forms.RichTextBox();
 			this.saveFile = new System.Windows.Forms.SaveFileDialog();
 			this.panel = new System.Windows.Forms.Panel();
+			this.max = new System.Windows.Forms.Label();
 			this.bBackToInput = new System.Windows.Forms.Button();
+			this.sliderH = new System.Windows.Forms.TrackBar();
 			this.bVisualize = new System.Windows.Forms.Button();
 			this.bSaveMatrix = new System.Windows.Forms.Button();
+			this.label1 = new System.Windows.Forms.Label();
+			this.min = new System.Windows.Forms.Label();
 			this.bSaveStat = new System.Windows.Forms.Button();
 			this.bGetMatrix = new System.Windows.Forms.Button();
 			this.bGetStat = new System.Windows.Forms.Button();
@@ -47,9 +51,6 @@
 			this.bGenData = new System.Windows.Forms.Button();
 			this.bBackToHomepage = new System.Windows.Forms.Button();
 			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-			this.sliderH = new System.Windows.Forms.TrackBar();
-			this.min = new System.Windows.Forms.Label();
-			this.max = new System.Windows.Forms.Label();
 			this.panel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.sliderH)).BeginInit();
 			this.SuspendLayout();
@@ -57,10 +58,10 @@
 			// progress
 			// 
 			this.progress.ForeColor = System.Drawing.Color.Blue;
-			this.progress.Location = new System.Drawing.Point(35, 743);
+			this.progress.Location = new System.Drawing.Point(1, 1030);
 			this.progress.Margin = new System.Windows.Forms.Padding(1);
 			this.progress.Name = "progress";
-			this.progress.Size = new System.Drawing.Size(688, 38);
+			this.progress.Size = new System.Drawing.Size(600, 50);
 			this.progress.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
 			this.progress.TabIndex = 3;
 			this.progress.Visible = false;
@@ -73,11 +74,11 @@
 			// log
 			// 
 			this.log.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.log.Font = new System.Drawing.Font("Century Gothic", 10F);
-			this.log.Location = new System.Drawing.Point(35, 38);
+			this.log.Font = new System.Drawing.Font("Century Gothic", 12F);
+			this.log.Location = new System.Drawing.Point(12, 12);
 			this.log.Name = "log";
 			this.log.ReadOnly = true;
-			this.log.Size = new System.Drawing.Size(688, 626);
+			this.log.Size = new System.Drawing.Size(1290, 500);
 			this.log.TabIndex = 12;
 			this.log.Text = "";
 			// 
@@ -89,9 +90,14 @@
 			// panel
 			// 
 			this.panel.BackColor = System.Drawing.Color.LightSlateGray;
+			this.panel.Controls.Add(this.max);
 			this.panel.Controls.Add(this.bBackToInput);
 			this.panel.Controls.Add(this.bVisualize);
 			this.panel.Controls.Add(this.bSaveMatrix);
+			this.panel.Controls.Add(this.min);
+			this.panel.Controls.Add(this.sliderH);
+			this.panel.Controls.Add(this.label1);
+			this.panel.Controls.Add(this.progress);
 			this.panel.Controls.Add(this.bSaveStat);
 			this.panel.Controls.Add(this.bGetMatrix);
 			this.panel.Controls.Add(this.bGetStat);
@@ -101,11 +107,21 @@
 			this.panel.Controls.Add(this.bGetData);
 			this.panel.Controls.Add(this.bGenData);
 			this.panel.Controls.Add(this.bBackToHomepage);
-			this.panel.Location = new System.Drawing.Point(760, 0);
+			this.panel.Location = new System.Drawing.Point(1320, 0);
 			this.panel.Margin = new System.Windows.Forms.Padding(0);
 			this.panel.Name = "panel";
-			this.panel.Size = new System.Drawing.Size(600, 800);
+			this.panel.Size = new System.Drawing.Size(600, 1080);
 			this.panel.TabIndex = 53;
+			// 
+			// max
+			// 
+			this.max.AutoSize = true;
+			this.max.BackColor = System.Drawing.Color.Transparent;
+			this.max.ForeColor = System.Drawing.Color.White;
+			this.max.Location = new System.Drawing.Point(516, 891);
+			this.max.Name = "max";
+			this.max.Size = new System.Drawing.Size(0, 20);
+			this.max.TabIndex = 56;
 			// 
 			// bBackToInput
 			// 
@@ -123,6 +139,15 @@
 			this.bBackToInput.Text = "Вернуться к параметрам симуляции";
 			this.bBackToInput.UseVisualStyleBackColor = false;
 			this.bBackToInput.Click += new System.EventHandler(this.bBackToInput_Click);
+			// 
+			// sliderH
+			// 
+			this.sliderH.BackColor = System.Drawing.Color.Teal;
+			this.sliderH.Location = new System.Drawing.Point(0, 847);
+			this.sliderH.Name = "sliderH";
+			this.sliderH.Size = new System.Drawing.Size(600, 69);
+			this.sliderH.TabIndex = 54;
+			this.sliderH.Scroll += new System.EventHandler(this.sliderH_Scroll);
 			// 
 			// bVisualize
 			// 
@@ -157,6 +182,28 @@
 			this.bSaveMatrix.Text = "Сохранить файлы матрицы";
 			this.bSaveMatrix.UseVisualStyleBackColor = false;
 			this.bSaveMatrix.Click += new System.EventHandler(this.bSaveMatrix_Click);
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.BackColor = System.Drawing.Color.Transparent;
+			this.label1.Font = new System.Drawing.Font("Century Gothic", 10F);
+			this.label1.Location = new System.Drawing.Point(3, 821);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(307, 23);
+			this.label1.TabIndex = 57;
+			this.label1.Text = "Пороговое значение сигнала";
+			this.label1.Visible = false;
+			// 
+			// min
+			// 
+			this.min.AutoSize = true;
+			this.min.BackColor = System.Drawing.Color.Transparent;
+			this.min.ForeColor = System.Drawing.Color.White;
+			this.min.Location = new System.Drawing.Point(10, 891);
+			this.min.Name = "min";
+			this.min.Size = new System.Drawing.Size(0, 20);
+			this.min.TabIndex = 55;
 			// 
 			// bSaveStat
 			// 
@@ -206,7 +253,7 @@
 			this.bGetStat.Name = "bGetStat";
 			this.bGetStat.Size = new System.Drawing.Size(200, 200);
 			this.bGetStat.TabIndex = 7;
-			this.bGetStat.Text = "Загрузить и визуализировать файл статистики наблюдений";
+			this.bGetStat.Text = "Загрузить файл статистики наблюдений";
 			this.bGetStat.UseVisualStyleBackColor = false;
 			this.bGetStat.Click += new System.EventHandler(this.bGetStat_Click);
 			// 
@@ -240,7 +287,7 @@
 			this.bGenStat.Name = "bGenStat";
 			this.bGenStat.Size = new System.Drawing.Size(200, 200);
 			this.bGenStat.TabIndex = 5;
-			this.bGenStat.Text = "Сгенерировать и визуализировать статистику наблюдений";
+			this.bGenStat.Text = "Сгенерировать статистику наблюдений";
 			this.bGenStat.UseVisualStyleBackColor = false;
 			this.bGenStat.Click += new System.EventHandler(this.bGenStat_Click);
 			// 
@@ -313,55 +360,22 @@
 			this.bBackToHomepage.UseVisualStyleBackColor = false;
 			this.bBackToHomepage.Click += new System.EventHandler(this.bBackToHomepage_Click);
 			// 
-			// sliderH
-			// 
-			this.sliderH.BackColor = System.Drawing.Color.Teal;
-			this.sliderH.Location = new System.Drawing.Point(35, 670);
-			this.sliderH.Name = "sliderH";
-			this.sliderH.Size = new System.Drawing.Size(688, 69);
-			this.sliderH.TabIndex = 54;
-			this.sliderH.Scroll += new System.EventHandler(this.sliderH_Scroll);
-			// 
-			// min
-			// 
-			this.min.AutoSize = true;
-			this.min.BackColor = System.Drawing.Color.Transparent;
-			this.min.ForeColor = System.Drawing.Color.White;
-			this.min.Location = new System.Drawing.Point(40, 713);
-			this.min.Name = "min";
-			this.min.Size = new System.Drawing.Size(0, 20);
-			this.min.TabIndex = 55;
-			// 
-			// max
-			// 
-			this.max.AutoSize = true;
-			this.max.BackColor = System.Drawing.Color.Transparent;
-			this.max.ForeColor = System.Drawing.Color.White;
-			this.max.Location = new System.Drawing.Point(655, 713);
-			this.max.Name = "max";
-			this.max.Size = new System.Drawing.Size(0, 20);
-			this.max.TabIndex = 56;
-			// 
 			// Operations
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSize = true;
-			this.ClientSize = new System.Drawing.Size(1360, 800);
-			this.Controls.Add(this.max);
-			this.Controls.Add(this.min);
-			this.Controls.Add(this.sliderH);
+			this.ClientSize = new System.Drawing.Size(1920, 1080);
 			this.Controls.Add(this.panel);
 			this.Controls.Add(this.log);
-			this.Controls.Add(this.progress);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "Operations";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Form2";
 			this.panel.ResumeLayout(false);
+			this.panel.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.sliderH)).EndInit();
 			this.ResumeLayout(false);
-			this.PerformLayout();
 
 		}
 
@@ -387,5 +401,6 @@
 		private System.Windows.Forms.TrackBar sliderH;
 		private System.Windows.Forms.Label min;
 		private System.Windows.Forms.Label max;
+		private System.Windows.Forms.Label label1;
 	}
 }

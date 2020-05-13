@@ -30,8 +30,8 @@ U=zeros(M,Nu*Nv);
 g=sinx(pi*ii(i)/Um).*sinx(pi*kk(k)/Vm);
 U=repmat(g,M,1).*exp(j*2*pi*[p' q']*[ii(i)/Um ; kk(k)/Vm]);
 
-VisFiles(1, N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,real(U),0, 'Вещественные составляющие пробных сигналов по углам', [0 10 300 200]);
-VisFiles(1, N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,imag(U),0, 'Комплексные составляющие пробных сигналов по углам', [290 10 300 200]);
+VisFiles(1, N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,real(U),0, 'Вещественные составляющие пробных сигналов по углам', [0 0 300 200]);
+VisFiles(1, N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,imag(U),0, 'Комплексные составляющие пробных сигналов по углам', [290 0 300 200]);
 
 rU=real(U);
 iU=imag(U);
@@ -54,7 +54,7 @@ S(:,l)=S(:,l)/sqrt(ls);
  
 end
  
-VisFiles(1, N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,S,0, 'Пробные сигналы по времени', [580 10 300 200]);
+VisFiles(1, N,Um,Vm,Nu, Nv, Ns, lu, lv, lt, ii,kk,ll,S,0, 'Пробные сигналы по времени', [580 0 300 200]);
  
 rS=real(S);
 iS=imag(S);

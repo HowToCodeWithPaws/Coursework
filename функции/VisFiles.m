@@ -55,11 +55,6 @@ hold off
  
 % Re-format the colorbar
 h=colorbar;
- 
-%set(h,'ylim',[1 length(map)]);
-yal=linspace(1,length(map),10);
-
-%set(h,'ytick',yal);
 
 % Create the yticklabels
 ytl=linspace(miv,mav,11);

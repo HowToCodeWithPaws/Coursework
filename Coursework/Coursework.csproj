@@ -55,10 +55,12 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MatlabFuncs">
+    <Reference Include="MatlabFuncs, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\MatlabFuncs\for_testing\MatlabFuncs.dll</HintPath>
     </Reference>
-    <Reference Include="MatlabFuncsNative">
+    <Reference Include="MatlabFuncsNative, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\MatlabFuncs\for_testing\MatlabFuncsNative.dll</HintPath>
     </Reference>
     <Reference Include="MWArray, Version=2.20.0.0, Culture=neutral, PublicKeyToken=e1d84a0da19db86f, processorArchitecture=MSIL">

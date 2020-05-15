@@ -141,14 +141,14 @@ namespace Coursework
 			dataE = matrixE = statE = bSaveData.Enabled
 				= bGenMatrix.Enabled = bSaveMatrix.Enabled
 				= bGenStat.Enabled = bSaveStat.Enabled
-				= bVisualize.Enabled = sliderH.Enabled = 
-				min.Visible=max.Visible=label1.Visible= false;
+				= bVisualize.Enabled = sliderH.Enabled =
+				min.Visible = max.Visible = label1.Visible = false;
 
 			this.BackColor = log.BackColor = backColor;
 			panel.BackColor = sliderH.BackColor =
 				min.BackColor = max.BackColor = panelColor;
-			log.ForeColor = min.ForeColor = max.ForeColor 
-				=label1.ForeColor= textColor;
+			log.ForeColor = min.ForeColor = max.ForeColor
+				= label1.ForeColor = textColor;
 
 			foreach (Button b in GetAllControlsOfType<Button>(this))
 			{
@@ -360,10 +360,10 @@ namespace Coursework
 					max.Text = $"{maxH:F3}";
 
 					sliderH.Minimum = (int)Math.Floor(minH);
-					sliderH.Maximum = (int)Math.Ceiling(maxH);
+					sliderH.Maximum = (int)Math.Floor(maxH);
 
 					statE = bSaveStat.Enabled = bVisualize.Enabled = sliderH.Enabled
-						=min.Visible = max.Visible = label1.Visible= true;
+						= min.Visible = max.Visible = label1.Visible = true;
 				}
 				else
 				{
@@ -719,7 +719,7 @@ namespace Coursework
 				maxH = float.Parse(a.GetValue(0, 2).ToString());
 
 				sliderH.Minimum = (int)Math.Floor(minH);
-				sliderH.Maximum = (int)Math.Ceiling(maxH);
+				sliderH.Maximum = (int)Math.Floor(maxH);
 
 				min.Text = $"{minH:F3}";
 				max.Text = $"{maxH:F3}";
@@ -992,9 +992,16 @@ namespace Coursework
 			{
 				b.Enabled = true;
 			}
-			bSaveStat.Enabled = bVisualize.Enabled = statE;
-			bGenStat.Enabled = bSaveMatrix.Enabled = matrixE;
-			bGenMatrix.Enabled = bSaveData.Enabled = dataE;
+
+			bSaveData.Enabled = dataE;
+			bSaveStat.Enabled = statE;
+			bSaveMatrix.Enabled = matrixE;
+
+			bGenMatrix.Enabled = dataE;
+			bGenStat.Enabled = dataE && matrixE;
+
+			bVisualize.Enabled = sliderH.Enabled 
+						= min.Visible = max.Visible = label1.Visible = statE;
 		}
 
 		/// <summary>
@@ -1006,6 +1013,8 @@ namespace Coursework
 			{
 				b.Enabled = false;
 			}
+
+			sliderH.Enabled = false;
 		}
 	}
 }

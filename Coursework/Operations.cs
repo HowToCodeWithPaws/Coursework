@@ -516,7 +516,7 @@ namespace Coursework
 			if (checkLen && (expectedLen > length))
 			{
 				MessageBox.Show($"В файле {path} находятся данные" +
-						$" не в требуемом количестве {length}");
+						$" не в требуемом количестве");
 
 				return false;
 			}

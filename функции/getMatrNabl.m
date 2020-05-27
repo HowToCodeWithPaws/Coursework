@@ -8,11 +8,13 @@ f=getPhase(u/Um,v/Vm,Mu,Mv);
 U=[repmat(g,M,1).*exp(f)];
 S=zeros(N,Nc);
 n=1:N;
+
 for l=1:Nc
     b=n-1>=Tc(l)&n-1<Tc(l)+Lc;
     o=(n(b)-1-Tc(l))/Lc;
     S(n(b),l)=exp(-j*pi*Kc*(o.^2-o));
 end
+
 g=sinx(pi*up/Um).*sinx(pi*vp/Vm);
 f=getPhase(up/Um,vp/Vm,Mu,Mv);
 V=[repmat(g,M,1).*exp(f) repmat(g,M,1).*f.*exp(f)];

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Coursework.Homescreen" Collapsed="true">
+    <Position X="1.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAQCAAABAAACCICoCiIAAEAAAAQEEAAQAAAYA=</HashCode>
+      <FileName>Homescreen.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="funcs" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Coursework.Input" Collapsed="true">
+    <Position X="1.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iQGjY6SBUiEABAJgCiSAToGnQAAQETImBNMFF1BjA6E=</HashCode>
+      <FileName>Input.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="prevForm" />
+      <Field Name="funcs" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Coursework.Operations" Collapsed="true">
+    <Position X="1.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CQMC+iKBQvKQhDIACSCQCIGDQQAEFEAgBZMwE1Igh5A=</HashCode>
+      <FileName>Operations.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="prevForm" />
+      <Field Name="homescreen" />
+      <Field Name="funcs" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Coursework.Program" Collapsed="true">
+    <Position X="6.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Coursework.Properties.Resources" Collapsed="true">
+    <Position X="6.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Coursework.Properties.Settings" Collapsed="true">
+    <Position X="6.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MatlabFuncs.Funcs">
+    <Position X="4.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RadarLib.RadarOperations" Collapsed="true">
+    <Position X="1.75" Y="5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

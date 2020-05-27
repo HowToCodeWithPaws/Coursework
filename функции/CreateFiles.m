@@ -78,6 +78,12 @@ end
 rY=real(Y(:,:));
 iY=imag(Y(:,:));
 
+rRm = real(R(:,:));
+iRm= imag(R(:,:));
+
+save RmX.txt rRm -ascii;
+save RmY.txt iRm -ascii;
+
 save YX.txt rY -ascii;
 save YY.txt iY -ascii;
 
